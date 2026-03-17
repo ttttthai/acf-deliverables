@@ -1,6 +1,6 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACF_T5D_ProcessDesign_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ACF_T5D_ProcessDesign_v1.0</h1><p>AEON Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ACF Process Design -- Current &amp; Future State v1.0</h1>
-<p><strong>Document ID:</strong> ACF_T5D_ProcessDesign_v1.0
-<strong>Prepared for:</strong> AEON Consumer Finance Vietnam -- Operations &amp; Technology Teams
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACF_T5D_ProcessDesign_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ACF_T5D_ProcessDesign_v1.0</h1><p>ABC Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ABC Process Design -- Current &amp; Future State v1.0</h1>
+<p><strong>Document ID:</strong> ABC_T5D_ProcessDesign_v1.0
+<strong>Prepared for:</strong> ABC Consumer Finance Vietnam -- Operations &amp; Technology Teams
 <strong>Prepared by:</strong> Team 5 -- Architecture &amp; Implementation
 <strong>Date:</strong> March 15, 2026
 <strong>Classification:</strong> Internal -- Strictly Confidential
@@ -8,7 +8,7 @@
 <strong>Sources:</strong> Team 2 (Operational DD, Technology DD, Capability Gaps), Team 4 (Digital Transformation, Product Strategy, Sales Strategy)</p>
 <hr>
 <h2>Executive Summary</h2>
-<p>This document provides text-based BPMN process descriptions for ACF&#39;s 5 core processes (Loan Origination, Loan Servicing, Collections, Customer Service, Compliance Reporting) in both current and future states. The analysis identifies 27 process bottlenecks, 19 automation opportunities ranked by ROI, 12 handoff inefficiencies, and 8 critical control gaps. The future-state processes target 80% straight-through processing (STP) for origination, 60% digital collection resolution, and fully automated SBV regulatory reporting. <span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></p>
+<p>This document provides text-based BPMN process descriptions for ABC&#39;s 5 core processes (Loan Origination, Loan Servicing, Collections, Customer Service, Compliance Reporting) in both current and future states. The analysis identifies 27 process bottlenecks, 19 automation opportunities ranked by ROI, 12 handoff inefficiencies, and 8 critical control gaps. The future-state processes target 80% straight-through processing (STP) for origination, 60% digital collection resolution, and fully automated SBV regulatory reporting. <span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></p>
 <hr>
 <h2>1. Current State Processes</h2>
 <h3>1.1 Loan Origination Process</h3>
@@ -51,25 +51,25 @@
     |
     → [Agent enters loan amount, product details, dealer information]
     |
-    → [Application created in LOOMS&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ACF IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025&lt;/span&gt;&lt;/span&gt; via Sales App]
+    → [Application created in LOOMS&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ABC IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025&lt;/span&gt;&lt;/span&gt; via Sales App]
     |
     → PROCEED to eKYC Verification
 </code></pre>
 <p><strong>Channel: VPBank NEO Agent Banking (~2-3% of volume)</strong></p>
-<pre><code>START → [Customer sees ACF loan offer in VPBank NEO app]
+<pre><code>START → [Customer sees ABC loan offer in VPBank NEO app]
     |
     → [Customer taps &quot;Apply&quot; within VPBank NEO interface]
     |
-    → [VPBank NEO routes to ACF application flow]
+    → [VPBank NEO routes to ABC application flow]
     |
     → [Customer provides CCCD and personal information]
     |
-    → [Application data transferred to ACF systems]
+    → [Application data transferred to ABC systems]
     |
     → PROCEED to eKYC Verification
 </code></pre>
 <p><strong>Channel: Digital / Self-Service (&lt;1% of volume)</strong></p>
-<pre><code>START → [Customer visits ACF Customer Portal (web)]
+<pre><code>START → [Customer visits ABC Customer Portal (web)]
     |
     → [Limited loan information available; no online application capability]
     |
@@ -499,7 +499,7 @@
 &lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ CHANNELS for payment receipt:&lt;/div&gt;
 &lt;/div&gt;
 &lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
-&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Bank transfer to ACF collection account (SeABank)&lt;/div&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Bank transfer to ABC collection account (SeABank)&lt;/div&gt;
 &lt;/div&gt;
 &lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
 &lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Collection partner payment points (API: CreateFTPayment)&lt;/div&gt;
@@ -711,4 +711,4 @@
 [B2 Account: 463 cases; VND 10.0B POS]
     → Same process as B1 with escalated urgency
     → B2 resolution rate: 41.67% (Jan-26); declining trend
-    → B2 roll forward rate: 57.7%&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;State Bank of Vietnam (sbv.gov.vn)&quot;VietQR&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;NAPAS &quot;VietQR Integration St</body></html>
+    → B2 roll forward rate: 57.7%&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;State Bank of Vietnam (sbv.gov.vn)&quot;VietQR&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;NAPAS &quot;VietQR Integration Sta</body></html>
