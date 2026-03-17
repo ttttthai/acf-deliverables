@@ -1,0 +1,617 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACF_T4C_DigitalTransformation_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ACF_T4C_DigitalTransformation_v1.0</h1><p>AEON Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ACF Digital Transformation Roadmap v1.0</h1>
+<p><strong>Document ID:</strong> ACF_T4C_DigitalTransformation_v1.0
+<strong>Prepared for:</strong> AEON Consumer Finance Vietnam -- Digital Transformation Steering Committee
+<strong>Date:</strong> March 15, 2026
+<strong>Classification:</strong> Internal -- Strictly Confidential
+<strong>Version:</strong> 1.0
+<strong>Sources:</strong> Team 1 (Technology Landscape, Tech Roadmap Options, Best Practices), Team 2 (Technology DD, Capability Gaps), Team 4 (Corporate Strategy, Product Strategy, Technology Strategy)</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>ACF&#39;s digital maturity is at the bottom of the Vietnam consumer finance market. The company scores 1/5 on digital customer experience, has no mobile app, no BNPL product, manual loan origination processes, eKYC drop-off rates estimated above 25%, and less than 1% of originations through digital channels. Every competitor -- from market leader FE Credit (FE ONLINE 2.0 with 14M users) to the smallest player VietCredit (digital-first model achieving 89.4% growth) -- has surpassed ACF in digital capability.</p>
+<p>This roadmap defines a 4-phase digital transformation over 60 months, progressing from emergency fixes to market leadership. The transformation is not optional -- it is existential. Without a mobile app, ACF cannot acquire digital-native customers. Without AI scoring, ACF cannot manage credit risk. Without cybersecurity, ACF cannot pass regulatory inspection.</p>
+<p><strong>Total Digital Transformation Investment:</strong> USD 18-28M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> over 5 years (included within Technology Strategy envelope)</p>
+<hr>
+<h2>Phase 1: Foundation (0-6 Months / Q2-Q3 2026)</h2>
+<h3>Theme: &quot;Stop the Bleeding -- Fix What&#39;s Broken&quot;</h3>
+<p>Phase 1 addresses the existential gaps that threaten ACF&#39;s regulatory standing, operational security, and competitive viability. Every item in this phase is a prerequisite for any future growth.</p>
+<h3>1.1 Cybersecurity Urgent Fixes</h3>
+<p><strong>Problem:</strong> EY identified 52 high-impact&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;EY &quot;Executive Summary Report_v.3.1.pptx&quot; — IT Security Assessment&quot;Executive Summary Report_v.3.1.pptx&quot; (AdvisorsData)&quot;Executive Summary Report_v.3.1.pptx&quot; — Risk Assessment (AdvisorsData)&quot;&gt;<span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#0D1B2A;color:white;font-size:8px;font-weight:700;font-style:italic;vertical-align:middle;line-height:1">i</span></span>/high-probability risks including no firewall, no SIEM<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">EY &quot;Executive Summary Report_v.3.1.pptx&quot; — Cybersecurity Findings</span></span>, no IDS/IPS, no endpoint security, no database encryption, no incident response plan, and no centralized log management. This is the most critical gap across all dimensions.</p>
+<p><strong>Actions:</strong></p>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Cybersecurity Urgent Fixes -- Gantt Timeline</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.1 Next-Gen Firewall (Palo Alto/Fortinet)</div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 0%; width: 25%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 1-4</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color:#0D1B2A; text-align: right;">$80K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.2 DB Encryption (AES-256) T24/LOOMS<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF IT Division "LOS_Gantt-chart_General.xlsx" Package 11 Dec 2025</span></span></div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 0%; width: 25%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 1-4</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color:#0D1B2A; text-align: right;">$30K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.3 Endpoint Protection (CrowdStrike)</div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 6%; width: 31%; height: 100%; background:#0D1B2A;opacity:0.7; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 2-6</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color:#0D1B2A; text-align: right;">$60K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.4 MFA All Admin Access (MS Authenticator)</div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 6%; width: 19%; height: 100%; background:#0D1B2A;opacity:0.5; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 2-4</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color: #0D1B2A; text-align: right;">$15K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.5 SIEM (Splunk) 24/7 Alerting</div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 25%; width: 50%; height: 100%; background:#0D1B2A;opacity:0.75; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 4-12</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color:#0D1B2A; text-align: right;">$150K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.6 Incident Response Plan</div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 25%; width: 25%; height: 100%; background:#0D1B2A;opacity:0.7; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 4-8</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color: #0D1B2A; text-align: right;">$20K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.7 Vulnerability Scan & Remediation</div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 37%; width: 38%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 6-12</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color:#0D1B2A; text-align: right;">$50K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.8 WAF for Web-Facing Apps</div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 50%; width: 50%; height: 100%; background:#0D1B2A;opacity:0.75; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 8-16</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color:#0D1B2A; text-align: right;">$40K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.9 Software License Audit</div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 25%; width: 50%; height: 100%; background:#0D1B2A;opacity:0.7; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 4-12</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color: #0D1B2A; text-align: right;">$100K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 260px; font-size: 11px; font-weight: 600; color: #333;">1.1.10 Backup Encryption & DR Validation</div>
+  <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 6%; width: 38%; height: 100%; background:#0D1B2A;opacity:0.5; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 700;">Wk 2-8</div>
+  </div>
+  <div style="min-width: 60px; font-size: 11px; font-weight: 700; color: #0D1B2A; text-align: right;">$30K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 13px; font-weight: 700; color:#0D1B2A; border-top: 2px solid #D4D4D4; padding-top: 8px;">Total Cybersecurity: USD 575K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+
+<p><strong>Phase 1 Cybersecurity Investment:</strong> USD 575K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>
+<strong>Success Criteria:</strong> Zero CRITICAL EY findings remaining; incident response plan tested; SIEM operational</p>
+<h3>1.2 Mobile App MVP Launch</h3>
+<p><strong>Problem:</strong> ACF has no customer-facing mobile app. This is a critical competitive gap -- every competitor has one, and 70%+ of industry originations occur via mobile.</p>
+<p><strong>MVP Feature Set (Minimum Viable Product):</strong></p>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Mobile App MVP Feature Set</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px;">
+<div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; border:1px solid #D4D4D4;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"><span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">User Registration</span><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius:0;">P1</span></div>
+  <div style="font-size: 11px; color: #555;">CCCD-based registration; phone/email; OTP verification</div>
+  <div style="font-size: 10px; color: #888; margin-top: 4px;">Firebase Auth + VNPT eKYC</div>
+</div>
+<div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; border:1px solid #D4D4D4;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"><span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Loan Dashboard</span><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius:0;">P1</span></div>
+  <div style="font-size: 11px; color: #555;">View active loans, balances, next payment date, payment history</div>
+  <div style="font-size: 10px; color: #888; margin-top: 4px;">T24 API integration</div>
+</div>
+<div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; border:1px solid #D4D4D4;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"><span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Make Payment</span><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius:0;">P1</span></div>
+  <div style="font-size: 11px; color: #555;">Pay via bank transfer (NAPAS 24/7), VietQR scan</div>
+  <div style="font-size: 10px; color: #888; margin-top: 4px;">NAPAS API + VietQR</div>
+</div>
+<div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; border:1px solid #D4D4D4;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"><span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">WAON Points</span><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius:0;">P1</span></div>
+  <div style="font-size: 11px; color: #555;">View points balance, earning history</div>
+  <div style="font-size: 10px; color: #888; margin-top: 4px;">ACSTV API integration</div>
+</div>
+<div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; border:1px solid #D4D4D4;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"><span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Push Notifications</span><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius:0;">P1</span></div>
+  <div style="font-size: 11px; color: #555;">Payment reminders, promotional offers, account alerts</div>
+  <div style="font-size: 10px; color: #888; margin-top: 4px;">Firebase Cloud Messaging</div>
+</div>
+<div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; border:1px solid #D4D4D4;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"><span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Loan Application</span><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius:0;">P1</span></div>
+  <div style="font-size: 11px; color: #555;">Digital origination for ACS cross-sell cash loan</div>
+  <div style="font-size: 10px; color: #888; margin-top: 4px;">LOOMS API</div>
+</div>
+<div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; border:1px solid #D4D4D4;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"><span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">eKYC</span><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius:0;">P1</span></div>
+  <div style="font-size: 11px; color: #555;">VNPT eKYC with CCCD NFC chip reading; face verification</div>
+  <div style="font-size: 10px; color: #888; margin-top: 4px;">VNPT SDK + HyperVerge</div>
+</div>
+<div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; border:1px solid #D4D4D4;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"><span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Basic Support</span><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius:0;">P2</span></div>
+  <div style="font-size: 11px; color: #555;">FAQ, hotline integration, Zalo link</div>
+  <div style="font-size: 10px; color: #888; margin-top: 4px;">Static content + Stringee</div>
+</div>
+</div>
+</div>
+
+<p><strong>Development Approach:</strong></p>
+<ul>
+<li>Framework: Flutter (single codebase for iOS + Android; strong Vietnam developer community)</li>
+<li>Backend: Spring Boot microservices on Kubernetes (Kubesphere existing)</li>
+<li>API Layer: Kong API Gateway for all mobile-to-backend communication</li>
+<li>Timeline: 4 months<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span> from kickoff to TestFlight/Play Store beta; 5 months to production</li>
+<li>Team: 5-8 mobile developers (hire or outsource); 2 backend developers; 1 UX designer; 1 QA</li>
+</ul>
+<p><strong>Sprint Plan:</strong></p>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Sprint Plan -- Gantt Timeline</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 100px; font-size: 12px; font-weight: 700; color:#0D1B2A;">Sprint 0</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 0%; width: 9%; height: 100%; background:#0D1B2A;opacity:0.75; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">2 wk</div>
+  </div>
+  <div style="min-width: 220px; font-size: 10px; color: #555;">Architecture; API spec; UX wireframes</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 100px; font-size: 12px; font-weight: 700; color:#0D1B2A;">Sprint 1-2</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 9%; width: 18%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">4 wk</div>
+  </div>
+  <div style="min-width: 220px; font-size: 10px; color: #555;">Registration; login; CCCD; push notification</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 100px; font-size: 12px; font-weight: 700; color: #0D1B2A;">Sprint 3-4</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 27%; width: 18%; height: 100%; background:#0D1B2A;opacity:0.7; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">4 wk</div>
+  </div>
+  <div style="min-width: 220px; font-size: 10px; color: #555;">Loan dashboard; balance; T24 API</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 100px; font-size: 12px; font-weight: 700; color: #0D1B2A;">Sprint 5-6</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 45%; width: 18%; height: 100%; background:#0D1B2A;opacity:0.5; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">4 wk</div>
+  </div>
+  <div style="min-width: 220px; font-size: 10px; color: #555;">Payment (NAPAS/VietQR); WAON points</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 100px; font-size: 12px; font-weight: 700; color:#0D1B2A;">Sprint 7-8</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 63%; width: 18%; height: 100%; background:#0D1B2A;opacity:0.75; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">4 wk</div>
+  </div>
+  <div style="min-width: 220px; font-size: 10px; color: #555;">Loan app (ACS); eKYC (VNPT); upload</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 100px; font-size: 12px; font-weight: 700; color: #0D1B2A;">Sprint 9</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 81%; width: 9%; height: 100%; background:#0D1B2A;opacity:0.7; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">2 wk</div>
+  </div>
+  <div style="min-width: 220px; font-size: 10px; color: #555;">UAT; bug fixes; performance</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 100px; font-size: 12px; font-weight: 700; color: #0D1B2A;">Sprint 10</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 90%; width: 10%; height: 100%; background:#0D1B2A;opacity:0.5; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">2 wk</div>
+  </div>
+  <div style="min-width: 220px; font-size: 10px; color: #555;">Soft launch; 1,000 beta users</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; border-top: 2px solid #D4D4D4; padding-top: 6px; margin-top: 4px;">
+  <div style="min-width: 100px; font-size: 13px; font-weight: 800; color:#0D1B2A;">GO-LIVE</div>
+  <div style="flex: 1; font-size: 12px; font-weight: 700; color:#0D1B2A;">Week 22 -- App Store + Google Play Release + Marketing Campaign</div>
+</div>
+</div>
+</div>
+
+<p><strong>MVP KPIs:</strong></p>
+<ul>
+<li>Downloads in first 30 days: 20,000</li>
+<li>Registration completion rate: &gt;70%</li>
+<li>DAU/MAU ratio: &gt;30%</li>
+<li>Payment via app rate: 15% of total payments</li>
+<li>App crash rate: &lt;0.5%</li>
+<li>App Store rating: 3.5+</li>
+</ul>
+<p><strong>Phase 1 Mobile App Investment:</strong> USD 800K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>-1.2M</p>
+<h3>1.3 eKYC Optimization (&lt;15% Drop-Off)</h3>
+<p><strong>Problem:</strong> ACF&#39;s eKYC process suffers from high customer drop-off. Common causes in Vietnam include poor lighting/camera quality on lower-end devices, CCCD chip NFC read failure, liveness check failure, network timeout, and excessive steps.</p>
+<p><strong>Audit and Fix Plan:</strong></p>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">eKYC Drop-Off Reduction Plan</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; align-items: stretch; gap: 10px; background: #fff; border-radius:0; padding: 10px; border: 1px solid #D4D4D4;">
+  <div style="min-width: 140px;"><div style="font-size: 12px; font-weight: 700; color:#0D1B2A;">Audit</div><div style="font-size: 10px; color: #888;">Week 1-2</div></div>
+  <div style="flex: 1; font-size: 11px; color: #555;">Map every step of current eKYC funnel; measure drop-off at each stage</div>
+  <div style="min-width: 120px; text-align: right;"><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius:0;">Identify top 3 points</span></div>
+</div>
+<div style="display: flex; align-items: stretch; gap: 10px; background: #dcfce7; border-radius:0; padding: 10px; border: 1px solid #D4D4D4;">
+  <div style="min-width: 140px;"><div style="font-size: 12px; font-weight: 700; color:#0D1B2A;">Camera Guidance</div><div style="font-size: 10px; color: #888;">Week 3-6</div></div>
+  <div style="flex: 1; font-size: 11px; color: #555;">Real-time overlay + lighting detection; auto-capture</div>
+  <div style="min-width: 120px; text-align: right;"><span style="background: #0D1B2A; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius:0;">-5% drop-off</span></div>
+</div>
+<div style="display: flex; align-items: stretch; gap: 10px; background: #dcfce7; border-radius:0; padding: 10px; border: 1px solid #D4D4D4;">
+  <div style="min-width: 140px;"><div style="font-size: 12px; font-weight: 700; color:#0D1B2A;">NFC Fallback</div><div style="font-size: 10px; color: #888;">Week 3-6</div></div>
+  <div style="flex: 1; font-size: 11px; color: #555;">Photo-based OCR fallback if NFC chip read fails</div>
+  <div style="min-width: 120px; text-align: right;"><span style="background: #0D1B2A; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius:0;">-3% drop-off</span></div>
+</div>
+<div style="display: flex; align-items: stretch; gap: 10px; background: #dcfce7; border-radius:0; padding: 10px; border: 1px solid #D4D4D4;">
+  <div style="min-width: 140px;"><div style="font-size: 12px; font-weight: 700; color:#0D1B2A;">Liveness UX</div><div style="font-size: 10px; color: #888;">Week 4-8</div></div>
+  <div style="flex: 1; font-size: 11px; color: #555;">Simplified Vietnamese tutorial; passive liveness when possible</div>
+  <div style="min-width: 120px; text-align: right;"><span style="background: #0D1B2A; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius:0;">-3% drop-off</span></div>
+</div>
+<div style="display: flex; align-items: stretch; gap: 10px; background: #dbeafe; border-radius:0; padding: 10px; border: 1px solid #D4D4D4;">
+  <div style="min-width: 140px;"><div style="font-size: 12px; font-weight: 700; color:#0D1B2A;">Progress Indicator</div><div style="font-size: 10px; color: #888;">Week 2-4</div></div>
+  <div style="flex: 1; font-size: 11px; color: #555;">Clear step counter; save-and-resume capability</div>
+  <div style="min-width: 120px; text-align: right;"><span style="background: #0D1B2A; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius:0;">-2% drop-off</span></div>
+</div>
+<div style="display: flex; align-items: stretch; gap: 10px; background: #dbeafe; border-radius:0; padding: 10px; border: 1px solid #D4D4D4;">
+  <div style="min-width: 140px;"><div style="font-size: 12px; font-weight: 700; color:#0D1B2A;">Network Optimization</div><div style="font-size: 10px; color: #888;">Week 4-8</div></div>
+  <div style="flex: 1; font-size: 11px; color: #555;">Compress uploads; retry logic; offline queue</div>
+  <div style="min-width: 120px; text-align: right;"><span style="background: #0D1B2A; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius:0;">-2% drop-off</span></div>
+</div>
+<div style="display: flex; align-items: stretch; gap: 10px; background: #fef3c7; border-radius:0; padding: 10px; border: 1px solid #D4D4D4;">
+  <div style="min-width: 140px;"><div style="font-size: 12px; font-weight: 700; color:#0D1B2A;">VNPT eKYC</div><div style="font-size: 10px; color: #888;">Week 4-12</div></div>
+  <div style="flex: 1; font-size: 11px; color: #555;">Replace/supplement FPT eKYC with highest Vietnamese OCR accuracy</div>
+  <div style="min-width: 120px; text-align: right;"><span style="background: #0D1B2A; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius:0;">Better accuracy</span></div>
+</div>
+<div style="display: flex; align-items: stretch; gap: 10px; background: #fef3c7; border-radius:0; padding: 10px; border: 1px solid #D4D4D4;">
+  <div style="min-width: 140px;"><div style="font-size: 12px; font-weight: 700; color:#0D1B2A;">HyperVerge</div><div style="font-size: 10px; color: #888;">Week 8-16</div></div>
+  <div style="flex: 1; font-size: 11px; color: #555;">Edge case fallback where VNPT fails (FE Credit-proven)</div>
+  <div style="min-width: 120px; text-align: right;"><span style="background: #0D1B2A; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius:0;">+3-5% catch</span></div>
+</div>
+<div style="display: flex; align-items: stretch; gap: 10px; background: #dcfce7; border-radius:0; padding: 10px; border: 1px solid #D4D4D4;">
+  <div style="min-width: 140px;"><div style="font-size: 12px; font-weight: 700; color:#0D1B2A;">WAON Pre-Qual</div><div style="font-size: 10px; color: #888;">Week 12-20</div></div>
+  <div style="flex: 1; font-size: 11px; color: #555;">Simplified flow (face match only) for WAON 6+ month members</div>
+  <div style="min-width: 120px; text-align: right;"><span style="background: #0D1B2A; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius:0;">-5% for 40%</span></div>
+</div>
+</div>
+</div>
+
+<p><strong>Target:</strong> eKYC completion rate from ~50% (estimated current) to &gt;85% by end of Phase 1</p>
+<p><strong>Phase 1 eKYC Investment:</strong> USD 300K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></p>
+<h3>1.4 Infrastructure Remediation</h3>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Infrastructure Remediation -- Investment Breakdown</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 180px; font-size: 12px; font-weight: 700; color: #333;">Independent DC Setup</div>
+  <div style="flex: 1; height: 28px; background: #f1f5f9; border-radius:0;">
+    <div style="width: 100%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; padding: 0 10px; font-size: 11px; color: #fff; font-weight: 700;">USD 800K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> -- Viettel IDC; SeABank<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF Banking Partner Agreement — Disbursement Channel</span></span> exit</div>
+  </div>
+  <div style="min-width: 70px; font-size: 10px; color: #888;">Q2-Q3 2026</div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 180px; font-size: 12px; font-weight: 700; color: #333;">DR Site Establishment</div>
+  <div style="flex: 1; height: 28px; background: #f1f5f9; border-radius:0;">
+    <div style="width: 50%; height: 100%; background:#0D1B2A;opacity:0.75; border-radius:0; display: flex; align-items: center; padding: 0 10px; font-size: 11px; color: #fff; font-weight: 700;">USD 400K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> -- Automated failover</div>
+  </div>
+  <div style="min-width: 70px; font-size: 10px; color: #888;">Q2-Q3 2026</div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 180px; font-size: 12px; font-weight: 700; color: #333;">Network Upgrade</div>
+  <div style="flex: 1; height: 28px; background: #f1f5f9; border-radius:0;">
+    <div style="width: 37%; height: 100%; background:#0D1B2A;opacity:0.7; border-radius:0; display: flex; align-items: center; padding: 0 10px; font-size: 11px; color: #fff; font-weight: 700;">USD 300K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> -- Redundant WAN</div>
+  </div>
+  <div style="min-width: 70px; font-size: 10px; color: #888;">Q2-Q3 2026</div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 180px; font-size: 12px; font-weight: 700; color: #333;">OS/DB Standardization</div>
+  <div style="flex: 1; height: 28px; background: #f1f5f9; border-radius:0;">
+    <div style="width: 25%; height: 100%; background:#0D1B2A;opacity:0.5; border-radius:0; display: flex; align-items: center; padding: 0 10px; font-size: 11px; color: #fff; font-weight: 700;">USD 200K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+  </div>
+  <div style="min-width: 70px; font-size: 10px; color: #888;">Q3 2026</div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 180px; font-size: 12px; font-weight: 700; color: #333;">Kubernetes Deployment</div>
+  <div style="flex: 1; height: 28px; background: #f1f5f9; border-radius:0;">
+    <div style="width: 12%; height: 100%; background:#0D1B2A;opacity:0.6; border-radius:0; display: flex; align-items: center; padding: 0 10px; font-size: 11px; color: #fff; font-weight: 700;">$100K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+  </div>
+  <div style="min-width: 70px; font-size: 10px; color: #888;">Q3 2026</div>
+</div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 13px; font-weight: 700; color:#0D1B2A; border-top: 2px solid #D4D4D4; padding-top: 8px;">Total Infrastructure: USD 1.8M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+
+<p><strong>Phase 1 Infrastructure Investment:</strong> USD 1.8M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></p>
+<h3>1.5 Collection System Deployment</h3>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Collection System Deployment Timeline</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 200px; font-size: 11px; font-weight: 600; color: #333;">Credgenics evaluation + contracting</div>
+  <div style="flex: 1; height: 24px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 0%; width: 33%; height: 100%; background:#0D1B2A;opacity:0.75; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">Q2 2026</div>
+  </div>
+  <div style="min-width: 80px; font-size: 10px; color: #0D1B2A; font-weight: 700; text-align: right;">Included</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 200px; font-size: 11px; font-weight: 600; color: #333;">ZNS/SMS Gateway go-live</div>
+  <div style="flex: 1; height: 24px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 0%; width: 33%; height: 100%; background:#0D1B2A;opacity:0.7; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">Q2 2026</div>
+  </div>
+  <div style="min-width: 80px; font-size: 10px; font-weight: 700; color:#0D1B2A; text-align: right;">USD 50K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 200px; font-size: 11px; font-weight: 600; color: #333;">Automated payment reminders (B0)</div>
+  <div style="flex: 1; height: 24px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 0%; width: 33%; height: 100%; background:#0D1B2A;opacity:0.5; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">Q2 2026</div>
+  </div>
+  <div style="min-width: 80px; font-size: 10px; color: #0D1B2A; font-weight: 700; text-align: right;">Included</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 200px; font-size: 11px; font-weight: 600; color: #333;">Digital payment links (B1-B3)</div>
+  <div style="flex: 1; height: 24px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 33%; width: 34%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">Q3 2026</div>
+  </div>
+  <div style="min-width: 80px; font-size: 10px; font-weight: 700; color:#0D1B2A; text-align: right;">USD 30K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 200px; font-size: 11px; font-weight: 600; color: #333;">Credgenics full deployment</div>
+  <div style="flex: 1; height: 24px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 33%; width: 34%; height: 100%; background:#0D1B2A;opacity:0.75; border-radius:0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600;">Q3 2026</div>
+  </div>
+  <div style="min-width: 80px; font-size: 10px; font-weight: 700; color:#0D1B2A; text-align: right;">USD 300K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+</div>
+<div style="text-align: right; margin-top: 12px; font-size: 13px; font-weight: 700; color:#0D1B2A; border-top: 2px solid #D4D4D4; padding-top: 8px;">Total Collections: USD 380K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+
+<p><strong>Phase 1 Collections Investment:</strong> USD 380K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></p>
+<h3>1.6 LOOMS Completion</h3>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">LOOMS Milestones & Risk Assessment</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="background: #F5E8E82e2; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; display: flex; justify-content: space-between; align-items: center;">
+  <div><div style="font-size: 13px; font-weight: 700; color: #333;">DSD Phase Issues Resolution</div><div style="font-size: 11px; color: #555;">Weekly escalation; dedicated resolution team</div></div>
+  <div style="text-align: right;"><div style="font-size: 11px; color: #888;">Q2 2026</div><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius:0;">HIGH</span></div>
+</div>
+<div style="background: #fef3c7; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; display: flex; justify-content: space-between; align-items: center;">
+  <div><div style="font-size: 13px; font-weight: 700; color: #333;">Integration Testing Complete</div><div style="font-size: 11px; color: #555;">Automated test suite; staged integration (6+ points)</div></div>
+  <div style="text-align: right;"><div style="font-size: 11px; color: #888;">Q2 2026</div><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius:0;">MEDIUM</span></div>
+</div>
+<div style="background: #fef3c7; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; display: flex; justify-content: space-between; align-items: center;">
+  <div><div style="font-size: 13px; font-weight: 700; color: #333;">Parallel Run Start</div><div style="font-size: 11px; color: #555;">Reconciliation scripts; manual verification</div></div>
+  <div style="text-align: right;"><div style="font-size: 11px; color: #888;">June 2026</div><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius:0;">MEDIUM</span></div>
+</div>
+<div style="background: #F5E8E82e2; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; display: flex; justify-content: space-between; align-items: center;">
+  <div><div style="font-size: 13px; font-weight: 700; color: #333;">Go-Live</div><div style="font-size: 11px; color: #555;">Phased rollout (cash loans first); rollback plan</div></div>
+  <div style="text-align: right;"><div style="font-size: 11px; color: #888;">August 2026</div><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius:0;">HIGH</span></div>
+</div>
+<div style="background: #fef3c7; border-left: 4px solid #D4D4D4; border-radius:0; padding: 12px; display: flex; justify-content: space-between; align-items: center;">
+  <div><div style="font-size: 13px; font-weight: 700; color: #333;">Stabilization (60 days)</div><div style="font-size: 11px; color: #555;">Dedicated support team; war room</div></div>
+  <div style="text-align: right;"><div style="font-size: 11px; color: #888;">October 2026</div><span style="background: #0D1B2A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 10px; border-radius:0;">MEDIUM</span></div>
+</div>
+</div>
+</div>
+
+<p><strong>Phase 1 LOOMS Investment:</strong> USD 500K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> (completion costs)</p>
+<h3>Phase 1 Summary</h3>
+<div style="background:#0D1B2A; border-radius:0; padding: 24px; margin: 16px 0; color: #fff;">
+<div style="font-size: 16px; font-weight: 700; margin-bottom: 16px;">Phase 1 Investment Summary</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 600;">Infrastructure</div>
+  <div style="flex: 1; height: 24px; background: rgba(255,255,255,0.15); border-radius:0;">
+    <div style="width: 100%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 700;">USD 1.8M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> -- Independent DC/DR; SeABank exit</div>
+  </div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 600;">Mobile App MVP</div>
+  <div style="flex: 1; height: 24px; background: rgba(255,255,255,0.15); border-radius:0;">
+    <div style="width: 67%; height: 100%; background:#0D1B2A;opacity:0.7; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 700; color: #333;">USD 800K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>-1.2M -- App Store + Google Play</div>
+  </div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 600;">Cybersecurity</div>
+  <div style="flex: 1; height: 24px; background: rgba(255,255,255,0.15); border-radius:0;">
+    <div style="width: 32%; height: 100%; background:#0D1B2A;opacity:0.5; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 700; color: #333;">USD 575<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF IT Division "LOS_Gantt-chart_General.xlsx" Package 11 Dec 2025</span></span>K</div>
+  </div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 600;">LOOMS</div>
+  <div style="flex: 1; height: 24px; background: rgba(255,255,255,0.15); border-radius:0;">
+    <div style="width: 28%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 700;">USD 500K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+  </div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 600;">Collections</div>
+  <div style="flex: 1; height: 24px; background: rgba(255,255,255,0.15); border-radius:0;">
+    <div style="width: 21%; height: 100%; background:#0D1B2A;opacity:0.65; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 700; color: #333;">USD 380K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+  </div>
+</div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 600;">eKYC</div>
+  <div style="flex: 1; height: 24px; background: rgba(255,255,255,0.15); border-radius:0;">
+    <div style="width: 17%; height: 100%; background:#0D1B2A;opacity:0.55; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 10px; font-weight: 700;">USD 300K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+  </div>
+</div>
+</div>
+<div style="margin-top: 16px; padding-top: 12px; border-top: 2px solid rgba(255,255,255,0.3); text-align: center; font-size: 20px; font-weight: 800;">PHASE 1 TOTAL: USD 4.4-4.8M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+
+<p><strong>Phase 1 Team Requirements:</strong></p>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Phase 1 Team Requirements</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;">
+<div style="background: #F5E8E82e2; border-radius:0; padding: 12px; text-align: center; border: 2px solid #D4D4D4;">
+  <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">1</div>
+  <div style="font-size: 13px; font-weight: 700; color: #333;">CISO</div>
+  <div style="font-size: 10px; color:#0D1B2A; font-weight: 700;">NEW HIRE -- CRITICAL</div>
+</div>
+<div style="background: #fff; border-radius:0; padding: 12px; text-align: center; border: 1px solid #D4D4D4;">
+  <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">5-8</div>
+  <div style="font-size: 13px; font-weight: 700; color: #333;">Mobile Developers</div>
+  <div style="font-size: 10px; color: #888;">New hire or outsource</div>
+</div>
+<div style="background: #fff; border-radius:0; padding: 12px; text-align: center; border: 1px solid #D4D4D4;">
+  <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">3-5</div>
+  <div style="font-size: 13px; font-weight: 700; color: #333;">Backend Developers</div>
+  <div style="font-size: 10px; color: #888;">New hire</div>
+</div>
+<div style="background: #fff; border-radius:0; padding: 12px; text-align: center; border: 1px solid #D4D4D4;">
+  <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">2-3</div>
+  <div style="font-size: 13px; font-weight: 700; color: #333;">Security Engineers</div>
+  <div style="font-size: 10px; color: #888;">New hire</div>
+</div>
+<div style="background: #fff; border-radius:0; padding: 12px; text-align: center; border: 1px solid #D4D4D4;">
+  <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">2-3</div>
+  <div style="font-size: 13px; font-weight: 700; color: #333;">DevOps/Infra</div>
+  <div style="font-size: 10px; color: #888;">Existing + new hire</div>
+</div>
+<div style="background: #fff; border-radius:0; padding: 12px; text-align: center; border: 1px solid #D4D4D4;">
+  <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">2-3</div>
+  <div style="font-size: 13px; font-weight: 700; color: #333;">QA/Testing</div>
+  <div style="font-size: 10px; color: #888;">Existing + new hire</div>
+</div>
+<div style="background: #fff; border-radius:0; padding: 12px; text-align: center; border: 1px solid #D4D4D4;">
+  <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">1-2</div>
+  <div style="font-size: 13px; font-weight: 700; color: #333;">UX/UI Designer</div>
+  <div style="font-size: 10px; color: #888;">New hire</div>
+</div>
+<div style="background: #fff; border-radius:0; padding: 12px; text-align: center; border: 1px solid #D4D4D4;">
+  <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">2</div>
+  <div style="font-size: 13px; font-weight: 700; color: #333;">Project Managers</div>
+  <div style="font-size: 10px; color: #888;">Existing</div>
+</div>
+</div>
+</div>
+
+<hr>
+<h2>Phase 2: Build (6-18 Months / Q4 2026 - Q2 2027)</h2>
+<h3>Theme: &quot;Launch the Product Engine&quot;</h3>
+<p>Phase 2 builds on the foundation to launch new products (BNPL, credit card CMS, AI scoring) and deepen digital capabilities. This phase transitions ACF from &quot;fixing&quot; to &quot;building.&quot;</p>
+<h3>2.1 AI Credit Scoring v1</h3>
+<p><strong>Objective:</strong> Deploy ML-based credit scoring to improve GINI from 26-27% to 40%<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span>+, enabling better risk discrimination and supporting new product launches.</p>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">AI Credit Scoring v1 -- Timeline</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 700; color:#0D1B2A;">Data Preparation</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 0%; width: 25%; height: 100%; background:#0D1B2A;opacity:0.75; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 9px; color: #fff; font-weight: 600;">Q4 2026</div>
+  </div>
+  <div style="min-width: 200px; font-size: 10px; color: #555;">Feature store from T24, LOOMS, CIC, WAON</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 700; color:#0D1B2A;">Model Development</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 0%; width: 50%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 9px; color: #fff; font-weight: 600;">Q4 2026 - Q1 2027</div>
+  </div>
+  <div style="min-width: 200px; font-size: 10px; color: #555;">LR + gradient boosting ensemble (AND Solution)</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 700; color: #0D1B2A;">Validation</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 25%; width: 25%; height: 100%; background:#0D1B2A;opacity:0.7; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 9px; color: #fff; font-weight: 600;">Q1 2027</div>
+  </div>
+  <div style="min-width: 200px; font-size: 10px; color: #555;">OOT validation; champion-challenger</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 700; color: #0D1B2A;">Deployment</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 50%; width: 25%; height: 100%; background:#0D1B2A;opacity:0.5; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 9px; color: #fff; font-weight: 600;">Q2 2027</div>
+  </div>
+  <div style="min-width: 200px; font-size: 10px; color: #555;">Real-time scoring API; LOOMS + app</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px;">
+  <div style="min-width: 130px; font-size: 12px; font-weight: 700; color: #0D1B2A;">Monitoring</div>
+  <div style="flex: 1; height: 26px; background: #f1f5f9; border-radius:0; position: relative;">
+    <div style="position: absolute; left: 50%; width: 50%; height: 100%; background:#0D1B2A;opacity:0.6; border-radius:0; display: flex; align-items: center; padding-left: 8px; font-size: 9px; color: #fff; font-weight: 600;">Ongoing</div>
+  </div>
+  <div style="min-width: 200px; font-size: 10px; color: #555;">PSI/CSI tracking; drift detection</div>
+</div>
+</div>
+</div>
+
+<p><strong>Scoring Architecture:</strong></p>
+<pre><code>[Application Data] + [CIC Bureau] + [WAON Loyalty] + [Device Fingerprint]
+                              ↓
+              [Feature Engineering Pipeline]
+                              ↓
+              [ML Ensemble Model (XGBoost + LightGBM)]
+                              ↓
+              [Score + Explanation + Decision]
+                              ↓
+[Auto-Approve] ←→ [Review Queue] ←→ [Auto-Decline]
+   (Score &gt; 700)    (500-700)        (Score &lt; 500)
+</code></pre>
+<p><strong>Key Features for ACF Scoring:</strong></p>
+<ul>
+<li>WAON<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty Program Documentation</span></span> purchase frequ<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty Program Documentation</span></span>ency (weekly shoppers score higher than one-time)</li>
+<li>WAON basket diversity (multi-category buyers are more financially stable)</li>
+<li>WAON membership tenure (longer membership = more data and stability signal)</li>
+<li>WAON recency (recent activity vs dormant members)</li>
+<li>Device metadata (Credolab SDK: device age, app diversity, storage usage)</li>
+<li>CIC<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">National Credit Information Center (CIC), State Bank of Vietnam</span></span> bureau history, inquiry velocity, existing obligations</li>
+<li>Application demographics (income, employment, location)</li>
+</ul>
+<p><strong>Investment:</strong> USD 500K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></p>
+<h3>2.2 Digital Onboarding (End-to-End)</h3>
+<p><strong>Objective:</strong> Achieve fully digital loan origination via mobile app with &lt;5 minute completion time and &gt;60% STP (straight-through processing) rate.</p>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Digital Onboarding -- Current vs Target</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="display: flex; gap: 8px; align-items: stretch;">
+  <div style="min-width: 120px; font-size: 12px; font-weight: 700; color:#0D1B2A; padding-top: 8px;">Application</div>
+  <div style="flex: 1; background: #F5E8E82e2; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color:#0D1B2A;">NOW:</span> Manual / agent-assisted</div>
+  <div style="display: flex; align-items: center; font-size: 16px; color: #0D1B2A;">&#8594;</div>
+  <div style="flex: 1; background: #dcfce7; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color: #0D1B2A;">TARGET:</span> Self-service app; WAON pre-fill</div>
+</div>
+<div style="display: flex; gap: 8px; align-items: stretch;">
+  <div style="min-width: 120px; font-size: 12px; font-weight: 700; color:#0D1B2A; padding-top: 8px;">ID Verification</div>
+  <div style="flex: 1; background: #F5E8E82e2; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color:#0D1B2A;">NOW:</span> FPT eKYC (high drop-off)</div>
+  <div style="display: flex; align-items: center; font-size: 16px; color: #0D1B2A;">&#8594;</div>
+  <div style="flex: 1; background: #dcfce7; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color: #0D1B2A;">TARGET:</span> VNPT + HyperVerge; &lt;15% drop-off</div>
+</div>
+<div style="display: flex; gap: 8px; align-items: stretch;">
+  <div style="min-width: 120px; font-size: 12px; font-weight: 700; color:#0D1B2A; padding-top: 8px;">Credit Check</div>
+  <div style="flex: 1; background: #F5E8E82e2; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color:#0D1B2A;">NOW:</span> CIC H2H (semi-automated)</div>
+  <div style="display: flex; align-items: center; font-size: 16px; color: #0D1B2A;">&#8594;</div>
+  <div style="flex: 1; background: #dcfce7; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color: #0D1B2A;">TARGET:</span> Real-time CIC + ML; &lt;10s decision</div>
+</div>
+<div style="display: flex; gap: 8px; align-items: stretch;">
+  <div style="min-width: 120px; font-size: 12px; font-weight: 700; color:#0D1B2A; padding-top: 8px;">Documents</div>
+  <div style="flex: 1; background: #F5E8E82e2; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color:#0D1B2A;">NOW:</span> Manual upload; paper-based</div>
+  <div style="display: flex; align-items: center; font-size: 16px; color: #0D1B2A;">&#8594;</div>
+  <div style="flex: 1; background: #dcfce7; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color: #0D1B2A;">TARGET:</span> OCR capture (VNPT OCR)</div>
+</div>
+<div style="display: flex; gap: 8px; align-items: stretch;">
+  <div style="min-width: 120px; font-size: 12px; font-weight: 700; color:#0D1B2A; padding-top: 8px;">Decision</div>
+  <div style="flex: 1; background: #F5E8E82e2; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color:#0D1B2A;">NOW:</span> Manual review for most</div>
+  <div style="display: flex; align-items: center; font-size: 16px; color: #0D1B2A;">&#8594;</div>
+  <div style="flex: 1; background: #dcfce7; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color: #0D1B2A;">TARGET:</span> Auto-approve Tier 1-2; manual Tier 3</div>
+</div>
+<div style="display: flex; gap: 8px; align-items: stretch;">
+  <div style="min-width: 120px; font-size: 12px; font-weight: 700; color:#0D1B2A; padding-top: 8px;">Contract</div>
+  <div style="flex: 1; background: #F5E8E82e2; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color:#0D1B2A;">NOW:</span> Paper or basic FPT eSign</div>
+  <div style="display: flex; align-items: center; font-size: 16px; color: #0D1B2A;">&#8594;</div>
+  <div style="flex: 1; background: #dcfce7; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color: #0D1B2A;">TARGET:</span> In-app digital contract + eSign</div>
+</div>
+<div style="display: flex; gap: 8px; align-items: stretch;">
+  <div style="min-width: 120px; font-size: 12px; font-weight: 700; color:#0D1B2A; padding-top: 8px;">Disbursement</div>
+  <div style="flex: 1; background: #F5E8E82e2; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color:#0D1B2A;">NOW:</span> Bank transfer (hours)</div>
+  <div style="display: flex; align-items: center; font-size: 16px; color: #0D1B2A;">&#8594;</div>
+  <div style="flex: 1; background: #dcfce7; border-radius:0; padding: 8px 12px; font-size: 11px; color: #333;"><span style="font-weight: 700; color: #0D1B2A;">TARGET:</span> Instant NAPAS 24/7 or MoMo</div>
+</div>
+</div>
+</div>
+
+<p><strong>STP Targets:</strong></p>
+<div style="background:#F2F2F0; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+<div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">STP (Straight-Through Processing) Rate Targets</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<div style="font-size: 11px; color: #888; display: flex; gap: 10px; padding-left: 140px; margin-bottom: 4px;"><span style="min-width: 80px; text-align: center;">Year 1</span><span style="min-width: 80px; text-align: center;">Year 3</span><span style="min-width: 80px; text-align: center;">Year 5</span></div>
+<div style="display: flex; align-items: center; gap: 10px;">
+  <div style="min-width: 140px; font-size: 12px; font-weight: 600; color: #333;">ACS Cross-Sell</div>
+  <div style="min-width: 80px; text-align: center;"><span style="background: #0D1B2A; color: #fff; font-size: 12px; font-weight: 700; padding: 3px 12px; border-radius:0;">70%</span></div>
+  <div style="min-width: 80px; text-align: center;"><span style="backgr</body></html>

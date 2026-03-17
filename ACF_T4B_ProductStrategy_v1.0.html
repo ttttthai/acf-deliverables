@@ -1,0 +1,692 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACF_T4B_ProductStrategy_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ACF_T4B_ProductStrategy_v1.0</h1><p>AEON Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ACF Product Strategy v1.0</h1>
+<p><strong>Document ID:</strong> ACF_T4B_ProductStrategy_v1.0
+<strong>Prepared for:</strong> AEON Consumer Finance Vietnam -- Product Development Committee
+<strong>Date:</strong> March 15, 2026
+<strong>Classification:</strong> Internal -- Strictly Confidential
+<strong>Version:</strong> 1.0
+<strong>Sources:</strong> Team 1 (Market Research, Competitor Profiles, Best Practices, Financial Benchmarks), Team 2 (Operational DD, Technology DD), Team 3 (Regulatory Compliance)</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>ACF&#39;s product portfolio is critically narrow. The company generates revenue from only two product categories -- cash loans (15.2% of lending balance) and installment loans (84.8%) -- while competitors operate across 5-7 product categories including credit cards, BNPL, EV financing, and insurance products. The fastest-growing segment in Vietnam consumer finance (credit cards, +72.8<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">FiinGroup &quot;Vietnam Credit Card Market Report 2025.pdf&quot; — Growth Rate</span></span>% YoY) is one where ACF has zero presence. BNPL, growing at 36.5% annually toward USD 8.51B<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> by 2030, is another zero. This product strategy defines the performance optimization plan for existing products, the new product roadmap (credit cards, BNPL, 2-wheeler/EV), pricing strategy, and NPL reduction approach by product.</p>
+<hr>
+<!-- ============ PRODUCT PORTFOLIO MATRIX ============ -->
+<div style="background:#F2F2F0; border-radius:0; padding: 24px; margin: 24px 0; border: 1px solid #D4D4D4;">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 4px;">Product Portfolio Matrix (Growth vs Profitability)</div>
+  <div style="font-size: 12px; color: #999; margin-bottom: 16px;">Positioning of current and planned product lines</div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border-radius:0; overflow: hidden;">
+    <div style="background:#F2F2F0; padding: 18px; position: relative;">
+      <div style="font-size: 14px; font-weight: 800; color:#0D1B2A; margin-bottom: 8px;">&#9733; STARS</div>
+      <div style="font-size: 11px; color:#0D1B2A; font-weight: 600;">High Growth / High Profitability</div>
+      <div style="margin-top: 10px;">
+        <span style="display: inline-block; background: #0D1B2A; color: #fff; padding: 3px 10px; border-radius:0; font-size: 11px; font-weight: 600; margin: 2px;">Credit Cards</span>
+        <span style="display: inline-block; background: #0D1B2A; color: #fff; padding: 3px 10px; border-radius:0; font-size: 11px; font-weight: 600; margin: 2px;">BNPL</span>
+      </div>
+    </div>
+    <div style="background:#E8E8E6; padding: 18px;">
+      <div style="font-size: 14px; font-weight: 800; color:#0D1B2A; margin-bottom: 8px;">&#10067; QUESTION MARKS</div>
+      <div style="font-size: 11px; color:#0D1B2A; font-weight: 600;">High Growth / Uncertain Profitability</div>
+      <div style="margin-top: 10px;">
+        <span style="display: inline-block; background: #0D1B2A; color: #fff; padding: 3px 10px; border-radius:0; font-size: 11px; font-weight: 600; margin: 2px;">2-Wheeler/EV</span>
+        <span style="display: inline-block; background: #0D1B2A; color: #fff; padding: 3px 10px; border-radius:0; font-size: 11px; font-weight: 600; margin: 2px;">Green Lending</span>
+      </div>
+    </div>
+    <div style="background:#E8E8E6; padding: 18px;">
+      <div style="font-size: 14px; font-weight: 800; color:#0D1B2A; margin-bottom: 8px;">&#128176; CASH COWS</div>
+      <div style="font-size: 11px; color:#0D1B2A; font-weight: 600;">Low Growth / High Profitability</div>
+      <div style="margin-top: 10px;">
+        <span style="display: inline-block; background: #0D1B2A; color: #fff; padding: 3px 10px; border-radius:0; font-size: 11px; font-weight: 600; margin: 2px;">ACS Cross-Sell</span>
+        <span style="display: inline-block; background: #0D1B2A; color: #fff; padding: 3px 10px; border-radius:0; font-size: 11px; font-weight: 600; margin: 2px;">Installment CD</span>
+      </div>
+    </div>
+    <div style="background:#DDDDD8; padding: 18px;">
+      <div style="font-size: 14px; font-weight: 800; color:#0D1B2A; margin-bottom: 8px;">&#128054; DOGS</div>
+      <div style="font-size: 11px; color:#0D1B2A; font-weight: 600;">Low Growth / Low Profitability</div>
+      <div style="margin-top: 10px;">
+        <span style="display: inline-block; background: #0D1B2A; color: #fff; padding: 3px 10px; border-radius:0; font-size: 11px; font-weight: 600; margin: 2px;">Cash Loan NTB</span>
+        <span style="display: inline-block; background: #0D1B2A; color: #fff; padding: 3px 10px; border-radius:0; font-size: 11px; font-weight: 600; margin: 2px;">Revolving (Stopped)</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF Strategy Team, Product Strategy Analysis</div>
+<!-- ============ END PRODUCT PORTFOLIO MATRIX ============ -->
+
+<!-- ============ PRODUCT LAUNCH TIMELINE ============ -->
+<div style="background:#0D1B2A; border-radius:0; padding: 24px; margin: 24px 0;">
+  <div style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 20px;">Product Launch Timeline</div>
+  <div style="position: relative; padding-left: 20px;">
+    <!-- Timeline line -->
+    <div style="position: absolute; left: 8px; top: 0; bottom: 0; width: 3px; background: rgba(255,255,255,0.2);"></div>
+    <!-- Now -->
+    <div style="position: relative; margin-bottom: 20px; padding-left: 24px;">
+      <div style="position: absolute; left: -16px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 3px solid rgba(255,255,255,0.5);"></div>
+      <div style="font-size: 11px; color: #0D1B2A; font-weight: 700; text-transform: uppercase;">NOW (Active)</div>
+      <div style="display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap;">
+        <span style="background: rgba(34,197,94,0.2); border: 1px solid #D4D4D4; color: #0D1B2A; padding: 4px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Cash Loan</span>
+        <span style="background: rgba(34,197,94,0.2); border: 1px solid #D4D4D4; color: #0D1B2A; padding: 4px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Installment CD/TW</span>
+      </div>
+    </div>
+    <!-- Year 1 -->
+    <div style="position: relative; margin-bottom: 20px; padding-left: 24px;">
+      <div style="position: absolute; left: -16px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 3px solid rgba(255,255,255,0.5);"></div>
+      <div style="font-size: 11px; color: #0D1B2A; font-weight: 700; text-transform: uppercase;">Year 1 (Q4 2026)</div>
+      <div style="display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap;">
+        <span style="background: rgba(245,158,11,0.2); border: 1px solid #D4D4D4; color: #0D1B2A; padding: 4px 12px; border-radius:0; font-size: 12px; font-weight: 600;">BNPL (AEON Pilot)</span>
+        <span style="background: rgba(245,158,11,0.2); border: 1px solid #D4D4D4; color: #0D1B2A; padding: 4px 12px; border-radius:0; font-size: 12px; font-weight: 600;">VinFast EV Loan</span>
+      </div>
+    </div>
+    <!-- Year 2 -->
+    <div style="position: relative; margin-bottom: 20px; padding-left: 24px;">
+      <div style="position: absolute; left: -16px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 3px solid rgba(255,255,255,0.5);"></div>
+      <div style="font-size: 11px; color: #93c5fd; font-weight: 700; text-transform: uppercase;">Year 2 (Q1 2028)</div>
+      <div style="display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap;">
+        <span style="background: rgba(59,130,246,0.2); border: 1px solid #D4D4D4; color: #93c5fd; padding: 4px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Credit Card (Basic)</span>
+        <span style="background: rgba(59,130,246,0.2); border: 1px solid #D4D4D4; color: #93c5fd; padding: 4px 12px; border-radius:0; font-size: 12px; font-weight: 600;">BNPL (External)</span>
+      </div>
+    </div>
+    <!-- Year 3 -->
+    <div style="position: relative; padding-left: 24px;">
+      <div style="position: absolute; left: -16px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 3px solid rgba(255,255,255,0.5);"></div>
+      <div style="font-size: 11px; color: #c4b5fd; font-weight: 700; text-transform: uppercase;">Year 3 (2028-2029)</div>
+      <div style="display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap;">
+        <span style="background: rgba(168,85,247,0.2); border: 1px solid #D4D4D4; color: #c4b5fd; padding: 4px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Credit Card (Premium)</span>
+        <span style="background: rgba(168,85,247,0.2); border: 1px solid #D4D4D4; color: #c4b5fd; padding: 4px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Full 2WL/EV Suite</span>
+        <span style="background: rgba(168,85,247,0.2); border: 1px solid #D4D4D4; color: #c4b5fd; padding: 4px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Green Lending</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF Strategy Team, Product Strategy Analysis</div>
+<!-- ============ END PRODUCT LAUNCH TIMELINE ============ -->
+
+<!-- ============ REVENUE MIX TRANSITION ============ -->
+<div style="display: flex; gap: 24px; margin: 24px 0; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 220px; background: #fff; border-radius:0; padding: 20px; border: 1px solid #D4D4D4; text-align: center;">
+    <div style="font-size: 15px; font-weight: 700; color:#0D1B2A; margin-bottom: 12px;">Current Revenue Mix</div>
+    <div style="width: 160px; height: 160px; border-radius: 50%; background: conic-gradient(#0D1B2A 0% 65%, #B0B0B0 65% 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+      <div style="width: 80px; height: 80px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center;">
+        <div style="font-size: 13px; font-weight: 700; color:#0D1B2A;">2026</div>
+      </div>
+    </div>
+    <div style="margin-top: 12px; text-align: left; display: inline-block;">
+      <div style="font-size: 12px; margin-bottom: 3px;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 6px;"></span>Cash Loans 65%</div>
+      <div style="font-size: 12px;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 6px;"></span>Installment 35%</div>
+    </div>
+  </div>
+  <div style="flex: 1; min-width: 220px; background: #fff; border-radius:0; padding: 20px; border: 1px solid #D4D4D4; text-align: center;">
+    <div style="font-size: 15px; font-weight: 700; color:#0D1B2A; margin-bottom: 12px;">Year 5 Target Revenue Mix</div>
+    <div style="width: 160px; height: 160px; border-radius: 50%; background: conic-gradient(#0D1B2A 0% 20%, #B0B0B0 20% 35%, #C5A572 35% 65%, #1B3A5C 65% 85%, #D4D4D4 85% 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+      <div style="width: 80px; height: 80px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center;">
+        <div style="font-size: 13px; font-weight: 700; color:#0D1B2A;">2031</div>
+      </div>
+    </div>
+    <div style="margin-top: 12px; text-align: left; display: inline-block;">
+      <div style="font-size: 11px; margin-bottom: 2px;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>Cash 20%<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span></div>
+      <div style="font-size: 11px; margin-bottom: 2px;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>Installment 15%<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span></div>
+      <div style="font-size: 11px; margin-bottom: 2px;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>Credit Cards 30%<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span></div>
+      <div style="font-size: 11px; margin-bottom: 2px;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>BNPL 20%<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span></div>
+      <div style="font-size: 11px;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>2WL/EV/Green 15%<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span></div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF Strategy Team, Product Strategy Analysis</div>
+<!-- ============ END REVENUE MIX TRANSITION ============ -->
+
+<h2>1. Current Product Assessment</h2>
+<h3>1.1 Product Portfolio Overview</h3>
+<div style="background: #fff; border-radius:0; padding: 20px; margin: 16px 0; border: 1px solid #D4D4D4;">
+  <div style="font-size: 15px; font-weight: 700; color:#0D1B2A; margin-bottom: 14px;">Product Portfolio Overview</div>
+  <div style="display: flex; flex-direction: column; gap: 6px;">
+    <div style="background: #fef2f2; border-radius:0; padding: 12px; border-left: 4px solid #D4D4D4;">
+      <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-weight: 700; color:#0D1B2A; font-size: 13px;">Cash Loans (Total)</span><span style="background: #0D1B2A; color: #fff; padding: 2px 8px; border-radius:0; font-size: 10px; font-weight: 600;">NPL ~25%</span></div>
+      <div style="display: flex; gap: 16px; margin-top: 6px; font-size: 12px; color: #666;"><span><strong>Balance:</strong> VND 137,795M (15.2%)</span><span><strong>Disbursement:</strong> 68,384</span><span><strong>Yield:</strong> 25-30%</span></div>
+      <div style="margin-top: 8px; padding-left: 12px; border-left: 2px solid #D4D4D4;">
+        <div style="font-size: 11px; color: #666; margin-bottom: 4px;"><span style="color: #0D1B2A; font-weight: 600;">ACS Cross-sell:</span> ~VND 90,000M (10%) | Yield 22-25% | NPL 5-8% | Best performing</div>
+        <div style="font-size: 11px; color: #666; margin-bottom: 4px;"><span style="color:#0D1B2A; font-weight: 600;">Cash Loan NTB:</span> ~VND 30,000M (3%) | Yield 30-35% | NPL 25-30% | FPD5+ 11.8% (3.5x market)</div>
+        <div style="font-size: 11px; color: #666;"><span style="color: #0D1B2A; font-weight: 600;">Cash Loan Existing (PTF):</span> ~VND 17,795M (2%) | Yield 28-32% | NPL 15-20% | Declining legacy</div>
+      </div>
+    </div>
+    <div style="background: #fffbeb; border-radius:0; padding: 12px; border-left: 4px solid #D4D4D4;">
+      <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-weight: 700; color:#0D1B2A; font-size: 13px;">Installment CD</span><span style="background: #0D1B2A; color: #fff; padding: 2px 8px; border-radius:0; font-size: 10px; font-weight: 600;">NPL ~18%</span></div>
+      <div style="display: flex; gap: 16px; margin-top: 6px; font-size: 12px; color: #666;"><span><strong>Balance:</strong> VND 702,975M (77.3%)</span><span><strong>Yield:</strong> 18-22%</span><span>Core product; dealer quality issues</span></div>
+    </div>
+    <div style="background: #fef2f2; border-radius:0; padding: 12px; border-left: 4px solid #D4D4D4;">
+      <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-weight: 700; color:#0D1B2A; font-size: 13px;">Installment TW</span><span style="background: #0D1B2A; color: #fff; padding: 2px 8px; border-radius:0; font-size: 10px; font-weight: 600;">NPL ~20%</span></div>
+      <div style="display: flex; gap: 16px; margin-top: 6px; font-size: 12px; color: #666;"><span><strong>Balance:</strong> VND 68,510M (7.5%)</span><span><strong>Yield:</strong> 20-24%</span><span>FPD5+ at 9.5% (3.5x market)</span></div>
+    </div>
+    <div style="background: #f1f5f9; border-radius:0; padding: 12px; border-left: 4px solid #D4D4D4;">
+      <div style="display: flex; justify-content: space-between; align-items: center;"><span style="font-weight: 700; color: #94a3b8; font-size: 13px;">Revolving Loans</span><span style="background: #94a3b8; color: #fff; padding: 2px 8px; border-radius:0; font-size: 10px; font-weight: 600;">DISCONTINUED</span></div>
+      <div style="font-size: 12px; color: #666; margin-top: 4px;">Legacy only | Stopped Nov 2025</div>
+    </div>
+    <div style="background: #0D1B2A; border-radius:0; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+      <span style="color: #fff; font-weight: 800; font-size: 14px;">TOTAL PORTFOLIO</span>
+      <div style="display: flex; gap: 16px;"><span style="color: #0D1B2A; font-weight: 700;">VND 909,280M</span><span style="color:#0D1B2A; font-weight: 700;">NPL 22.8%</span><span style="color: #fff;">Yield 21.06%</span></div>
+    </div>
+  </div>
+</div>
+
+<h3>1.2 Cash Loan Performance by Sub-Product</h3>
+<h4>Standard Cash Loan (NTB - New to Bank)</h4>
+<p><strong>Performance:</strong> FPD5+ at 11.8%, which is 3.5x the market average of 3.4%. However, sample size is very limited (9 loans observed in risk threshold analysis), making definitive conclusions premature.</p>
+<p><strong>Assessment: RESTRICT AND MONITOR</strong></p>
+<ul>
+<li>Approval rate already tightened from 81% (Jul 2025) to 30.5% (Dec 2025)</li>
+<li>CIC<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">National Credit Information Center (CIC), State Bank of Vietnam</span></span> scorecard GINI at 26-27% (acceptable but not strong discriminatory power)</li>
+<li>Limited backtest sample (5,867 loans<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">National Credit Information Center (CIC), State Bank of Vietnam</span></span>) with low positive label rates</li>
+<li><strong>Recommendation:</strong> Maintain strict underwriting; limit NTB disbursements to &lt;10% of total; focus on income-verified, CIC-clean applicants; introduce alternative data scoring (device fingerprint, Credolab) for thin-file NTB</li>
+</ul>
+<h4>ACS Cross-Sell Cash Loan</h4>
+<p><strong>Performance:</strong> Dominant channel generating VND 61B<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span> in January 2026 (60% of total disbursements). Approval rate at 70.6% and improving (+6.6% MoM). Leverages existing ACS installment customer base with known payment history.</p>
+<p><strong>Assessment: GROW AGGRESSIVELY</strong></p>
+<ul>
+<li>Lowest risk channel due to behavioral data on existing customers</li>
+<li>ACF&#39;s unique ecosystem advantage -- no competitor can replicate AEON customer cross-sell</li>
+<li><strong>Recommendation:</strong> Scale ACS cross-sell by: (1) expanding eligible AEON customer base through WAON<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty Program Documentation</span></span> loyalty integration, (2) introducing tiered credit limits based on installment payment history, (3) launching pre-approved offers via push notification when mobile app launches, (4) extending cross-sell to Citimart, MiniStop, and AEON Mall customers</li>
+</ul>
+<h4>Cash Loan Existing (PTF Legacy)</h4>
+<p><strong>Performance:</strong> Approval rate at 47.1% for existing PTF customers. Legacy portfolio with elevated NPL.</p>
+<p><strong>Assessment: MANAGE DOWN</strong></p>
+<ul>
+<li>Serve only best-performing existing PTF customers (behavioral score cutoff)</li>
+<li>Do not acquire new customers through legacy PTF channels</li>
+<li>Transition performing PTF customers to AEON-branded products over 12-18 months</li>
+<li><strong>Recommendation:</strong> Reduce PTF cash loan origination by 50% over Year 1; sunset the sub-brand</li>
+</ul>
+<h4>Flexible / Emergency / Loyalty Cash Loans (Future)</h4>
+<p>These sub-products do not currently exist at ACF but represent market opportunities:</p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**AEON Flexible Cash**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:10%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">VND 5-50M, 6-36 months, flexible repayment</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**AEON Emergency**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:8%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">VND 2-10M, 3-12 months, fast approval</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**AEON Loyalty Cash**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:24%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Pre-approved for WAON members with 12+ month history</div>
+</div></div>
+</div>
+
+
+<p><strong>Recommendation:</strong> Launch AEON Loyalty Cash as a premium ACS cross-sell variant by Q4 2026. Reserve Flexible and Emergency for post-app launch (Year 2).</p>
+<h3>1.3 Installment Loan Performance by Category</h3>
+<h4>Electronics (Installment CD -- Consumer Durables)</h4>
+<p><strong>Current State:</strong> VND 702.9B (77.3% of portfolio). Dominant product originated through national sales network (NSN) at retail partners.</p>
+<p><strong>Performance Issues:</strong></p>
+<ul>
+<li>FPD5+ at 2.0% for Installment CD (below market average of 4.3% -- encouraging)</li>
+<li>But New Scheme records significantly lower B0 resolution rates (94.37% vs 98.76% for ACS scheme)</li>
+<li>Dealer quality varies dramatically: Cho Lon at 18.3% FPD, MediaMart at 52.9% FPD</li>
+<li>Province concentration risk: Lai Chau 25.0% FPD5, Hanoi 15.9% FPD5</li>
+</ul>
+<p><strong>Assessment: OPTIMIZE AND CLEAN</strong></p>
+<ul>
+<li>Suspend high-FPD dealers (Cho Lon already stopped; add MediaMart and other outliers)</li>
+<li>Implement dealer-level risk scoring and monitoring</li>
+<li>Expand to higher-quality electronics retailers (FPT Shop, CellphoneS) where available</li>
+<li><strong>Grow:</strong> AEON retail<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Vietnam Ecosystem — &quot;Lotte vs AEON – Vietnam Ecosystem.pdf&quot; OtherData</span></span> store installment (captive network, best data, lowest CAC)</li>
+<li><strong>Restrict:</strong> Third-party dealer installment (high variance, limited data control)</li>
+</ul>
+<h4>Furniture / Healthcare / Education / Travel (Future Categories)</h4>
+<p>ACF&#39;s installment product currently focuses on consumer electronics and durables. Expanding into additional categories represents a growth opportunity, particularly within the AEON ecosystem:</p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Healthcare**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">AEON Ecosystem Opportunity:</span> AEON Wellness pharmacies; medical installment partnerships</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Market Size:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Growing sector; BNPL for healthcare projected high growth</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">MEDIUM</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Education**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">AEON Ecosystem Opportunity:</span> Partner with education institutions near AEON Malls</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Market Size:</span> Sector-specific BNPL demand identified in market research</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">LOW</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Travel**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">AEON Ecosystem Opportunity:</span> AEON Mall travel agencies; partnership with airlines</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Market Size:</span> HD Saison's "Fly Now Pay Later" with VietJet proves concept</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">MEDIUM</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Furniture/Home**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">AEON Ecosystem Opportunity:</span> AEON retail stores (furniture departments); home improvement</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Market Size:</span> Large ticket; fits installment model well</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Fashion**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">AEON Ecosystem Opportunity:</span> AEON Mall fashion retailers; AEON GMS apparel</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Market Size:</span> Smaller ticket; better suited for BNPL than installment</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">MEDIUM (via BNPL)</span></div>
+</div>
+</div></div>
+
+
+<p><strong>Recommendation:</strong> Prioritize Furniture/Home installment within AEON stores (natural extension of existing product). Healthcare and Travel for Year 2 expansion.</p>
+<h4>Product Rationalization Matrix</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">1</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">ACS Cross-Sell Cash Loan</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Action: **GROW**</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Best performance; ecosystem advantage; scalable</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">2</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">AEON Store Installment</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Action: **GROW**</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Captive network; best data; lowest risk</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">3</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Installment CD (quality dealers)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Action: **MAINTAIN**</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Core product; optimize dealer selection</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">4</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Installment TW (2-wheeler)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Action: **TRANSFORM**</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Shift from ICE to EV financing; new risk model</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">5</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Cash Loan NTB</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Action: **RESTRICT**</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: 3.5x market FPD; tighten until AI scoring improves</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">6</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Cash Loan Existing (PTF)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Action: **MANAGE DOWN**</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Legacy; transition customers to AEON brand</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">7</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Installment CD (high-risk dealers)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Action: **STOP**</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Cho Lon, MediaMart, and similar; FPD unacceptable</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">8</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Revolving Loans</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Action: **STOPPED**</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Already discontinued Nov 2025</div>
+</div></div>
+</div>
+
+
+<hr>
+<h2>2. New Product Roadmap</h2>
+<h3>2.1 Credit Card Strategy</h3>
+<h4>2.1.1 Market Opportunity</h4>
+<p>The credit card segment is the fastest-growing in Vietnam consumer finance:</p>
+<ul>
+<li>FinCo credit card balances grew 72.8% YoY in 1H2025</li>
+<li>12.62M bank<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">FiinGroup &quot;Vietnam Credit Card Market Report 2025.pdf&quot; — Cards in Circulation</span></span> cards + 537K FinCo cards in circulation (growing 20.9% CAGR)</li>
+<li>FinCo credit card outstanding balance: VND 56.2T (Jun 2025)</li>
+<li>FE Credit dominates with 57.3% transaction share and 80.5% of new FinCo issuance</li>
+<li>Vietnam credit card penetration (17 per 100 adults) well below Thailand (48) and Malaysia (55)</li>
+<li>VietCredit proved digital card model: 89.4% portfolio growth, CIR drop to 22.1%</li>
+</ul>
+<p><strong>ACF&#39;s addressable opportunity:</strong> Target 2-5% of FinCo credit card market within 3 years of launch, equivalent to 200,000-650,000 active cards<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span>.</p>
+<h4>2.1.2 Target Segments</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Mass Market**</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">VND 7-10M | AEON Basic (NAPAS) | VND 5-15M | 60% of portfolio</span></div></div> <span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Upper Mass**</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">VND 10-20M | AEON Classic (Visa/MC) | VND 15-30M | 30% of portfolio</span></div></div> <span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Premium/Aspirational**</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">VND 15-30M | AEON Co-Brand Premium | VND 30-50M | 10% of portfolio</span></div></div> <span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>
+</div>
+
+
+<p><strong>Primary acquisition channels:</strong></p>
+<ol>
+<li>Pre-approved offers to qualified WAON loyalty members (3M+ addressable)</li>
+<li>In-store acquisition at AEON Mall checkout and customer service desks</li>
+<li>Cross-sell to existing ACS installment and PTF cash loan customers</li>
+<li>Digital-first application through new mobile app</li>
+<li>VPBank NEO channel for broader reach</li>
+</ol>
+<h4>2.1.3 Card Design</h4>
+<p><strong>AEON Basic Card (NAPAS<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">NAPAS — National Payment Corporation of Vietnam</span></span> Domestic)</strong></p>
+<ul>
+<li>Target: Mass segment entry-level</li>
+<li>Annual fee: VND 0 (Y<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty Program Documentation</span></span>ear 1), VND 150K (Year 2+)</li>
+<li>Interest rate: 1.5-2.0%/month on revolving balance</li>
+<li>Cashback: 1% at AEON stores, 0.5% elsewhere</li>
+<li>WAON points: 1 point per VND 25,000 spent</li>
+<li>Features: Virtual card (instant issuance), NFC contactless, QR payment</li>
+<li>Credit limit: VND 5-15M</li>
+<li>Minimum income: VND 5M/month (verified or estimated via WAON data)</li>
+</ul>
+<p><strong>AEON Classic Card (Visa/Mastercard International)</strong></p>
+<ul>
+<li>Target: Upper Mass with international transaction needs</li>
+<li>Annual fee: VND 300K (waived if spend &gt; VND 5M/month)</li>
+<li>Interest rate: 1.3-1.8%/month</li>
+<li>Cashback: 2% at AEON stores, 1% elsewhere, 1.5% online</li>
+<li>WAON points: 2 points per VND 25,000 at AEON; 1 point elsewhere</li>
+<li>Features: International online/offline transactions, travel insurance, installment conversion</li>
+<li>Credit limit: VND 15-30M</li>
+<li>Minimum income: VND 10M/month</li>
+</ul>
+<p><strong>AEON Co-Brand Premium Card</strong></p>
+<ul>
+<li>Target: Aspirational/Premium AEON ecosystem power users</li>
+<li>Annual fee: VND 500K (waived if spend &gt; VND 10M/month)</li>
+<li>Interest rate: 1.2-1.5%/month</li>
+<li>Cashback: 3% at AEON ecosystem (Mall, MaxValu, Citimart, MiniStop), 1.5% elsewhere</li>
+<li>WAON points: 3x earning rate across all AEON entities</li>
+<li>Features: Priority checkout at AEON Mall, free parking at AEON Mall, exclusive promotions, BNPL conversion at checkout, AEON Mall lounge access</li>
+<li>Credit limit: VND 30-50M</li>
+<li>Minimum income: VND 15M/month</li>
+</ul>
+<h4>2.1.4 Rewards Strategy: Cashback vs Points</h4>
+<p><strong>Recommendation: Hybrid approach -- WAON points at AEON + cashback elsewhere</strong></p>
+<p>Rationale:</p>
+<ul>
+<li>WAON points create ecosystem lock-in (redeemable only at AEON stores)</li>
+<li>Cashback provides universal appeal for non-AEON spending</li>
+<li>Points-based earning at AEON stores drives foot traffic back to AEON ecosystem (closed-loop flywheel)</li>
+<li>Cashback rate for non-AEON spending ensures competitiveness with bank cards</li>
+<li>Redemption at AEON stores has higher margin for ACF (AEON absorbs cost; ACF retains interchange income)</li>
+</ul>
+<p><strong>Comparison with competitors:</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Card types</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">ACF (Planned):</span> 3-4</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">FE Credit:</span> 7</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Home Credit:</span> 1</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">VietCredit:</span> 1</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Reward type</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">ACF (Planned):</span> WAON points + cashback</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">FE Credit:</span> FE Points + offers</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Home Credit:</span> Cashback</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">VietCredit:</span> Cashback</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Ecosystem integration</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">ACF (Planned):</span> AEON stores, malls, convenience</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">FE Credit:</span> VPBank ecosystem</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Home Credit:</span> MWG retail</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">VietCredit:</span> None</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Differentiator</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">ACF (Planned):</span> Only card with physical retail ecosystem rewards</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">FE Credit:</span> Scale + variety</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Home Credit:</span> Best asset quality</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">VietCredit:</span> Digital-first</div>
+</div>
+</div></div>
+
+
+<h4>2.1.5 Risk Model</h4>
+<p><strong>Application Scorecard (Credit Card):</strong></p>
+<ul>
+<li>Layer 1: CIC bureau score and history (mandatory)</li>
+<li>Layer 2: WAON loyalty data (purchase frequency, recency, basket size, category mix, membership tenure)</li>
+<li>Layer 3: ACF internal behavioral data (for cross-sell from cash/installment customers)</li>
+<li>Layer 4: Device fingerprint score (Credolab)</li>
+<li>Layer 5: Income estimation model (using WAON spend as proxy for verified income)</li>
+</ul>
+<p><strong>Credit Limit Assignment:</strong></p>
+<ul>
+<li>Initial limit: Conservative (70-80% of model recommendation)</li>
+<li>Dynamic adjustment: Monthly behavioral review; automatic increase for customers with 6+ months of on-time payment and utilization &gt;30%</li>
+<li>Ecosystem bonus: +20% limit increase for AEON Co-Brand cardholders demonstrating consistent AEON ecosystem spend</li>
+</ul>
+<p><strong>Early Warning:</strong></p>
+<ul>
+<li>Utilization spike detection (&gt;80% utilization with declining payment)</li>
+<li>Payment pattern deterioration monitoring</li>
+<li>Cross-reference with installment/cash loan payment behavior</li>
+<li>External trigger monitoring (CIC score changes)</li>
+</ul>
+<h4>2.1.6 Regulatory Pathway</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">SBV pre-consultation</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Completed (Feb 2026)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Done</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">CMS vendor selection</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> RFP evaluated (11 vendors)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q2 2026</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">CMS implementation</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Build phase</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q3 2026 -- Q2 2027</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">PCI-DSS Level 1 certification</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Pathway initiated</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q2 2027</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">NAPAS membership application</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Planned</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q1 2027</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Visa/Mastercard certification</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Planned</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q2 2027</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">SBV formal application</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Planned</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q4 2027</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Pilot launch</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Planned</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q1 2028</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Full commercial launch</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Planned</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q2 2028</div>
+</div>
+</div></div>
+
+
+<p><strong>Key SBV requirements (from Feb 2026 meeting):</strong></p>
+<ul>
+<li>Customer data (CIF) must be maintained locally in Vietnam (Viettel IDC)</li>
+<li>Overseas SaaS CMS requires dedicated environment with site-to-site VPN</li>
+<li>PCI-DSS v4.0 compliance; ISO 27001:2022; HSM encryption</li>
+<li>RPO &lt;= 15 minutes; RTO &lt;= 4 hours; SLA uptime &gt;= 99.95%</li>
+<li>Right of inspection by SBV, Ministry of Public Security</li>
+</ul>
+<h4>2.1.7 Technology Requirements</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Card Management System</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Solution:</span> BPC SmartVista or OpenWay WAY4 (from RFP)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Vendor selection pending</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Card Processing</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Solution:</span> NAPAS (domestic), Visa/MC (international)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> NAPAS membership pending</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">HSM</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Solution:</span> Hardware Security Module for PIN/CVV</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Part of CMS</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Fraud Management</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Solution:</span> Real-time transaction monitoring</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Part of CMS (PISMO built-in for cards)</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Mobile Integration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Solution:</span> Virtual card issuance in ACF app</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> App development in progress</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Chargeback Management</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Solution:</span> Network dispute resolution system</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Part of CMS</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Loyalty Integration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Solution:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">WAON point earning and redemption</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Integration with ACSTV point system</div>
+</div>
+</div></div>
+
+
+<h4>2.1.8 P&amp;L Projections (Credit Card Business)</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Cards Issued (cumulative K)</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">120 | 300 | 500</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Active Cards (K)</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">80 | 250 | 400</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Average Balance/Active Card (VND M)</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">5 | 7 | 9</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Total Outstanding Balance (VND B)</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">400 | 1,750 | 3,600</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Revenue: Interest Income (VND B)</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">60 | 280 | 600</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Revenue: Interchange (VND B)</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">5 | 18 | 35</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Revenue: Annual/Late Fees (VND B)</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">8 | 25 | 45</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Total Card Revenue (VND B)**</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">**73** | **323** | **680**</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Credit Losses (NPL target <5%)</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">-15 | -55 | -100</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Operating Expenses</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">-50 | -100 | -160</span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Card PBT (VND B)**</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">**+8** | **+168** | **+420**</span></div></div>
+</div>
+
+
+<p><strong>Key assumptions:</strong> 65% activation rate; 40% revolving rate; 1.5% average monthly interest; interchange at 1.2% of transaction value; NPL &lt;5%; CIR declining as scale builds.</p>
+<hr>
+<h3>2.2 BNPL Strategy</h3>
+<h4>2.2.1 Market Opportunity</h4>
+<ul>
+<li>Vietnam BNPL market: USD 2.61<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">Research and Markets &quot;Vietnam BNPL Market Report 2025&quot;</span></span>&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;Vendor Proposal &quot;OpenWay/WAY4&quot; (RawData/Package 11 Dec 2025/Vendor proposal materials)&quot;BPC&quot; (RawData/Package 11 Dec 2025/Vendor proposal materials)&quot;HDB_HDSaison 2025.pdf&quot; (OtherData/IM + PITCH SAMPLES)&quot;Introduction to PISMO<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">&quot;Introduction to PISMO.pdf&quot; OtherData</span></span>.pdf&quot; (OtherData)&quot;Vietnam Credit Card Market Report 2025.pdf&quot; — FinCo Cards in Circulation&quot;Vietnam Credit Card Market Report 2025.pdf&quot; — Bank Cards in Circulation&quot;Vietnam Credit Card Market Report 2025.pdf&quot; — Card Growth Rate&quot;Vietnam Credit Card Market Report 2025.pdf&quot; (OtherData/Market Report2025)&quot;FIN_MMM_10.02.2026.pdf&quot; — Loan Book Outstanding&quot;FIN_MMM_10.02.2026.pdf&quot; (Package 6 Mar 2026)&quot;&gt;<span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#0D1B2A;color:white;font-size:8px;font-weight:700;font-style:italic;vertical-align:middle;line-height:1">i</span></span>B in 2025, growing 36.5% annually to USD 8.51B<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> by 2030</li>
+<li>BNPL at only 2% of e-commerce payments (massive headroom vs 5% in Indonesia, Singapore)</li>
+<li>E-commerce at 9.9% of total retail sales, growing at 23.5% CAGR</li>
+<li>Home Credit HomePayLater: leading BNPL solution across MWG ecosystem</li>
+<li>FE Credit + Viettel Money: BNPL since 2021</li>
+<li>Lotte Finance + ZaloPay<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ZaloPay — VNG Corporation Digital Wallet</span></span>: expanding BNPL partnerships</li>
+<li>BNPL remains in regulatory grey area; no specific SBV framework yet</li>
+</ul>
+<h4>2.2.2 Target Merchants</h4>
+<p><strong>Phase 1: AEON Captive Network (Zero merchant acquisition cost)</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">1</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">AEON Mall</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Locations: 9 (4 more planned)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Transaction Profile: High-value electronics, fashion, dining</div>
+<div style="font-size:12px;color:#666;margin-top:2px">BNPL Fit: HIGH -- large tickets ideal for 3-12 month installment</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">2</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">AEON Retail (GMS)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Locations: 46 stores</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Transaction Profile: Household goods, electronics, apparel</div>
+<div style="font-size:12px;color:#666;margin-top:2px">BNPL Fit: HIGH -- medium tickets for 1-6 month</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">3</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">MaxValu/Citimart</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Locations: 14 stores</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Transaction Profile: Groceries, daily essentials</div>
+<div style="font-size:12px;color:#666;margin-top:2px">BNPL Fit: MEDIUM -- small tickets for 1-3 month</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">4</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">MiniStop</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Locations: 173 stores</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Transaction Profile: Convenience, ready meals</div>
+<div style="font-size:12px;color:#666;margin-top:2px">BNPL Fit: LOW -- micro-tickets; future micro-BNPL</div>
+</div></div>
+<div style="background:white;border-radius:0;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">5</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">AEON Eshop</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Locations: Online</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Transaction Profile: Full AEON product range</div>
+<div style="font-size:12px;color:#666;margin-top:2px">BNPL Fit: HIGH -- online BNPL at checkout</div>
+</div></div>
+</div>
+
+
+<p><strong>Phase 2: External Merchant Partnerships</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">ZaloPay</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Type:</span> E-wallet (75M Zalo users)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Integration Model:</span> BNPL at ZaloPay checkout for partner merchants</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Shopee</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Type:</span> E-commerce (market leader)</di</body></html>

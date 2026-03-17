@@ -1,0 +1,669 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACF_T4C_TechnologyStrategy_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ACF_T4C_TechnologyStrategy_v1.0</h1><p>AEON Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ACF Technology Strategy v1.0</h1>
+<p><strong>Document ID:</strong> ACF_T4C_TechnologyStrategy_v1.0
+<strong>Prepared for:</strong> AEON Consumer Finance Vietnam -- Board of Directors &amp; AFS Japan
+<strong>Date:</strong> March 15, 2026
+<strong>Classification:</strong> Internal -- Strictly Confidential
+<strong>Version:</strong> 1.0
+<strong>Sources:</strong> Team 1 (Technology Landscape, Tech Roadmap Options, Best Practices, Financial Benchmarks), Team 2 (Technology DD, Capability Gaps, Operational DD), Team 4 (Corporate Strategy, Product Strategy)</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>ACF&#39;s technology estate is critically under-invested and architecturally outdated. The EY assessment identified 52 high-impact<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">EY &quot;Executive Summary Report_v.3.1.pptx&quot; — Risk Assessment, AdvisorsData</span></span>&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;EY &quot;Executive Summary Report_v.3.1.pptx&quot; (AdvisorsData)&quot;Executive Summary Report_v.3.1.pptx&quot; — Risk Assessment (AdvisorsData)&quot;&gt;<span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#0D1B2A;color:white;font-size:8px;font-weight:700;font-style:italic;vertical-align:middle;line-height:1">i</span></span>/high-probability risks, the absence of basic security controls (no firewall, no SIEM, no database encryption), and infrastructure at near capacity with single-site hosting. The core banking system (T24 R25) cannot support automated 5-group loan classification -- a regulatory requirement being handled via Excel workarounds. There is no customer-facing mobile app, no card management system, and no data warehouse. ACF scores 1/5 on technology architecture and 1/5 on data governance in the best practice benchmarking -- the lowest among all profiled competitors.</p>
+<p>This Technology Strategy addresses these gaps through a phased, investment-disciplined approach guided by a clear vision: <strong>Digital-first, cloud-ready, API-driven</strong>. The strategy prioritizes survival (cybersecurity, compliance) before growth (digital channels, new products) before leadership (AI operations, embedded finance). Total technology investment required is USD 25-39M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> over 5 years, with Year 1 requiring USD 7.6-10.4M to address existential gaps and lay the foundation for product launches.</p>
+<hr>
+<!-- ============ TECHNOLOGY INVESTMENT WATERFALL ============ -->
+<div style="background: #fff; border-radius:0; padding: 24px; margin: 24px 0; border: 1px solid #D4D4D4;">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 4px;">Technology Investment Waterfall (USD M, 5-Year)</div>
+  <div style="font-size: 12px; color: #999; margin-bottom: 20px;">Total: USD 25-39M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> across all categories</div>
+  <div style="display: flex; align-items: flex-end; gap: 12px; height: 200px; padding-bottom: 30px; border-bottom: 2px solid #D4D4D4;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+      <div style="font-size: 11px; font-weight: 700; color:#0D1B2A; margin-bottom: 4px;">$7.6-10.4M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+      <div style="width: 100%; display: flex; flex-direction: column; gap: 1px;">
+        <div style="height: 40px; background: #0D1B2A; border-radius:1px 4px 0 0;" title="EY "Executive Summary Report_v.3.1.pptx" — IT Security Assessment"Executive Summary Report_v.3.1.pptx" — Cybersecurity Findings"Executive Summary Report_v.3.1.pptx" — Cybersecurity Findings"20251115_BDIT v5.pptx" (AdvisorsData)"></div>
+        <div style="height: 30px; background: #0D1B2A;" title="Digital $1-1.5M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>"></div>
+        <div style="height: 20px; background: #0D1B2A;" title="AI/Data $1-1.5M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>"></div>
+        <div style="height: 50px; background: #0D1B2A;" title="Core Systems $3-4M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>"></div>
+        <div style="height: 20px; background: #0D1B2A; border-radius: 0 0 4px 4px;" title="Cloud $1-1.5M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>"></div>
+      </div>
+      <div style="font-size: 12px; color: #666; margin-top: 6px; font-weight: 600;">Year 1</div>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+      <div style="font-size: 11px; font-weight: 700; color:#0D1B2A; margin-bottom: 4px;">$5.5-8M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+      <div style="width: 100%; display: flex; flex-direction: column; gap: 1px;">
+        <div style="height: 20px; background: #0D1B2A; border-radius:1px 4px 0 0;"></div>
+        <div style="height: 35px; background: #0D1B2A;"></div>
+        <div style="height: 25px; background: #0D1B2A;"></div>
+        <div style="height: 25px; background: #0D1B2A;"></div>
+        <div style="height: 15px; background: #0D1B2A; border-radius: 0 0 4px 4px;"></div>
+      </div>
+      <div style="font-size: 12px; color: #666; margin-top: 6px; font-weight: 600;">Year 2</div>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+      <div style="font-size: 11px; font-weight: 700; color:#0D1B2A; margin-bottom: 4px;">$4.5-7M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+      <div style="width: 100%; display: flex; flex-direction: column; gap: 1px;">
+        <div style="height: 12px; background: #0D1B2A; border-radius:1px 4px 0 0;"></div>
+        <div style="height: 30px; background: #0D1B2A;"></div>
+        <div style="height: 25px; background: #0D1B2A;"></div>
+        <div style="height: 15px; background: #0D1B2A;"></div>
+        <div style="height: 12px; background: #0D1B2A; border-radius: 0 0 4px 4px;"></div>
+      </div>
+      <div style="font-size: 12px; color: #666; margin-top: 6px; font-weight: 600;">Year 3</div>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+      <div style="font-size: 11px; font-weight: 700; color:#0D1B2A; margin-bottom: 4px;">$3.5-6M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+      <div style="width: 100%; display: flex; flex-direction: column; gap: 1px;">
+        <div style="height: 8px; background: #0D1B2A; border-radius:1px 4px 0 0;"></div>
+        <div style="height: 25px; background: #0D1B2A;"></div>
+        <div style="height: 20px; background: #0D1B2A;"></div>
+        <div style="height: 10px; background: #0D1B2A;"></div>
+        <div style="height: 10px; background: #0D1B2A; border-radius: 0 0 4px 4px;"></div>
+      </div>
+      <div style="font-size: 12px; color: #666; margin-top: 6px; font-weight: 600;">Year 4</div>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+      <div style="font-size: 11px; font-weight: 700; color:#0D1B2A; margin-bottom: 4px;">$3-5M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+      <div style="width: 100%; display: flex; flex-direction: column; gap: 1px;">
+        <div style="height: 6px; background: #0D1B2A; border-radius:1px 4px 0 0;"></div>
+        <div style="height: 20px; background: #0D1B2A;"></div>
+        <div style="height: 18px; background: #0D1B2A;"></div>
+        <div style="height: 8px; background: #0D1B2A;"></div>
+        <div style="height: 8px; background: #0D1B2A; border-radius: 0 0 4px 4px;"></div>
+      </div>
+      <div style="font-size: 12px; color: #666; margin-top: 6px; font-weight: 600;">Year 5</div>
+    </div>
+  </div>
+  <div style="display: flex; gap: 16px; margin-top: 12px; flex-wrap: wrap; justify-content: center;">
+    <span style="font-size: 11px; color: #666;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>Security</span>
+    <span style="font-size: 11px; color: #666;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>Digital</span>
+    <span style="font-size: 11px; color: #666;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>AI / Data</span>
+    <span style="font-size: 11px; color: #666;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>Core Systems</span>
+    <span style="font-size: 11px; color: #666;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius:0; margin-right: 4px;"></span>Cloud</span>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF Strategy Team, Technology Strategy Analysis</div>
+<!-- ============ END TECHNOLOGY INVESTMENT WATERFALL ============ -->
+
+<!-- ============ BUILD VS BUY MATRIX ============ -->
+<div style="background:#F2F2F0; border-radius:0; padding: 24px; margin: 24px 0; border: 1px solid #D4D4D4;">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Build vs Buy vs Partner Decision Matrix</div>
+  <table style="width: 100%; border-collapse: separate; border-spacing: 2px;">
+    <tr>
+      <th style="padding: 10px; text-align: left; font-size: 12px; color: #666; width: 30%;">Component</th>
+      <th style="padding: 10px; text-align: center; font-size: 12px; color: #666; width: 23%;">BUILD</th>
+      <th style="padding: 10px; text-align: center; font-size: 12px; color: #666; width: 23%;">BUY</th>
+      <th style="padding: 10px; text-align: center; font-size: 12px; color: #666; width: 23%;">PARTNER</th>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: 600; font-size: 13px; background: #fff;">Mobile App</td>
+      <td style="padding: 10px; text-align: center; background: #dcfce7;"><span style="font-weight: 700; color: #166534;">RECOMMENDED</span></td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: 600; font-size: 13px; background: #fff;">Core Banking</td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+      <td style="padding: 10px; text-align: center; background: #dbeafe;"><span style="font-weight: 700; color:#0D1B2A;">RECOMMENDED</span></td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: 600; font-size: 13px; background: #fff;">Card Management</td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+      <td style="padding: 10px; text-align: center; background: #dbeafe;"><span style="font-weight: 700; color:#0D1B2A;">RECOMMENDED</span></td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: 600; font-size: 13px; background: #fff;">AI/ML Scoring</td>
+      <td style="padding: 10px; text-align: center; background: #dcfce7;"><span style="font-weight: 700; color: #166534;">RECOMMENDED</span></td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: 600; font-size: 13px; background: #fff;">eKYC</td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+      <td style="padding: 10px; text-align: center; background: #fef3c7;"><span style="font-weight: 700; color: #92400e;">RECOMMENDED</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: 600; font-size: 13px; background: #fff;">Collections Platform</td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+      <td style="padding: 10px; text-align: center; background: #dbeafe;"><span style="font-weight: 700; color:#0D1B2A;">RECOMMENDED</span></td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+    </tr>
+    <tr>
+      <td style="padding: 10px; font-weight: 600; font-size: 13px; background: #fff;">Cloud Infrastructure</td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+      <td style="padding: 10px; text-align: center; background: #f1f5f9;"><span style="color: #94a3b8;">-</span></td>
+      <td style="padding: 10px; text-align: center; background: #fef3c7;"><span style="font-weight: 700; color: #92400e;">RECOMMENDED</span></td>
+    </tr>
+  </table>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF Strategy Team, Technology Strategy Analysis</div>
+<!-- ============ END BUILD VS BUY MATRIX ============ -->
+
+<!-- ============ DIGITAL MATURITY PROGRESSION ============ -->
+<div style="background: #fff; border-radius:0; padding: 24px; margin: 24px 0; border: 1px solid #D4D4D4;">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Digital Maturity Progression</div>
+  <div style="margin-bottom: 16px;">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+      <span style="font-size: 13px; font-weight: 600; color: #333;">Current State</span>
+      <span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Level 1 / 5</span>
+    </div>
+    <div style="width: 100%; height: 28px; background: #f1f5f9; border-radius:0; overflow: hidden;">
+      <div style="width: 20%; height: 100%; background:#0D1B2A; border-radius:0; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">1.3</span>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom: 16px;">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+      <span style="font-size: 13px; font-weight: 600; color: #333;">Year 2 Target</span>
+      <span style="font-size: 13px; font-weight: 700; color: #0D1B2A;">Level 3 / 5</span>
+    </div>
+    <div style="width: 100%; height: 28px; background: #f1f5f9; border-radius:0; overflow: hidden;">
+      <div style="width: 60%; height: 100%; background:#0D1B2A;opacity:0.65; border-radius:0; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">3.3</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+      <span style="font-size: 13px; font-weight: 600; color: #333;">Year 5 Target</span>
+      <span style="font-size: 13px; font-weight: 700; color: #0D1B2A;">Level 5 / 5</span>
+    </div>
+    <div style="width: 100%; height: 28px; background: #f1f5f9; border-radius:0; overflow: hidden;">
+      <div style="width: 88%; height: 100%; background:#0D1B2A;opacity:0.45; border-radius:0; display: flex; align-items: center; justify-content: center;">
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">4.4</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF Strategy Team, Technology Strategy Analysis</div>
+<!-- ============ END DIGITAL MATURITY PROGRESSION ============ -->
+
+<h2>1. Technology Vision</h2>
+<h3>1.1 Vision Statement</h3>
+<p><strong>&quot;By 2030, ACF will operate a digital-first, cloud-ready, API-driven technology platform that enables real-time financial services across the AEON ecosystem, powered by AI-driven decisioning and secured by enterprise-grade cybersecurity.&quot;</strong></p>
+<h3>1.2 Technology Principles</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">1</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">**API-First**</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">2</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">**Cloud-Ready**</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">3</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">**Data as Asset**</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">4</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">**Security by Design**</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">5</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">**Buy Before Build**</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">6</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">**Composable Architecture**</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">7</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">**Vietnamese-First UX**</div>
+</div></div>
+</div>
+
+
+<h3>1.3 Technology Architecture Target State (2030)</h3>
+<pre><code>                    [Customer Layer]
+     Mobile App  |  Web Portal  |  Partner APIs  |  Agent App
+                         |
+              [API Gateway / Integration Hub]
+         Kong / AWS API Gateway / Event Bus (Kafka)
+                         |
+    +----------+---------+--------+---------+---------+
+    |          |         |        |         |         |
+ [Core     [Card     [LOS    [Collect- [AI/ML   [Data
+ Banking]  Mgmt]    System]  ions]    Platform] Platform]
+ T24 R25   CMS      LOOMS&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ACF IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025&lt;/span&gt;&lt;/span&gt;+   Credge-  Custom   Medallion
+ (→Mambu)  (PISMO&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;&quot;Introduction to PISMO.pdf&quot; OtherData&lt;/span&gt;&lt;/span&gt;/  (→Cloud  nics/    ML +     Architecture
+           BPC)     LOS)     Pega     Clever.AI (Bronze/
+    |          |         |        |         |     Silver/Gold)
+    +----------+---------+--------+---------+---------+
+                         |
+              [Infrastructure Layer]
+    Private Cloud IaaS (Viettel IDC DC/DR) + AWS (digital)
+                         |
+              [Security &amp; Compliance Layer]
+    SIEM | Zero Trust | MFA | PAM | DLP | Encryption
+</code></pre>
+<hr>
+<h2>2. Core Systems Transformation</h2>
+<h3>2.1 T24 R25<span class="src-tip"><span class="src-icon">i</span>&lt;<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF IT Division, &quot;20251115_BDIT v5.pptx&quot; AdvisorsData</span></span>span class=&quot;src-detail&quot;&gt;ACF IT Division, &quot;20251115_BDIT v5.pptx&quot; AdvisorsData</span></span>: Options Analysis</h3>
+<p>ACF currently runs Temenos T24 R25 as its core banking system on IBM Power Systems with Oracle RAC 19c database at SeABank<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF Banking Partner Agreement — Disbursement Channel</span></span> DC/DR sites. The system has significant customizations, cannot support automated 5-group loan classification, and has batch processing limitations.</p>
+<h4>Option Analysis</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Consumer Finance Fit (25%)**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:28%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">7/10 - Proven for cash/installment loans</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Vietnam Proven (20%)**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:36%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">9/10 - Multiple VN banks; ACF operational</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Time-to-Market (15%)**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:36%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">9/10 - Already operational; no migration</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Total Cost 5-Year (15%)**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:32%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">8/10 - USD 8-12M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> TCO (lowest)</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Credit Card Support (10%)**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:12%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">3/10 - Requires separate CMS</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**BNPL Support (10%)**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:12%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">3/10 - Requires custom build</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Migration Risk (5%)**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:40%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">10/10 - No migration needed</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Weighted Score**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:27%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">**6.85**</div>
+</div></div>
+</div>
+
+
+<h4>Recommendation: Phased Approach (&quot;Modernize in Modules&quot;)</h4>
+<p><strong>Short-term (Year 1-2): Stay on T24 R25</strong></p>
+<ul>
+<li>Fix the 5-group loan classification gap (BRD targeted Q3 2026)</li>
+<li>Add API layer on top of T24 for new digital channels</li>
+<li>Deploy separate CMS (BPC/PISMO) for credit card processing</li>
+<li>Rationale: ACF cannot afford operational disruption during NPL crisis and product launches. T24 R25 is functional for <span class="src-tip"><span class="src-icon">i</span><span class="src-detail">&quot;Introduction to PISMO.pdf&quot; OtherData</span></span>existing cash/installment loan book.</li>
+</ul>
+<p><strong>Medium-term (Year 2-3): Evaluate Mambu<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">Vendor Assessment — IKIGAI Technology Research</span></span> for New Products</strong></p>
+<ul>
+<li>Launch BNPL on Mambu or PISMO Digital Lending (separate from T24)</li>
+<li>New products (credit cards, BNPL) run on modern platforms; existing loan book stays on T24</li>
+<li>Pilot cloud-native core for selected product lines</li>
+</ul>
+<p><strong>Long-term (Year 3-5): Core Banking Migration Decision</strong></p>
+<ul>
+<li>By 2028, ACF will have operati<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">Vendor Assessment — IKIGAI Technology Research</span></span>onal stability, multiple products, and sufficient data to evaluate full core migration</li>
+<li>Decision point: Migrate entire loan book to Mambu/PISMO vs. upgrade T24 to Transact</li>
+<li>WeBank<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">&quot;UBank and FE Credit Proposal_with pricing_20251128.pdf&quot; OtherData/WeBank</span></span>/UBank proposal (USD 10.48M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>, 15 months, AWS-based) provides a reference architecture if full migration is chosen</li>
+<li>Migration decision based on: ACF financial position, Mambu Vietnam track record maturity, regulatory en<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025</span></span>vironment, AFS Japan alignment</li>
+</ul>
+<p><strong>Investment:</strong> T24 maintenance USD 0.3-0.5M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>/year; loan classification fix USD 0.2-0.3M; API layer USD 0.3-0.5M</p>
+<h3>2.2 LOOMS: Enhance vs Replace</h3>
+<p><strong>Current State:</strong> LOOMS (built on Newgen platform) is under active migration with August 2026 deployment target. PRD documents at V3.0-V3.2 for 13 modules. DSD Phase issues outstanding. 6+ integration points. IT team managing multiple concurrent projects creates resource contention.</p>
+<h4>Assessment</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<div style="flex:1;min-width:170px;background:white;border-radius:0;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Implementation time</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">3-6 months (already in progress)</div>
+<div style="font-size:12px;color:#666">Replace with Mambu LOS: 6-9 months (restart)</div>
+<div style="font-size:12px;color:#666">Replace with PISMO Lending: 3-6 months</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:0;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Risk</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">MEDIUM (known issues)</div>
+<div style="font-size:12px;color:#666">Replace with Mambu LOS: HIGH (restart disrupts Aug timeline)</div>
+<div style="font-size:12px;color:#666">Replace with PISMO Lending: MEDIUM-HIGH (new vendor)</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:0;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Cost</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">USD 0.5-1M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> (sunk + completion)</div>
+<div style="font-size:12px;color:#666">Replace with Mambu LOS: USD 2-4M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span> (new implementation)</div>
+<div style="font-size:12px;color:#666">Replace with PISMO Lending: USD 1.5-3M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:0;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Digital readiness</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">Moderate (API layer needed)</div>
+<div style="font-size:12px;color:#666">Replace with Mambu LOS: Excellent (cloud-native)</div>
+<div style="font-size:12px;color:#666">Replace with PISMO Lending: Excellent (API-first)</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:0;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Credit card support</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">No</div>
+<div style="font-size:12px;color:#666">Replace with Mambu LOS: Via configuration</div>
+<div style="font-size:12px;color:#666">Replace with PISMO Lending: Native</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:0;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">BNPL support</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">No</div>
+<div style="font-size:12px;color:#666">Replace with Mambu LOS: Native</div>
+<div style="font-size:12px;color:#666">Replace with PISMO Lending: Native</div>
+</div>
+</div></div>
+
+
+<h4>Recommendation: Complete LOOMS Deployment, Then Migrate</h4>
+<p><strong>Phase 1 (Now - Aug 2026):</strong> Complete LOOMS deployment for existing cash/installment loan origination</p>
+<ul>
+<li>Resolve all DSD Phase issues by Q2 2026</li>
+<li>Complete integration testing with T24, CIC<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">National Credit Information Center (CIC), State Bank of Vietnam</span></span>, FPT eKYC, FPT eSign</li>
+<li>Parallel run June-July 2026; go-live August 2026</li>
+<li>Add API layer for digital application intake from new mobile app</li>
+<li>Risk mitigation: Prepare rollback plan; phased deployment (cash loans first)</li>
+</ul>
+<p><strong>Phase 2 (Q4 2026 - Q2 2027):</strong> Enhance LOOMS with digital front-end</p>
+<ul>
+<li>Mobile-friendly origination flow connected via API</li>
+<li>Integrate VNPT eKYC for improved drop-off rates</li>
+<li>Add automated decisioning for low-risk segments (ACS cross-sell, WAON<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty Program Documentation</span></span> pre-qualified)</li>
+</ul>
+<p><strong>Phase 3 (Year 2-3):</strong> Migrate origination to unified cloud-native platform</p>
+<ul>
+<li>Implement PISMO Digital Lending for credit card origination (separate from LOOMS)</li>
+<li>Gradually migrate existing product origination to PISMO or Mambu LOS</li>
+<li>Decommission LOOMS by Year 3 when cloud-native platform proven</li>
+</ul>
+<p><strong>Investment:</strong> LOOMS completion USD 0.5-1M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>; API enhancement USD 0.3-0.5M; future migration USD 1.5-3M</p>
+<h3>2.3 Data Platform: Customer 360, Real-Time Analytics, AI/ML Infrastructure</h3>
+<p><strong>Current State:</strong> No data warehouse, no data lake, no Customer 360, no ETL pipelines, no ML infrastructure. Analytics limited to Power BI and Excel. Loan classification maintained off-system in Excel. IFRS 9 ECL model not implemented. AI/ML scoring planned (AND Solution engagement) but not deployed.</p>
+<h4>Target Architecture: Medallion Architecture (per EY Reco<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty <span class="src-tip"><span class="src-icon">i</span><span class="src-detail">National Credit Information Center (CIC), State Bank of Vietnam</span></span>Program Documentation</span></span>mmendation)</h4>
+<pre><code>[Bronze Layer - Raw Data Ingestion]
+T24 transactions | LOOMS applications | Collection activities | CIC bureau
+WAON loyalty data | AEON POS retail data | App usage data | Payment API
+
+        ↓ ETL / Streaming (Kafka / Airflow)
+
+[Silver Layer - Cleaned, Conformed Data]
+Customer Master | Account History | Transaction Log | Risk Events
+Product Catalog | Channel Attribution | Compliance Audit Trail
+
+        ↓ Transformation / Feature Engineering
+
+[Gold Layer - Business-Ready Analytics]
+Customer 360 | Credit Scoring Features | Collection Optimization
+Portfolio Dashboard | Regulatory Reports | P&amp;L Analytics | IFRS 9 ECL
+
+        ↓ Consumption
+
+[Analytics &amp; AI/ML]
+Power BI Dashboards | ML Model Serving | Real-Time Scoring API
+SBV Reporting | AFS STRAVIS | Management Reports
+</code></pre>
+<h4>Implementation Roadmap</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Foundation**</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">Q2-Q4 2026 | Data lake setup (Bronze/Silver); T24 + LOOMS data integration; Power BI dashboards upgrade; basic Customer 360 | USD 1-2M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Analytics**</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">Q1-Q3 2027 | Gold layer; IFRS 9 ECL models; ML feature store; WAON data integration; portfolio monitoring dashboards | USD 1-1.5M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**AI/ML Platform**</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">Q4 2027-Q2 2028 | ML model serving; real-time scoring API; behavioral scoring; fraud detection; collection optimization | USD 1-2M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></span></div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:8px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Advanced**</div>
+<div style="flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px">
+<span style="font-weight:600">2028-2030 | Real-time streaming analytics; dynamic pricing engine; predictive everything; data monetization | USD 1-2M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></span></div></div>
+</div>
+
+
+<h4>Technology Stack Recommendation</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Data Lake Storage</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Recommended:</span> Azure Data Lake / AWS S3</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Alternative:</span> On-premise Hadoop</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Rationale:</span> Cloud preferred for scalability; SBV compliance via local mirror</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">ETL/Orchestration</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Recommended:</span> Apache Airflow + dbt</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Alternative:</span> Informatica</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Rationale:</span> Open-source; strong community; cost-effective</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Stream Processing</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Recommended:</span> Apache Kafka</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Alternative:</span> AWS Kinesis</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Rationale:</span> Event-driven architecture foundation; vendor-agnostic</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Analytics Database</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Recommended:</span> Databricks / Snowflake</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Alternative:</span> Azure Synapse</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Rationale:</span> Best-in-class for ML integration; Medallion native</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">ML Framework</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Recommended:</span> Python (scikit-learn, XGBoost, PyTorch)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Alternative:</span> SageMaker</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Rationale:</span> Flexibility; talent availability; model portability</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">BI/Visualization</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Recommended:</span> Power BI (existing) + custom dashboards</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Alternative:</span> Tableau</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Rationale:</span> Leverage existing investment; extend with real-time</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Feature Store</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Recommended:</span> Feast (open-source)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Alternative:</span> Tecton</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Rationale:</span> Credit scoring feature management; model reproducibility</div>
+</div>
+</div></div>
+
+
+<p><strong>Customer 360 Specification:</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">T24 Core Banking</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Integration:</span> Daily batch → Real-time (Year 2)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Customer Attributes:</span> Account balances, loan status, payment history, DPD</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">LOOMS</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Integration:</span> Event-driven</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Customer Attributes:</span> Application data, approval/decline, document status</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Collection System</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Integration:</span> Daily batch</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Customer Attributes:</span> Contact history, promises, resolution outcomes</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">CIC Bureau</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Integration:</span> On-demand (scoring)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Customer Attributes:</span> Credit score, bureau history, inquiry velocity</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">WAON Loyalty</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Integration:</span> Daily batch → Real-time (Year 2)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Customer Attributes:</span> Purchase frequency, basket size, store visits, points balance</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">AEON POS (IDPOS)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Integration:</span> Batch (future)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Customer Attributes:</span> Retail transaction details, product categories, spend patterns</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Mobile App</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Integration:</span> Real-time (post-launch)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Customer Attributes:</span> App usage, login frequency, feature engagement, location</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Payment API</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Integration:</span> Event-driven</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Customer Attributes:</span> Disbursement, repayment, channel, timing patterns</div>
+</div>
+<div style="background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">eKYC</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Integration:</span> On-demand</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Customer Attributes:</span> Verification confidence, document quality, biometric match</div>
+</div>
+</div></div>
+
+
+<h3>2.4 Integration: API Gateway and Event-Driven Architecture</h3>
+<p><strong>Current State:</strong> Point-to-point integration with no API gateway, no service mesh, no event-driven architecture, no API versioning strategy beyond v1.2. Payment API acts as basic middleware between collection partners and T24 Adapter.</p>
+<h4>Target Integration Architecture</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**API Gateway**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">None</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Integration Bus**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Point-to-point</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**API Management**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">None</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**Service Mesh**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">None</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">**API Standards**</div>
+<div style="flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Ad hoc</div>
+</div></div>
+</div>
+
+
+<h4>Priority API Integrations</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">NAPAS 24/7 Transfer</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">CRITICAL</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q2 2026</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> Instant loan disbursement and repayment collection</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">VietQR Payment</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q2 2026</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> QR-based customer payments at POS and mobile</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">VNPT eKYC</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">CRITICAL</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q2 2026</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Replace/supplement FPT eKYC; reduce drop-off</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">MoMo API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q3-Q4 2026</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> E-wallet disbursement, BNPL checkout, lending partnership</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">ZaloPay API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q3-Q4 2026</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> BNPL checkout integration; notification via Zalo</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">CMS ↔ T24</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">CRITICAL</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q3 2027</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Credit card account lifecycle; balance synchronization</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">WAON ↔ CRM</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q3 2026</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> Loyalty data for cross-sell, scoring, and personalization</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Credgenics API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q3 2026</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Digital collection workflows, case management, analytics</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">VPBank NEO</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">MEDIUM</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q2 2026</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> Agent banking loan origination; data sharing</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">SBV Reporting</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Timeline:</span> Q4 2026</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> Automated regulatory reporting via standardized APIs</div>
+</div>
+</div></div>
+
+
+<p><strong>Investment:</strong> API gateway + integration platform USD 0.5-1M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>; ongoing integration development USD 0.3-0.5M/year</p>
+<hr>
+<h2>3. Digital Channel Strategy</h2>
+<h3>3.1 Mobile App Transformation</h3>
+<p><strong>Current State:</strong> No production customer-facing mobile app. WebApp and Smartphone App are under development. ACF is 2-3 years behind competitors (FE Credit has 14M customers on FE ONLINE 2.0; Home Credit has a full-featured app; MCredit achieves 2-minute API-based approval).</p>
+<h4>Short-Term: MVP (Q3-Q4 2026)</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Loan Status**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> View active loan balances, next payment date, payment history</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> P1</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Repayment**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> Pay via bank transfer, VietQR, NAPAS; schedule payments</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> P1</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**eKYC Onboarding**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> VNPT eKYC integration; CCCD chip NFC; biometric login</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> P1</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**WAON Points**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">View balance, earn history, redemption at AEON stores</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> P1</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Push Notifications**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> Payment reminders, promotional offers, account alerts</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> P1</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Contact Center**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> In-app chat (Stringee upgrade); hotline integration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> P2</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Loan Application**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Description:</span> Digital origination for cash loan (ACS cross-sell first)</div>
+<div style="font-size:12px;color:#666;margin-</body></html>

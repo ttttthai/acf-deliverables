@@ -1,0 +1,682 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACF_T5C_CustomerPersonas_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ACF_T5C_CustomerPersonas_v1.0</h1><p>AEON Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ACF Customer Personas &amp; Journey Maps v1.0</h1>
+<p><strong>Document ID:</strong> ACF_T5C_CustomerPersonas_v1.0
+<strong>Prepared for:</strong> AEON Consumer Finance Vietnam -- Product &amp; Digital Transformation Teams
+<strong>Prepared by:</strong> Team 5 -- Architecture &amp; Implementation
+<strong>Date:</strong> March 15, 2026
+<strong>Classification:</strong> Internal -- Strictly Confidential
+<strong>Version:</strong> 1.0
+<strong>Sources:</strong> Team 2 (Operational DD), Team 4 (Product Strategy, Sales Strategy, Corporate Strategy)</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>This document defines 5 detailed customer personas representing ACF&#39;s current and target customer segments, along with current-state and future-state journey maps for key product flows. The personas are derived from operational data (loan portfolio composition, channel mix, approval rates, demographic indicators) and strategic direction (BNPL targeting Gen Z, agent banking for underbanked, credit card cross-sell for loyal customers). Journey maps identify 23 moments of truth, 15 critical pain points, and 18 pain-to-opportunity conversions that inform ACF&#39;s digital transformation priorities. <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></p>
+<hr>
+<!-- ============ PERSONA CARDS ============ -->
+<div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 24px 0;">
+  <div style="background: #fff; border-radius:0; padding: 16px; border-top: 4px solid #D4D4D4; border:1px solid #D4D4D4; text-align: center;">
+    <div style="width: 56px; height: 56px; border-radius: 50%; background:#0D1B2A; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 22px; color: #fff; font-weight: 800;">M</span>
+    </div>
+    <div style="font-size: 15px; font-weight: 700; color: #2D4A7A;">Minh</div> <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span>
+    <div style="font-size: 12px; color: #666;">Age 28 / Male</div> <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span>
+    <div style="font-size: 11px; color: #999; margin-top: 4px;">Junior Accountant</div>
+    <div style="margin-top: 8px;">
+      <span style="background: #fef2f2; color: #1B2A4A; padding: 2px 8px; border-radius:0; font-size: 10px; font-weight: 600;">Cash Loan</span>
+    </div>
+  </div>
+  <div style="background: #fff; border-radius:0; padding: 16px; border-top: 4px solid #D4D4D4; border:1px solid #D4D4D4; text-align: center;">
+    <div style="width: 56px; height: 56px; border-radius: 50%; background:#0D1B2A;opacity:0.85; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 22px; color: #fff; font-weight: 800;">L</span>
+    </div>
+    <div style="font-size: 15px; font-weight: 700; color: #2D4A7A;">Lan</div>
+    <div style="font-size: 12px; color: #666;">Age 35 / Female</div> <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span>
+    <div style="font-size: 11px; color: #999; margin-top: 4px;">Salon Owner</div>
+    <div style="margin-top: 8px;">
+      <span style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius:0; font-size: 10px; font-weight: 600;">Flexible Cash</span>
+    </div>
+  </div>
+  <div style="background: #fff; border-radius:0; padding: 16px; border-top: 4px solid #D4D4D4; border:1px solid #D4D4D4; text-align: center;">
+    <div style="width: 56px; height: 56px; border-radius: 50%; background:#0D1B2A;opacity:0.7; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 22px; color: #fff; font-weight: 800;">H</span>
+    </div>
+    <div style="font-size: 15px; font-weight: 700; color: #2D4A7A;">Hung</div>
+    <div style="font-size: 12px; color: #666;">Age 42 / Male</div> <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span>
+    <div style="font-size: 11px; color: #999; margin-top: 4px;">Factory Worker</div>
+    <div style="margin-top: 8px;">
+      <span style="background: #dbeafe; color: #2D4A7A; padding: 2px 8px; border-radius:0; font-size: 10px; font-weight: 600;">Agent Banking</span>
+    </div>
+  </div>
+  <div style="background: #fff; border-radius:0; padding: 16px; border-top: 4px solid #D4D4D4; border:1px solid #D4D4D4; text-align: center;">
+    <div style="width: 56px; height: 56px; border-radius: 50%; background:#0D1B2A;opacity:0.6; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 22px; color: #fff; font-weight: 800;">T</span>
+    </div>
+    <div style="font-size: 15px; font-weight: 700; color: #2D4A7A;">Thu</div>
+    <div style="font-size: 12px; color: #666;">Age 24 / Female</div> <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span>
+    <div style="font-size: 11px; color: #999; margin-top: 4px;">Content Creator</div>
+    <div style="margin-top: 8px;">
+      <span style="background: #f3e8ff; color: #7e22ce; padding: 2px 8px; border-radius:0; font-size: 10px; font-weight: 600;">BNPL Target</span>
+    </div>
+  </div>
+  <div style="background: #fff; border-radius:0; padding: 16px; border-top: 4px solid #D4D4D4; border:1px solid #D4D4D4; text-align: center;">
+    <div style="width: 56px; height: 56px; border-radius: 50%; background:#0D1B2A;opacity:0.5; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center;">
+      <span style="font-size: 22px; color: #fff; font-weight: 800;">P</span>
+    </div>
+    <div style="font-size: 15px; font-weight: 700; color: #2D4A7A;">Phuong</div>
+    <div style="font-size: 12px; color: #666;">Age 38 / Female</div> <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span>
+    <div style="font-size: 11px; color: #999; margin-top: 4px;">Teacher</div>
+    <div style="margin-top: 8px;">
+      <span style="background: #dcfce7; color: #166534; padding: 2px 8px; border-radius:0; font-size: 10px; font-weight: 600;">Cross-Sell</span>
+    </div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF Strategy Team, Customer Persona Analysis</div>
+<!-- ============ END PERSONA CARDS ============ -->
+
+<!-- ============ JOURNEY EMOTION CURVE ============ -->
+<div style="background: #fff; border-radius:0; padding: 24px; margin: 24px 0; border: 1px solid #D4D4D4;">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 4px;">Customer Emotion Curve -- Cash Loan Journey</div>
+  <div style="font-size: 12px; color: #999; margin-bottom: 20px;">Current state (red) vs future state (green) emotional experience across journey stages</div>
+  <div style="position: relative; height: 180px; border-bottom: 2px solid #D4D4D4; border-left: 2px solid #D4D4D4; margin-left: 30px;">
+    <!-- Y-axis labels -->
+    <div style="position: absolute; left: -32px; top: 0; font-size: 10px; color: #999;">High</div>
+    <div style="position: absolute; left: -32px; top: 50%; transform: translateY(-50%); font-size: 10px; color: #999;">Mid</div>
+    <div style="position: absolute; left: -32px; bottom: 0; font-size: 10px; color: #999;">Low</div>
+    <!-- Current State (red dots + line) -->
+    <div style="position: absolute; left: 5%; top: 55%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="EY "Executive Summary Report_v.3.1.pptx" (AdvisorsData)"></div>
+    <div style="position: absolute; left: 20%; top: 82%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Wait: Anxious (2/10)"></div>
+    <div style="position: absolute; left: 38%; top: 35%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Decision: Relief (7/10)"></div>
+    <div style="position: absolute; left: 55%; top: 45%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Disburse: Satisfied (6/10)"></div>
+    <div style="position: absolute; left: 72%; top: 65%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Repay: Forgot (4/10)"></div>
+    <div style="position: absolute; left: 88%; top: 92%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Late: Stressed (1/10)"></div>
+    <!-- Future State (green dots) -->
+    <div style="position: absolute; left: 5%; top: 20%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Offer: Delighted (8/10)"></div>
+    <div style="position: absolute; left: 20%; top: 30%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Apply: Smooth (7/10)"></div>
+    <div style="position: absolute; left: 38%; top: 8%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Decision: Instant (9/10)"></div>
+    <div style="position: absolute; left: 55%; top: 2%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Disburse: Instant (10/10)"></div>
+    <div style="position: absolute; left: 72%; top: 20%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Repay: Effortless (8/10)"></div>
+    <div style="position: absolute; left: 88%; top: 8%; width: 14px; height: 14px; border-radius: 50%; background: #0D1B2A; border: 2px solid #fff; border:1px solid #D4D4D4; z-index: 2;" title="Loyalty: Valued (9/10)"></div>
+  </div>
+  <!-- X-axis labels -->
+  <div style="display: flex; justify-content: space-between; margin-left: 30px; margin-top: 8px; padding: 0 2%;">
+    <span style="font-size: 10px; color: #666; text-align: center; width: 14%;">Awareness</span> <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span>
+    <span style="font-size: 10px; color: #666; text-align: center; width: 14%;">Application</span> <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span>
+    <span style="font-size: 10px; color: #666; text-align: center; width: 14%;">Decision</span>
+    <span style="font-size: 10px; color: #666; text-align: center; width: 14%;">Disbursement</span>
+    <span style="font-size: 10px; color: #666; text-align: center; width: 14%;">Repayment</span>
+    <span style="font-size: 10px; color: #666; text-align: center; width: 14%;">Engagement</span>
+  </div>
+  <div style="display: flex; gap: 20px; justify-content: center; margin-top: 12px;">
+    <span style="font-size: 11px; color: #666;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius: 50%; margin-right: 4px;"></span>Current State</span>
+    <span style="font-size: 11px; color: #666;"><span style="display: inline-block; width: 10px; height: 10px; background: #0D1B2A; border-radius: 50%; margin-right: 4px;"></span>Future State</span>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF Strategy Team, Customer Persona Analysis</div>
+<!-- ============ END JOURNEY EMOTION CURVE ============ -->
+
+<h2>1. Customer Personas</h2>
+<h3>Persona 1: Minh -- The Urban Salaried Worker <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h3>
+<p><strong>Profile: Standard Cash Loan User</strong></p>
+<!-- Persona Card: Minh -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;overflow:hidden;border:1px solid #D4D4D4">
+  <div style="background:#0D1B2A;padding:16px 20px;color:white;display:flex;align-items:center;gap:16px">
+    <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700">M</div>
+    <div>
+      <div style="font-size:18px;font-weight:700">Nguyen Van Minh</div>
+      <div style="font-size:12px;opacity:0.8">28 / Male / District 7, HCMC</div>
+    </div>
+    <div style="margin-left:auto;text-align:right">
+      <span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:0;font-size:11px;font-weight:600">Cash Loan</span>
+    </div>
+  </div>
+  <div style="padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:11px">
+    <div>
+      <div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Occupation</div>
+      <div style="font-weight:600;color:#0D1B2A">Junior accountant, mid-size trading co.</div>
+    </div>
+    <div>
+      <div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Monthly Income</div>
+      <div style="font-weight:600;color:#0D1B2A">VND 12M (~USD 480)</div>
+    </div>
+    <div>
+      <div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Education</div>
+      <div style="font-weight:600;color:#0D1B2A">Bachelor's (Univ. of Economics HCMC)</div>
+    </div>
+    <div>
+      <div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Household</div>
+      <div style="font-weight:600;color:#0D1B2A">Shared apartment; single; sends 3M to parents</div>
+    </div>
+    <div>
+      <div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Banking</div>
+      <div style="font-weight:600;color:#0D1B2A">VPBank salary; savings; no credit card</div>
+    </div>
+    <div>
+      <div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Credit / AEON</div>
+      <div style="font-weight:600;color:#0D1B2A">CIC Group 1; WAON 8 months; AEON Mall 2-3x/mo</div>
+    </div>
+  </div>
+</div>
+
+<h4>Goals</h4>
+<ol>
+<li>Build an emergency fund (currently has &lt;VND 10M in savings)</li>
+<li>Purchase a new motorbike (VinFast Klara S, VND 40M) to replace his aging Honda Wave</li>
+<li>Wants a credit card for online shopping and building credit history</li>
+<li>Plans to move to a private apartment within 12 months</li>
+</ol>
+<h4>Pain Points <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ol>
+<li><strong>No digital loan option:</strong> Must call a hotline or visit a physical location to apply for a loan; finds this inconvenient and time-consuming</li>
+<li><strong>Unclear pricing:</strong> Cannot easily compare ACF rates with competitors online; no transparent calculator</li>
+<li><strong>Slow approval:</strong> Expects instant decisions like he sees on MoMo<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">MoMo — 51M Users, Vietnam Leading E-Wallet</span></span> and Shopee<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">Shopee — SEA E-Commerce Platform, Embedded Finance</span></span>; frustrated by multi-day processing</li>
+<li><strong>No mobile app:</strong> Cannot check loan balance, make payments, or track WAON<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty Program Documentation</span></span> points from his phone</li>
+<li><strong>Limited payment options:</strong> Wants to pay via VietQR<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">NAPAS &quot;VietQR Integration Standards&quot;</span></span> or MoMo; current options require bank transfer to a specific account</li>
+</ol>
+<h4>Digital Behavior</h4>
+<ul>
+<li>Smartphone: Sam<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">MoMo — 51M Users, Vietnam Leading E-Wallet</span></span>sung Galaxy<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">Shopee — SEA E-Commerce Platform, Embedded Finance</span></span> A54 (mid-range Android); uses 4G; mobile-first for everything</li>
+<li>Daily apps: Zalo (messaging), TikTok (entertainment), MoMo (payments), Shopee (shopping), Grab (transport)</li>
+<li><span class="src-tip"><span class="src-icon">i</span><span class="src-detail">NAPAS &quot;VietQR Integration Standards&quot;</span></span>Social media: Facebook (daily), TikTok (2+ hours/day), Instagram (weekly)</li>
+<li>Financial behavior: Pays bills via MoMo; uses VietQR at convenience stores; has tried SPayLater on Shopee</li>
+<li>Discovery: Finds financial products through TikTok creators, Facebook ads, and friend recommendations</li>
+<li>Trust signals: Values Japanese brands (quality association); checks Google reviews before applying</li>
+</ul>
+<h4>Journey Touchpoints <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ul>
+<li><strong>Awareness:</strong> TikTok ad for AEON Finance; sees AEON Mall in-store banner while shopping</li>
+<li><strong>Consideration:</strong> Searches &quot;vay tien nhanh&quot; on Google; compares rates on Vietnamese finance blogs</li>
+<li><strong>Application:</strong> Calls ACS telesales hotline (current); wants to apply in-app (future)</li>
+<li><strong>Approval:</strong> Receives call back with approval notification; wants instant in-app notification</li>
+<li><strong>Disbursement:</strong> Bank transfer to VPBank account (next day); wants instant transfer</li>
+<li><strong>Rep<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty Program Documentation</span></span>ayment:</strong> Manual bank transfer monthly; wants auto-debit or QR payment</li>
+<li><strong>Engagement:</strong> No ongoing engagement currently; wants WAON points for on-time payment</li>
+</ul>
+<h4>Dream Experience</h4>
+<p>&quot;I want to open an app on my phone, see that I&#39;m pre-approved for a VND 50M cash loan at a good rate because I&#39;m an AEON WAON member, apply in 3 minutes with my CCCD, get approved instantly, and have the money in my MoMo wallet within 5 minutes. Then I want to see my repayment schedule, make payments with VietQR, earn WAON points for paying on time, and get offers for an AEON credit card when I&#39;ve been a good customer for 6 months.&quot;</p>
+<hr>
+<h3>Persona 2: Lan -- The Self-Employed Small Business Owner</h3>
+<p><strong>Profile: Flexible Cash Loan User</strong></p>
+<!-- Persona Card: Lan -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;overflow:hidden;border:1px solid #D4D4D4">
+  <div style="background:#0D1B2A;padding:16px 20px;color:white;display:flex;align-items:center;gap:16px">
+    <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700">L</div>
+    <div>
+      <div style="font-size:18px;font-weight:700">Tran Thi Lan</div>
+      <div style="font-size:12px;opacity:0.8">35 / Female / Tan Phu District, HCMC</div>
+    </div>
+    <div style="margin-left:auto"><span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:0;font-size:11px;font-weight:600">Flexible Cash</span></div>
+  </div>
+  <div style="padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:11px">
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Occupation</div><div style="font-weight:600;color:#0D1B2A">Salon owner (2 employees); VND 40-60M revenue</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Monthly Income</div><div style="font-weight:600;color:#0D1B2A">VND 15M (variable, net)</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Education</div><div style="font-weight:600;color:#0D1B2A">High school + vocational (cosmetology)</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Household</div><div style="font-weight:600;color:#0D1B2A">Married; 1 child (6); owns house with mortgage</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Banking</div><div style="font-weight:600;color:#0D1B2A">Techcombank personal; mostly cash business</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Credit / AEON</div><div style="font-weight:600;color:#0D1B2A">CIC Group 1; Home Credit alumni; WAON 3 mo</div></div>
+  </div>
+</div>
+
+<h4>Goals</h4>
+<ol>
+<li>Expand her salon business (add 2 more chairs, new equipment -- VND 80-100M needed)</li>
+<li>Manage cash flow gaps (clients pay irregularly; rent and supplies are fixed costs)</li>
+<li>Build a savings cushion for her child&#39;s education</li>
+<li>Eventually wants a credit card for business expenses and online purchasing</li>
+</ol>
+<h4>Pain Points <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ol>
+<li><strong>Income verification difficulty:</strong> Self-employed income is variable and hard to document; bank statements don&#39;t reflect full income (cash-heavy business)</li>
+<li><strong>High rejection risk:</strong> CashLoan NTB approval rate is only 30.5%; self-employed applicants face even tighter scrutiny</li>
+<li><strong>No flexible repayment:</strong> Current products have rigid monthly schedules; her income fluctuates seasonally (Tet, holidays = high; mid-year = lower)</li>
+<li><strong>Limited loan amounts:</strong> Needs VND 80-100M but unsecured cash loans may cap lower for her risk profile</li>
+<li><strong>No relationship recognition:</strong> Despite being a Home Credit alumni with clean history, ACF treats her as &quot;new to bank&quot;</li>
+<li><strong>eKYC friction:</strong> CCCD NFC chip reading failed on her older phone; had to visit a branch for identity verification</li>
+</ol>
+<h4>Digital Behavior</h4>
+<ul>
+<li>Smartphone: iPhone 11 (used, bought secondhand); uses WiFi at salon; limited mobile data</li>
+<li>Daily apps: Zalo (business communication with clients), Facebook (salon marketing page), TikTok (content for salon), bank apps</li>
+<li>Social media: Facebook groups for beauty professionals; Zalo groups for local business owners</li>
+<li>Financial behavior: Receives payments via bank transfer and cash; uses Zalo Pay occasionally; saves in bank fixed deposits</li>
+<li>Discovery: Word-of-mouth from other business owners; Facebook groups; local advertising</li>
+<li>Trust signals: Prefers brands recommended by friends; values customer service responsiveness</li>
+</ul>
+<h4>Journey Touchpoints <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ul>
+<li><strong>Awareness:</strong> Friend (another salon owner) mentions AEON cash loan; sees Zalo ad</li>
+<li><strong>Consideration:</strong> Calls ACF hotline to ask about loan terms; asks about documentation requirements</li>
+<li><strong>Application:</strong> Provides CCCD, household registration, bank statements (3 months); eKYC process</li>
+<li><strong>Approval:</strong> Manual review required (self-employed); takes 2-3 business days</li>
+<li><strong>Disbursement:</strong> Bank transfer to Techcombank account; 1-2 days after approval</li>
+<li><strong>Repayment:</strong> Sets calendar reminder; manual bank transfer; occasionally late due to cash flow</li>
+<li><strong>Engagement:</strong> Receives collection calls if late; no proactive relationship management</li>
+</ul>
+<h4>Dream Experience</h4>
+<p>&quot;I want ACF to understand that my income is real even if it doesn&#39;t show perfectly in bank statements. I&#39;d love to upload photos of my business, show my client bookings, and have the system recognize that I&#39;m a reliable small business owner. I need flexibility -- maybe let me pay more in good months and less in slow months. And don&#39;t call me at work if I&#39;m one day late; send me a Zalo message with a payment link I can tap.&quot;</p>
+<hr>
+<h3>Persona 3: Hung -- The Semi-Urban Factory Worker</h3>
+<p><strong>Profile: Agent Banking (VPBank NEO) User</strong></p>
+<!-- Persona Card: Hung -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;overflow:hidden;border:1px solid #D4D4D4">
+  <div style="background:#0D1B2A;padding:16px 20px;color:white;display:flex;align-items:center;gap:16px">
+    <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700">H</div>
+    <div>
+      <div style="font-size:18px;font-weight:700">Le Van Hung</div>
+      <div style="font-size:12px;opacity:0.8">42 / Male / Di An City, Binh Duong</div>
+    </div>
+    <div style="margin-left:auto"><span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:0;font-size:11px;font-weight:600">Agent Banking</span></div>
+  </div>
+  <div style="padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:11px">
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Occupation</div><div style="font-weight:600;color:#0D1B2A">Welder, furniture factory (Binh Duong IP)</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Monthly Income</div><div style="font-weight:600;color:#0D1B2A">VND 8.5M (base + OT to VPBank)</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Education</div><div style="font-weight:600;color:#0D1B2A">9th grade; vocational welding cert</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Household</div><div style="font-weight:600;color:#0D1B2A">Married; 2 kids (12, 15); wife garment worker</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Banking</div><div style="font-weight:600;color:#0D1B2A">VPBank salary (factory); VPBank NEO basic</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Credit / AEON</div><div style="font-weight:600;color:#0D1B2A">Thin file; informal loans only; near AEON Mall BD</div></div>
+  </div>
+</div>
+
+<h4>Goals</h4>
+<ol>
+<li>Finance his older child&#39;s high school tuition and school supplies (VND 15-20M/year)</li>
+<li>Buy a new refrigerator and washing machine for the family (VND 15-25M total)</li>
+<li>Have access to emergency cash when unexpected expenses arise (medical, vehicle repair)</li>
+<li>Eventually buy a small piece of land in his home province for retirement</li>
+</ol>
+<h4>Pain Points <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ol>
+<li><strong>Thin credit file:</strong> Never had a formal loan; CIC<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">National Credit Information Center (CIC), State Bank of Vietnam</span></span> has no record; traditional scoring models reject him</li>
+<li><strong>Low digital literacy:</strong> Can use basic VPBank NEO features (balance check, transfer) but struggles with complex app flows</li>
+<li><strong>Language and documentation:</strong> Official financial documents are intimidating; prefers simple Vietnamese explanations</li>
+<li><strong>Limited time:</strong> Works 6 days/week, 10-12 hours/day; cannot visit branches during business hours</li>
+<li><strong>Informal lending dependence:</strong> Currently borrows from informal lenders (vay nong) at 5-10%/month for emergencies</li>
+<li><strong>No smartphone sophistication:</strong> Uses a Xiaomi Redmi 9A (budget phone); apps must be lightweight and simple</li>
+<li><strong>Trust issues:</strong> Wary of financial institutions due to stories of hidden fees and aggressive collection</li>
+</ol>
+<h4>Digital Behavior</h4>
+<ul>
+<li>Smartphone: Xiaomi Redmi 9A (budget Android); WiFi at factory during breaks; prepaid mobile data (limited)</li>
+<li>Daily apps: Zalo (family communication), VPBank NEO (salary check), YouTube (entertainment during breaks)</li>
+<li>Social media: Facebook (passive; scrolls news feed); Zalo groups for factory workers</li>
+<li>Financial behavior: Cash for most transactions; VPBank NEO for salary receipt and occasional transfers; no e-wallet</li>
+<li>Discovery: Co-worker recommendations; factory bulletin board; VPBank NEO in-app notifications</li>
+<li>Trust signals: Trusts his factory&#39;s HR department; trusts VPBank because factory uses it; AEON Mall is familiar</li>
+</ul>
+<h4>Journey Touchpoints <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ul>
+<li><strong>Awareness:</strong> VPBank NEO push notification about ACF loan availability; co-worker mentions it</li>
+<li><strong>Consideration:</strong> Asks HR department if it&#39;s legitimate; checks VPBank NEO interface for details</li>
+<li><strong>Application:</strong> Attempts application in VPBank NEO during lunch break; needs help from younger co-worker for eKYC</li>
+<li><strong>Approval:</strong> Uncertain about status; doesn&#39;t know where to check; waits for a call</li>
+<li><strong>Disbursement:</strong> Money arrives in VPBank account; checks on VPBank NEO</li>
+<li><strong>Repayment:</strong> Auto-debit from VPBank salary account (preferred); needs clear SMS confirmation each month</li>
+<li><strong>Engagement:</strong> Minimal; appreciates being left alone if payments are current</li>
+</ul>
+<h4>Dream Experience</h4>
+<p>&quot;I just want it to be simple. I open VPBank NEO, I see &#39;You can borrow up to VND 20M&#39;. I tap a button, scan my CCCD, take a selfie, and it&#39;s done. The money goes into my VPBank account by tomorrow. Every month they take the payment automatically from my salary. I don&#39;t want to think about it. And if something happens and I need to delay one payment, I want to send a message on Zalo and have someone understand my situation.&quot;</p>
+<hr>
+<h3>Persona 4: Thu -- The Digital Native Gen Z</h3>
+<p><strong>Profile: BNPL Target Customer</strong></p>
+<!-- Persona Card: Thu -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;overflow:hidden;border:1px solid #D4D4D4">
+  <div style="background:#0D1B2A;padding:16px 20px;color:white;display:flex;align-items:center;gap:16px">
+    <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700">T</div>
+    <div>
+      <div style="font-size:18px;font-weight:700">Pham Thi Thu</div>
+      <div style="font-size:12px;opacity:0.8">24 / Female / Binh Thanh District, HCMC</div>
+    </div>
+    <div style="margin-left:auto"><span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:0;font-size:11px;font-weight:600">BNPL Target</span></div>
+  </div>
+  <div style="padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:11px">
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Occupation</div><div style="font-weight:600;color:#0D1B2A">Jr. content creator, digital marketing agency</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Monthly Income</div><div style="font-weight:600;color:#0D1B2A">VND 14M salary + 3-5M freelance</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Education</div><div style="font-weight:600;color:#0D1B2A">Bachelor's (RMIT Vietnam), Marketing</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Household</div><div style="font-weight:600;color:#0D1B2A">Single; shared studio apartment; no dependents</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Banking</div><div style="font-weight:600;color:#0D1B2A">TNEX (primary); Techcombank; MoMo; ZaloPay</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Credit / AEON</div><div style="font-weight:600;color:#0D1B2A">No formal credit; SPayLater 5M; AEON Mall shopper</div></div>
+  </div>
+</div>
+
+<h4>Goals</h4>
+<ol>
+<li>Buy a MacBook Air for freelance work (VND 28-35M) -- wants to split into installments</li>
+<li>Afford travel experiences (Bali, Thailand) without depleting savings -- wants &quot;travel now, pay later&quot;</li>
+<li>Build a credit history for future apartment rental deposit or car loan</li>
+<li>Maximize rewards and cashback on everyday spending</li>
+<li>Never wants to feel &quot;in debt&quot; -- prefers short-term installments with clear end dates</li>
+</ol>
+<h4>Pain Points <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ol>
+<li><strong>No awareness of ACF:</strong> Has never heard of AEON Consumer Finance; associates AEON with shopping, not finance</li>
+<li><strong>Traditional finance aversion:</strong> Perceives consumer finance companies as &quot;for poor people&quot; or &quot;predatory&quot;; prefers fintech brands</li>
+<li><strong>Instant gratification expectation:</strong> Expects Shopee SPayLater-level speed; anything requiring &gt;2 minutes feels broken</li>
+<li><strong>No interest in calling anyone:</strong> Will not call a hotline; will abandon any process requiring a phone call</li>
+<li><strong>Privacy conscious:</strong> Concerned about data sharing; reads app permissions; will not install apps that request excessive access</li>
+<li><strong>Visual and social proof dependent:</strong> Needs to see TikTok reviews, Instagram stories, and friend recommendations before trusting a financial product</li>
+<li><strong>Small ticket need:</strong> Most purchases are VND 500K-5M; traditional VND 20M+ loan products are oversized for her needs</li>
+</ol>
+<h4>Digital Behavior</h4>
+<ul>
+<li>Smartphone: iPhone 14 (latest generation); always on WiFi or 5G; mobile-first exclusively</li>
+<li>Daily apps: TikTok (3+ hours), Instagram, Shopee, MoMo, Grab, TNEX, Netflix, Spotify</li>
+<li>Social media: TikTok (primary), Instagram (visual), Twitter/X (news), Facebook (decreasing)</li>
+<li>Financial behavior: SPayLater on Shopee; MoMo for bill payments; TNEX for saving pockets; Apple Pay via TNEX card</li>
+<li>Discovery: TikTok creator recommendations; Instagram stories from friends; app store discovery; never searches Google for finance</li>
+<li>Trust signals: Values modern UI/UX; trusts brands with strong social media presence; influenced by peer usage; avoids anything that looks &quot;old&quot; or &quot;corporate&quot;</li>
+</ul>
+<h4>Journey Touchpoints <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ul>
+<li><strong>Awareness:</strong> TikTok creator shows &quot;AEON PayLater&quot; at AEON Mall checkout; Instagram ad for AEON credit card</li>
+<li><strong>Consideration:</strong> Checks App Store reviews; asks friends on Zalo group if they&#39;ve used it; looks for TikTok reviews</li>
+<li><strong>Application:</strong> Downloads AEON app; expects to sign up with phone number + OTP in &lt;30 seconds</li>
+<li><strong>Activation:</strong> Wants BNPL activated immediately at checkout without a separate application process</li>
+<li><strong>First Purchase:</strong> Scans QR at AEON Mall fashion store; selects &quot;Pay in 3 months - 0%&quot;; biometric confirm</li>
+<li><strong>Repayment:</strong> Auto-debit from TNEX account; push notification 3 days before due date; tap to pay in app</li>
+<li><strong>Engagement:</strong> Wants personalized offers via push notification; WAON points for on-time payment; Instagram-worthy card design</li>
+</ul>
+<h4>Dream Experience</h4>
+<p>&quot;I&#39;m shopping at AEON Mall, I see a jacket I love for VND 2M. I open the AEON app, scan a QR code at checkout, and it instantly shows me: &#39;Pay VND 667K x 3 months, 0% interest.&#39; I tap my Face ID, done. I walk out with my jacket. Three weeks later I get a push notification: &#39;You&#39;ve been pre-approved for an AEON Credit Card with 3% cashback at AEON -- tap to get your virtual card instantly.&#39; The card has a cool design I can share on Instagram. That&#39;s how finance should work.&quot;</p>
+<hr>
+<h3>Persona 5: Phuong -- The Loyal Returning Borrower</h3>
+<p><strong>Profile: Cross-Sell Target</strong></p>
+<!-- Persona Card: Phuong -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;overflow:hidden;border:1px solid #D4D4D4">
+  <div style="background:#0D1B2A;padding:16px 20px;color:white;display:flex;align-items:center;gap:16px">
+    <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700">P</div>
+    <div>
+      <div style="font-size:18px;font-weight:700">Nguyen Thi Phuong</div>
+      <div style="font-size:12px;opacity:0.8">38 / Female / Cau Giay District, Hanoi</div>
+    </div>
+    <div style="margin-left:auto"><span style="background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:0;font-size:11px;font-weight:600">Cross-Sell</span></div>
+  </div>
+  <div style="padding:16px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:11px">
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Occupation</div><div style="font-weight:600;color:#0D1B2A">Primary school teacher (government)</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Monthly Income</div><div style="font-weight:600;color:#0D1B2A">VND 10M salary + 3M tutoring (cash)</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Education</div><div style="font-weight:600;color:#0D1B2A">Bachelor's in Education</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Household</div><div style="font-weight:600;color:#0D1B2A">Married; husband Grab driver; 2 kids (5, 10); owns apt</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Banking</div><div style="font-weight:600;color:#0D1B2A">Vietcombank; VPBank (mortgage); BIDV (savings)</div></div>
+    <div><div style="font-size:9px;color:#999;text-transform:uppercase;margin-bottom:2px">Credit / AEON</div><div style="font-weight:600;color:#0D1B2A">CIC G1; 2 ACF loans (0 late); WAON 18mo/12K pts</div></div>
+  </div>
+</div>
+
+<h4>Goals</h4>
+<ol>
+<li>Finance her children&#39;s education (English tutor, school supplies, laptop for older child)</li>
+<li>Wants a credit card for convenient online shopping (currently uses husband&#39;s bank debit card)</li>
+<li>Plans to renovate the kitchen (VND 50-70M budget) -- needs flexible financing</li>
+<li>Maximize WAON points through financial transactions (not just shopping)</li>
+<li>Simplify financial management -- currently juggles 3 bank accounts and cash</li>
+</ol>
+<h4>Pain Points <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ol>
+<li><strong>Not recognized for loyalty:</strong> Has completed 2 ACF loans perfectly; still treated like a new customer for every application</li>
+<li><strong>No pre-approved offers:</strong> Must re-apply and re-submit documents each time; no recognition of her clean history</li>
+<li><strong>WAON points disconnect:</strong> Earns WAON points from shopping but cannot leverage them for better loan terms or financial products</li>
+<li><strong>No credit card access:</strong> As a government employee with stable income and clean credit, should be a prime credit card candidate but ACF has no card product</li>
+<li><strong>Manual repayment process:</strong> Must remember to transfer payment each month; no auto-debit option from Vietcombank</li>
+<li><strong>No single view:</strong> Cannot see her AEON shopping rewards, loan status, and WAON points in one place</li>
+<li><strong>Husband as co-applicant complexity:</strong> Joint income is strong (VND 13M+) but informal tutoring income is hard to verify</li>
+</ol>
+<h4>Digital Behavior</h4>
+<ul>
+<li>Smartphone: iPhone 12 (bought via Home Credit installment 2 years ago); uses WiFi at home; 4G mobile</li>
+<li>Daily apps: Zalo (primary communication), Facebook (social), Vietcombank app (banking), Grab, Shopee</li>
+<li>Social media: Facebook (daily, moms groups), Zalo (family), YouTube (cooking and education content)</li>
+<li>Financial behavior: Vietcombank app for transfers; VPBank app for mortgage; manual bill payments; prefers auto-debit when available</li>
+<li>Discovery: AEON store promotions; Zalo notifications; word-of-mouth from teacher colleagues; AEON Mall events</li>
+<li>Trust signals: Trusts AEON brand (Japanese quality); trusts recommendations from colleagues; values transparency in pricing</li>
+</ul>
+<h4>Journey Touchpoints <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h4>
+<ul>
+<li><strong>Awareness:</strong> Already aware of ACF (previous customer); sees AEON Mall credit card promotional banner</li>
+<li><strong>Consideration:</strong> Compares ACF credit card (when available) with Vietcombank and Techcombank card offers</li>
+<li><strong>Application:</strong> Expects to be pre-approved based on history; wants to apply via app or at AEON Mall counter</li>
+<li><strong>Approval:</strong> Expects instant approval given her history; would be frustrated by re-verification</li>
+<li><strong>Card Issuance:</strong> Wants virtual card instantly in app; physical card delivered to home</li>
+<li><strong>Usage:</strong> AEON Mall shopping with enhanced WAON earning (3x points); online shopping; auto-pay utility bills</li>
+<li><strong>Engagement:</strong> Monthly WAON points summary; birthday offers; upgrade opportunities; financial wellness content</li>
+</ul>
+<h4>Dream Experience</h4>
+<p>&quot;When I open the AEON app, it should already know me. It should say: &#39;Hi Phuong, you&#39;ve been a perfect customer for 18 months. We&#39;ve pre-approved you for an AEON Classic Credit Card with VND 30M limit and 3x WAON points at AEON stores.&#39; I tap to accept, my virtual card appears, and I use it immediately at AEON Mall that weekend. My WAON points from shopping and from card spending combine into one balance. At the end of the month, I see everything -- my loan, my card, my points -- in one screen. And when my loan is paid off, the app automatically suggests the perfect product for my kitchen renovation at a special loyal-customer rate.&quot;</p>
+<hr>
+<h2>2. Current State Journey Maps</h2>
+<h3>2.1 Cash Loan End-to-End Journey (Current State)</h3>
+<pre><code>STAGE: AWARENESS
+[Touchpoint: TV ad / AEON Mall banner / friend referral / telesales call] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    | Customer sees or hears about ACF cash loan
+    | Emotion: Neutral / Mildly Interested
+    |
+    ↓
+STAGE: CONSIDERATION
+[Touchpoint: ACF hotline 1900 23 23 56 / Website / ACS telesales outbound call] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    | Customer calls hotline or receives ACS cross-sell call
+    | Asks about rates, amounts, documentation requirements
+    | Emotion: Curious but Uncertain (pricing not transparent online)
+    | PAIN POINT: No digital calculator; no rate comparison tool; must talk to human &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Time: 15-30 minutes on call
+    |
+    ↓
+STAGE: APPLICATION
+[Touchpoint: Telesales agent / Sales App (internal) / POS dealer] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    | Agent captures customer information
+    | Customer provides CCCD, income proof, address proof
+    | eKYC: FPT eKYC (OCR, facial recognition, liveness)
+    | Emotion: Hopeful but Anxious (will I be approved?)
+    | PAIN POINT: eKYC drop-off ~50% (camera quality, NFC failure, liveness failure) &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: Cannot self-serve; dependent on agent availability &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Time: 20-45 minutes for application capture
+    |
+    ↓
+STAGE: CREDIT ASSESSMENT
+[System: LOOMS&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span cl&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;National Credit Information Center (CIC), State Bank of Vietnam&lt;/span&gt;&lt;/span&gt;ass=&quot;src-detail&quot;&gt;ACF IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025&lt;/span&gt;&lt;/span&gt; (under migration) / CIC / Scoring Module] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    | CIC inquiry (R11A, B11T)
+    | Internal scoring (GINI 26-27%)
+    | Manual review for certain segments (NTB, self-employed, high amounts)
+    | Emotion: Waiting / Anxious (no visibility into status)
+    | PAIN POINT: No real-time status tracking; customer must call to check &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: Manual review for many segments; slow decisioning &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Time: 1-3 business days for full assessment
+    |
+    ↓
+STAGE: APPROVAL / DECLINE
+[Touchpoint: Phone call from agent / SMS notification] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    | Agent calls customer with approval (or decline)
+    | Approved: Shares amount, rate, tenor, monthly payment
+    | Declined: Generic reason; no guidance on improvement
+    | Emotion: Relief (if approved) / Frustration (if declined)
+    | Approval rate: 70.6% for ACS cross-sell; 30.5% for NTB
+    | PAIN POINT: Declined customers receive no actionable feedback &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Time: Within minutes of decision (but decision itself took 1-3 days)
+    |
+    ↓
+STAGE: CONTRACT SIGNING
+[Touchpoint: FPT eSign / Paper contract (some cases)] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    | Digital contract via FPT eSign (for eligible cases)
+    | Paper contract for POS/dealer channel
+    | Emotion: Committed but Impatient (want money now)
+    | Time: 15-30 minutes
+    |
+    ↓
+STAGE: DISBURSEMENT
+[System: T24 / Payment API / SeABank&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ACF Banking Partner Agreement — Disbursement Channel&lt;/span&gt;&lt;/span&gt;]
+    |
+    | Bank transfer via SeABank
+    | Fallback: CITAD / NAPAS&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;NAPAS — National Payment Corporation of Vietnam&lt;/span&gt;&lt;/span&gt; fast
+    | Disbursement status: READY -&gt; PAID
+    | Emotion: Satisfaction (money received) / Frustration (if delayed)
+    | PAIN POINT: Not instant; can take hours to 1 business day &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: No e-wallet disbursement (MoMo/ZaloPay&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ZaloPay — VNG Corporation Digital Wallet&lt;/span&gt;&lt;/span&gt;) &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Time: Same day to next business day
+    |
+    ↓
+STAGE: REPAYMENT (MONTHLY)
+[Touchpoint: Bank transfer / Collection partner / Customer Portal] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    | Customer makes monthly payment via bank transfer
+    | Some use collection partner payment points
+    | Customer Portal shows basic balance information
+    | Emotion: Neutral (if on track) / Stressed (if cash-tight)
+    | PAIN POINT: Manual payment; must remember due date &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: No auto-debit from customer&#39;s primary bank &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: No VietQR or e-wallet payment option &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: No payment confirmation push notification &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    ↓
+STAGE: DELINQUENCY (IF APPLICABLE)
+[Touchpoint: SMS/IVR / Tele collection call / Field visit] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    | DPD 1-30: Pre-due reminder calls; SMS
+    | DPD 31-90: Tele collection calls (B1-B3)
+    | DPD 91+: Legal calls; field visits
+    | Emotion: Stress / Embarrassment / Anger
+    | PAIN POINT: 18 call attempts per contract for B1 with only 7.3% contact rate &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: No self-service restructuring option &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: No digital payment link for immediate resolution &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    ↓
+STAGE: RENEWAL / CROSS-SELL
+[Touchpoint: ACS telesales outbound call] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    |
+    | ACS cross-sell team contacts existing customers for new cash loan
+    | Approval rate for cross-sell: 70.6%
+    | Emotion: Open (if previous experience was positive)
+    | PAIN POINT: Only via telesales; no in-app pre-approved offers &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: Must re-apply with full documentation &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+</code></pre>
+<h3>2.2 Installment Loan E2E Journey (Current State)</h3>
+<pre><code>AWARENESS → [AEON store / POS dealer display / Sales agent at store]
+    ↓
+CONSIDERATION → [Customer sees product (electronics/appliance) and financing option]
+    | In-store: Sales agent explains installment terms
+    | Emotion: Interested but comparing with Home Credit, FE Credit at same store
+    | PAIN POINT: No instant rate comparison on phone &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    ↓
+APPLICATION → [Sales App (agent-assisted) at POS/store]
+    | Agent captures CCCD via Sales App
+    | eKYC verification (FPT eKYC)
+    | Product and loan amount selected
+    | Emotion: Hopeful;&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ACF IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025&lt;/span&gt;&lt;/span&gt; time-sensitive (wants to take product home today) &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: Process takes 20-40 minutes at store; customer may leave &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    ↓
+CREDIT ASSESSMENT → [LOOMS / CIC / Scoring Module]
+    | CIC check + internal scoring
+    | Approval: CD 75.5%, TW 61.7%
+    | Emotion: Waiting anxiously at the store counter
+    | Time: 15 minutes to 2 hours (varies)
+    ↓
+APPROVAL + CONTRACT → [Agent notification / FPT eSign at store]
+    | Agent informs customer; signs contract
+    | Insurance offer (52.1% penetration currently)
+    | Emotion: Excitement (can take product home)
+    ↓
+DISBURSEMENT → [Direct to dealer/merchant]
+    | Dealer receives payment confirmation
+    | Customer takes product home
+    | Emotion: Satisfaction
+    ↓
+REPAYMENT → [Monthly bank transfer / collection partner]
+    | Same pain points as cash loan repayment &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: No reminder system; no auto-debit; no app-based payment &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    ↓
+DELINQUENCY / RENEWAL → [Same as cash loan]
+</code></pre>
+<h3>2.3 Complaint/Resolution Journey (Current State)</h3>
+<pre><code>ISSUE OCCURS → [Payment error / incorrect charge / account question / dispute]
+    ↓
+CONTACT → [Call ACF hotline 1900 23 23 56]
+    | Stringee platform routes to agent
+    | Emotion: Frustrated; wants quick resolution
+    | PAIN POINT: Phone only; no chat, no in-app support, no Zalo support &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: Hold times during peak hours &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    ↓
+ISSUE CAPTURE → [Agent logs issue manually]
+    | No formal complaint tracking system
+    | Emotion: Uncertain if issue will be resolved
+    | PAIN POINT: No ticket number; no tracking mechanism for customer &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    ↓
+RESOLUTION → [Manual investigation; escalation if needed]
+    | Resolution time: Unknown (no SLA data available)
+    | Customer informed via phone callback
+    | Emotion: Relief (if resolved) / Escalating frustration (if prolonged)
+    | PAIN POINT: No visibility into resolution progress &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | PAIN POINT: No NPS/CSAT measurement after resolution &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    ↓
+CLOSURE → [Agent verbal confirmation]
+    | No formal closure documentation to customer
+    | PAIN POINT: No written confirmation; no survey; no feedback loop &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+</code></pre>
+<hr>
+<h2>3. Future State Journey Maps</h2>
+<h3>3.1 Fully Digital Cash Loan Onboarding (&lt;15 Minutes) <span style="background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ILLUSTRATIVE</span></h3>
+<pre><code>AWARENESS
+    [Touchpoint: TikTok ad / AEON app push notification / VPBank NEO in-app offer / WAON pre-approval] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Customer receives personalized offer based on WAON data
+    | &quot;You&#39;re pre-approved for up to VND 50M at 1.2%/month&quot;
+    | Emotion: Pleasantly surprised; feels valued
+    | Time: 0 minutes (passive awareness)
+    ↓
+CONSIDERATION
+    [Touchpoint: AEON mobile app / Website loan calculator] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Transparent rate calculator in-app
+    | Compare terms, simulate payments
+    | See eligibility indicator (green/yellow/red) before applying
+    | Emotion: Confident; informed decision
+    | Time: 2-3 minutes browsing
+    ↓
+APPLICATION
+    [Touchpoint: AEON mobile app] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Step 1: Tap &quot;Apply Now&quot; (pre-filled for WAON members)
+    | Step 2: CCCD NFC chip scan (VNPT eKYC)
+    | Step 3: Face verification (passive liveness)
+    | Step 4: Income verification (bank statement OCR or salary slip photo)
+    | Step 5: Review and confirm
+    | Progress bar: &quot;Step 3 of 5&quot; with save-and-resume
+    | Emotion: Smooth; modern; feels like ordering on Shopee
+    | Time: 3-5 minutes
+    | eKYC completion: &gt;85% (NFC fallback to OCR; camera guidance; offline queue)
+    ↓
+INSTANT CREDIT DECISION
+    [System: ML Scoring API (&lt;100ms) + CIC real-time + Rule Engine]
+    | Auto-approve for Tier 1-2 (score &gt;500): 60-80% STP
+    | Manual review queue for Tier 3 (score 300-500): notification &quot;under review&quot;
+    | Auto-decline for Tier 4 (score &lt;300): with actionable feedback
+    | Emotion: Delighted (instant approval) / Patient (quick review promise)
+    | Time: &lt;5 seconds for auto-approve; &lt;30 minutes for manual review
+    ↓
+CONTRACT SIGNING
+    [Touchpoint: In-app FPT eSign] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Digital contract displayed in-app
+    | Key terms highlighted (rate, total cost, monthly payment)
+    | Biometric confirmation (fingerpri&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;NAPAS — National Payment Corporation of Vietnam&lt;/span&gt;&lt;/span&gt;nt or Face ID)
+    | Emotion:&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ZaloPay — VNG Corporation Digital Wallet&lt;/span&gt;&lt;/span&gt; Committed; clear understanding of terms
+    | Time: 1-2 minutes
+    ↓
+INSTANT DISBURSEMENT
+    [System: NAPAS 24/7 / MoMo / ZaloPay]
+    | Money in bank account within 30 seconds (NAPAS 24/7)
+    | OR money in MoMo/ZaloPay wallet instantly
+    | Push notification: &quot;VND 30M has been sent to your account&quot;
+    | Emotion: Elated; trust reinforced
+    | Time: &lt;1 minute
+    ↓
+REPAYMENT (SELF-SERVICE)
+    [Touchpoint: AEON mobile app] &lt;span style=&quot;background:#E2D9F3;color:#4A235A;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI ILLUSTRATIVE&lt;/span&gt;
+    | Auto-debit setup (recommended at onboarding)
+    | VietQR one-tap payment
+    | MoMo/ZaloPay payment link
+    | Push notification 3 days before due date
+    | In-app payment confirmation with WAON points earned
+    | Emotion: Effortless; rewarded for on-time payment
+    | WAON: Earn 1 point per VND 25,000 of repayment
+    ↓
+PROACTIVE ENGAGEMENT
+    [System: AI Next-Best-Offer / Behavioral Scoring]
+    | Month 3: &quot;Your WAON points have earned you a rate discount of 0.1%&quot;
+    | Month 6: &quot;You&#39;re pre-approved for an AEON Basic Credit Card&quot;
+    | Month 12: &quot;Congratulations on loan completion! Here&#39;s your loyalty reward&quot;
+    | Churn detection: If app usage declines, proactive retention offer
+    | Emotion: Value</body></html>

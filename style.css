@@ -1,0 +1,140 @@
+/* McKinsey / TC Capital Consulting Style — IKIGAI Corporation */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6; color: #1A1A1A; background: #FFFFFF;
+  max-width: 980px; margin: 0 auto; padding: 48px 36px;
+  font-size: 14px; font-weight: 400; letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 1.6em; font-weight: 700; color: #0D1B2A;
+  margin: 2em 0 0.5em; padding-bottom: 10px;
+  border-bottom: 2px solid #0D1B2A;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+h2 {
+  font-size: 1.25em; font-weight: 700; color: #0D1B2A;
+  margin: 1.8em 0 0.5em; padding-bottom: 6px;
+  border-bottom: 1px solid #D4D4D4;
+  text-transform: uppercase; letter-spacing: 0.3px;
+}
+h3 { font-size: 1.05em; font-weight: 600; color: #0D1B2A; margin: 1.2em 0 0.3em; }
+h4 { font-size: 0.95em; font-weight: 600; color: #333; margin: 0.8em 0 0.2em; }
+p { margin: 0.4em 0; color: #333; font-size: 14px; }
+ul, ol { margin: 0.4em 0 0.4em 1.5em; color: #333; }
+li { margin: 0.15em 0; }
+strong { color: #0D1B2A; font-weight: 700; }
+
+table {
+  width: 100%; border-collapse: collapse; margin: 1em 0;
+  font-size: 13px; border: 1px solid #D4D4D4;
+}
+th {
+  background: #0D1B2A; color: #fff; padding: 8px 12px;
+  text-align: left; font-weight: 600; font-size: 11px;
+  text-transform: uppercase; letter-spacing: 0.8px;
+}
+td { padding: 7px 12px; border-bottom: 1px solid #ECECEC; color: #333; }
+tr:nth-child(even) { background: #F8F8F8; }
+
+code { background: #F2F2F0; padding: 1px 5px; border-radius: 1px; font-size: 13px; color: #0D1B2A; }
+pre { background: #0D1B2A; color: #ECECEC; padding: 16px; border-radius: 2px; overflow-x: auto; margin: 1em 0; }
+pre code { background: none; color: inherit; padding: 0; }
+
+blockquote {
+  border-left: 3px solid #0D1B2A; padding: 12px 20px; margin: 1em 0;
+  background: #F2F2F0; border-radius: 0 2px 2px 0; color: #333;
+}
+
+hr { border: none; border-top: 1px solid #D4D4D4; margin: 2em 0; }
+a { color: #0D1B2A; text-decoration: underline; }
+a:hover { color: #1B3A5C; }
+
+.header-bar {
+  background: #0D1B2A; color: white; padding: 24px 32px;
+  border-radius: 0; margin-bottom: 32px; border-bottom: 3px solid #C5A572;
+}
+.header-bar h1 {
+  color: white; border: none; margin: 0; font-size: 1.2em;
+  font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+}
+.header-bar p {
+  color: rgba(255,255,255,0.55); margin: 4px 0 0;
+  font-size: 11px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase;
+}
+
+.nav-back {
+  display: inline-block; margin-bottom: 16px;
+  padding: 6px 16px; background: #0D1B2A; color: white;
+  border-radius: 1px; font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+}
+.nav-back:hover { background: #1B3A5C; text-decoration: none; }
+
+/* Source tooltip — visible on hover */
+.src-tip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 3px;
+  vertical-align: middle;
+}
+.src-tip .src-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: #0D1B2A;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1;
+  vertical-align: middle;
+}
+.src-tip .src-detail {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0D1B2A;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  padding: 8px 12px;
+  border-radius: 3px;
+  white-space: nowrap;
+  max-width: 420px;
+  white-space: normal;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  pointer-events: none;
+  margin-bottom: 6px;
+}
+.src-tip .src-detail::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #0D1B2A;
+}
+.src-tip:hover .src-detail {
+  display: block;
+}
+
+@media print {
+  body { max-width: 100%; padding: 20px; }
+  .nav-back { display: none; }
+  .src-tip .src-icon { display: none; }
+}

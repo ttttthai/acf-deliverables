@@ -1,0 +1,742 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACF_T2A_OperationalDD_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ACF_T2A_OperationalDD_v1.0</h1><p>AEON Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ACF Operational Due Diligence Report v1.0</h1>
+<p><strong>Prepared for:</strong> Ikigai Advisory -- Project ACF
+<strong>Prepared by:</strong> Team 2 -- Due Diligence
+<strong>Date:</strong> March 15, 2026
+<strong>Classification:</strong> Internal -- Strictly Confidential
+<strong>Version:</strong> 1.0</p>
+<hr>
+<h2>1. Executive Summary</h2>
+<h3>Overall Risk Rating: HIGH</h3>
+<!-- ============ RISK RATING DASHBOARD ============ -->
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0;">
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 1px;">Operations</div>
+    <div style="font-size: 20px; font-weight: 700; color:#0D1B2A; margin: 4px 0;">Operational Risk</div>
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 14px; border-radius:2px; font-size: 12px; font-weight: 700;">AMBER</span>
+  </div>
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 1px;">Technology</div>
+    <div style="font-size: 20px; font-weight: 700; color:#0D1B2A; margin: 4px 0;">Technology Risk</div>
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 14px; border-radius:2px; font-size: 12px; font-weight: 700;">RED</span>
+  </div>
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 1px;">Collections</div>
+    <div style="font-size: 20px; font-weight: 700; color:#0D1B2A; margin: 4px 0;">Collections Risk</div>
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 14px; border-radius:2px; font-size: 12px; font-weight: 700;">RED</span>
+  </div>
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 1px;">Customer Service</div>
+    <div style="font-size: 20px; font-weight: 700; color:#0D1B2A; margin: 4px 0;">Customer Service</div>
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 14px; border-radius:2px; font-size: 12px; font-weight: 700;">AMBER</span>
+  </div>
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 1px;">Risk Management</div>
+    <div style="font-size: 20px; font-weight: 700; color:#0D1B2A; margin: 4px 0;">Risk Management</div>
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 14px; border-radius:2px; font-size: 12px; font-weight: 700;">RED</span>
+  </div>
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; color: #666; text-transform: uppercase; letter-spacing: 1px;">Compliance</div>
+    <div style="font-size: 20px; font-weight: 700; color:#0D1B2A; margin: 4px 0;">Compliance</div>
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 14px; border-radius:2px; font-size: 12px; font-weight: 700;">AMBER</span>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END RISK RATING DASHBOARD ============ -->
+
+<p>AEON Consumer Finance Vietnam (ACF, formerly PTF) is a consumer finance company wholly owned by AEON Financial Service Co., Ltd. (AFS Japan). The company operates primarily in cash loans and installment loans across Vietnam, with a nascent credit card initiative under development. ACF is undergoing a significant technology transformation (T24 R25 upgrade, LOOMS<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025</span></span> migration) while simultaneously managing elevated credit risk and portfolio quality challenges.</p>
+<h3>Top 5 Findings</h3>
+<!-- ============ TOP 5 FINDINGS SEVERITY CARDS ============ -->
+<div style="display: flex; flex-direction: column; gap: 10px; margin: 24px 0;">
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+      <span style="font-size: 14px; font-weight: 800; color:#0D1B2A;">#1 NPL Critically Elevated</span>
+      <div><span style="background: #0D1B2A; color: #fff; padding: 3px 12px; border-radius:2px; font-size: 10px; font-weight: 700;">CRITICAL</span> <span style="background: #f1f5f9; color:#0D1B2A; padding: 3px 10px; border-radius:2px; font-size: 10px; font-weight: 600;">Credit Risk</span></div>
+    </div>
+    <div style="font-size: 12px; color: #666;">NPL ratio at 22.5-22.8% (Dec 25/Jan 26), far exceeding industry average of 6-8%. Outstanding NPL: VND 189.7B on VND 841.7B portfolio.</div>
+  </div>
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+      <span style="font-size: 14px; font-weight: 800; color:#0D1B2A;">#2 Significant Operating Losses</span>
+      <div><span style="background: #0D1B2A; color: #fff; padding: 3px 12px; border-radius:2px; font-size: 10px; font-weight: 700;">CRITICAL</span> <span style="background: #f1f5f9; color:#0D1B2A; padding: 3px 10px; border-radius:2px; font-size: 10px; font-weight: 600;">Financial</span></div>
+    </div>
+    <div style="font-size: 12px; color: #666;">PBT negative VND 12.3B (Jan 26). CIR -135%, ROE -28.3%, ROA -11%. Accumulated losses VND 1,036-1,043B eroding capital.</div>
+  </div>
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+      <span style="font-size: 14px; font-weight: 800; color:#0D1B2A;">#3 LOOMS Migration Delays</span>
+      <div><span style="background: #0D1B2A; color: #fff; padding: 3px 12px; border-radius:2px; font-size: 10px; font-weight: 700;">HIGH</span> <span style="background: #f1f5f9; color:#0D1B2A; padding: 3px 10px; border-radius:2px; font-size: 10px; font-weight: 600;">Techno<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF IT Division "LOS_Gantt-chart_General.xlsx" Package 11 Dec 2025</span></span>logy</span></div>
+    </div>
+    <div style="font-size: 12px; color: #666;">T24 cannot support 5-group R18 classification; loan classification in Excel. LOOMS deployment pushed to Aug 2026.</div>
+  </div>
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+      <span style="font-size: 14px; font-weight: 800; color:#0D1B2A;">#4 Declining Collection Effectiveness</span>
+      <div><span style="background: #0D1B2A; color: #fff; padding: 3px 12px; border-radius:2px; font-size: 10px; font-weight: 700;">HIGH</span> <span style="background: #f1f5f9; color:#0D1B2A; padding: 3px 10px; border-radius:2px; font-size: 10px; font-weight: 600;">Collections</span></div>
+    </div>
+    <div style="font-size: 12px; color: #666;">B1 resolution 54.97% (vs 59.92% KPI); B2 41.67% (vs 44.69%); 60% of B4+ uncovered; field productivity VND 15M/FC <span style="background:#F8D7DA;color:#721C24;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">REQUIRES ACF CONFIRMATION</span>.</div>
+  </div>
+  <div style="background: #fff; border-left: 5px solid #D4D4D4; border-radius:2px; padding: 16px; border:1px solid #D4D4D4;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+      <span style="font-size: 14px; font-weight: 800; color:#0D1B2A;">#5 New Scheme Elevated Delinquency</span>
+      <div><span style="background: #0D1B2A; color: #fff; padding: 3px 12px; border-radius:2px; font-size: 10px; font-weight: 700;">HIGH</span> <span style="background: #f1f5f9; color:#0D1B2A; padding: 3px 10px; border-radius:2px; font-size: 10px; font-weight: 600;">Portfolio</span></div>
+    </div>
+    <div style="font-size: 12px; color: #666;">FPD5+ 2.5% installment. New Scheme B0 resolution 94.37% vs 98.76% ACS. Concentrated risk in specific dealers.</div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END TOP 5 FINDINGS ============ -->
+
+<h3>Key Financial Snapshot (Jan 2026)</h3>
+<!-- ============ KEY FINANCIAL KPI CARDS ============ -->
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 24px 0;">
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Total Assets</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">1,607B</div>
+    <div style="font-size: 10px; color: #666;">VND</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Lending Balance</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">909B</div>
+    <div style="font-size: 10px; color: #666;">VND (gross)</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Capital</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">1,550B</div>
+    <div style="font-size: 10px; color: #666;">VND</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Accum. Losses</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">(1,036B)</div>
+    <div style="font-size: 10px; color: #666;">VND</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">NPL Ratio</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">22.8%</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">PBT (Jan-26)</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">(12.3B)</div>
+    <div style="font-size: 10px; color: #666;">VND</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Disbursement</div>
+    <div style="font-size: 22px; font-weight: 800; color: #0D1B2A;">102B</div>
+    <div style="font-size: 10px; color: #666;">VND (Jan-26)</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">CAR</div>
+    <div style="font-size: 22px; font-weight: 800; color: #0D1B2A;">31.2%</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Revenue (Jan)</div>
+    <div style="font-size: 22px; font-weight: 800; color: #0D1B2A;">20.8B</div>
+    <div style="font-size: 10px; color: #666;">VND</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">OPEX (Jan)</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">33.1B</div>
+    <div style="font-size: 10px; color: #666;">VND</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Lending Yield</div>
+    <div style="font-size: 22px; font-weight: 800; color: #0D1B2A;">21.06%</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Cost of Funds</div>
+    <div style="font-size: 22px; font-weight: 800; color: #0D1B2A;">7.7%</div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END KEY FINANCIAL KPIs ============ -->
+
+<hr>
+<h2>2. Business Overview</h2>
+<h3>2.1 Company History: PTF to ACF</h3>
+<p>AEON Consumer Finance Vietnam (ACF) was formerly known as PTF (PPF Home Credit-affiliated entity that was subsequently acquired and rebranded). The company operates under a consumer finance company (FinCo) license issued by the State Bank of Vietnam (SBV). It was rebranded to AEON Consumer Finance as part of AEON Financial Service&#39;s (AFS) strategy to build a comprehensive consumer finance presence in Vietnam, leveraging the AEON Group retail ecosystem (AEON Mall, AEON supermarkets, MaxValu, and associated retail brands).</p>
+<p><strong>Key milestones:</strong></p>
+<ul>
+<li>Original establishment as PTF with consumer lending license</li>
+<li>Acquisition by AEON Financial Service Co., Ltd. (AFS Japan)</li>
+<li>Rebranding to AEON Consumer Finance (ACF)</li>
+<li>Charter capital: VND 1,550 billion (as of Jan 2026)</li>
+<li>Registered address: 1st Floor, 2nd Floor, No. 3 Dang Thai Than, Cua Nam Ward, Hanoi City</li>
+<li>Website: <a href="http://www.aeonfinance.com.vn">www.aeonfinance.com.vn</a></li>
+<li>Customer hotline: 1900 23 23 56</li>
+</ul>
+<h3>2.2 Ownership Structure</h3>
+<!-- ============ OWNERSHIP STRUCTURE ============ -->
+<div style="display: flex; align-items: center; gap: 16px; margin: 24px 0; background:#F2F2F0;border-radius:2px;padding:24px 28px; border: 1px solid #D4D4D4;">
+  <div style="background: #0D1B2A; border-radius:2px; padding: 16px 24px; text-align: center; color: #fff; min-width: 160px;">
+    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8;">Ultimate Parent</div>
+    <div style="font-size: 15px; font-weight: 800; margin: 4px 0;">AFS Japan</div>
+    <div style="font-size: 24px; font-weight: 800;">100%</div>
+    <div style="font-size: 10px; opacity: 0.8;">Japan-listed</div>
+  </div>
+  <div style="font-size: 24px; color: #ccc;">&#8594;</div>
+  <div style="background: #0D1B2A; border-radius:2px; padding: 16px 24px; text-align: center; color: #fff; min-width: 160px;">
+    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8;">Subsidiary</div>
+    <div style="font-size: 15px; font-weight: 800; margin: 4px 0;">ACF Vietnam</div>
+    <div style="font-size: 10px; opacity: 0.8;">Consumer Finance Co.</div>
+  </div>
+  <div style="font-size: 24px; color: #ccc;">&#8596;</div>
+  <div style="background: #fff; border: 2px dashed #2D4A7A; border-radius:2px; padding: 16px 24px; text-align: center; min-width: 160px;">
+    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #999;">Affiliated</div>
+    <div style="font-size: 15px; font-weight: 800; color:#0D1B2A; margin: 4px 0;">AEON Group</div>
+    <div style="font-size: 10px; color: #666;">Retail ecosystem partner</div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END OWNERSHIP ============ -->
+
+<p>AFS Japan provides strategic oversight, capital injections, risk management frameworks, and technology governance through a Steering Committee (Stecomi) structure. Key AFS personnel (Tezuka, Miyama, Light Stone, Mitsuishi) actively participate in strategic direction-setting as evidenced by Stecomi meeting minutes.</p>
+<h3>2.3 Licenses and Regulatory Standing</h3>
+<!-- ============ LICENSE STATUS BADGES ============ -->
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 24px 0;">
+  <div style="background: #fff; border-radius:2px; padding: 14px; border:1px solid #D4D4D4; display: flex; align-items: center; gap: 12px;">
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 12px; border-radius:2px; font-size: 10px; font-weight: 700;">ACTIVE</span>
+    <div><div style="font-size: 13px; font-weight: 600; color: #333;">Consumer Finance License</div><div style="font-size: 11px; color: #999;">State Bank of Vietnam</div></div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; border:1px solid #D4D4D4; display: flex; align-items: center; gap: 12px;">
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 12px; border-radius:2px; font-size: 10px; font-weight: 700;">ACTIVE</span>
+    <div><div style="font-size: 13px; font-weight: 600; color: #333;">Lending Activities</div><div style="font-size: 11px; color: #999;">SBV -- Cash + Installment</div></div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; border:1px solid #D4D4D4; display: flex; align-items: center; gap: 12px;">
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 12px; border-radius:2px; font-size: 10px; font-weight: 700;">PENDING</span>
+    <div><div style="font-size: 13px; font-weight: 600; color: #333;">Credit Card Issuance</div><div style="font-size: 11px; color: #999;">Under development (RFP stage)</div></div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; border:1px solid #D4D4D4; display: flex; align-items: center; gap: 12px;">
+    <span style="background: #0D1B2A; color: #fff; padding: 4px 12px; border-radius:2px; font-size: 10px; font-weight: 700;">ACTIVE</span>
+    <div><div style="font-size: 13px; font-weight: 600; color: #333;">Insurance Distribution</div><div style="font-size: 11px; color: #999;">Ministry of Finance (partner-based)</div></div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END LICENSE STATUS ============ -->
+
+<p><strong>Regulatory interactions:</strong></p>
+<ul>
+<li>Regular SBV reporting (monthly, quarterly balance sheets)</li>
+<li>CIC R18 classification integration (monthly at T-1, quarterly at Month T)</li>
+<li>Circular 31 self-loan classification for monthly reporting</li>
+<li>STRAVIS reporting to AFS Group (in line with Group guidelines)</li>
+<li>FY2025 financial audit on track (draft report expected Feb 11, 2026; final by Feb 28, 2026)</li>
+</ul>
+<h3>2.4 Geographic Footprint</h3>
+<p>ACF operates across Vietnam with the following regional structure:</p>
+<!-- ============ GEOGRAPHIC FOOTPRINT ============ -->
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 24px 0;">
+  <div style="background: linear-gradient(135deg, #2D4A7A 0%, #2d5a8a 100%); border-radius:2px; padding: 16px; color: #fff; grid-column: span 2;">
+    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;">Primary Market</div>
+    <div style="font-size: 16px; font-weight: 800; margin: 4px 0;">South (HCMC & surrounding)</div>
+    <div style="font-size: 12px; opacity: 0.9;">Predue 6 HC | Field 17 HC | Legal Call 24 HC</div>
+    <div style="font-size: 11px; opacity: 0.7; margin-top: 4px;">Largest concentration, highest disbursement</div>
+  </div>
+  <div style="background: linear-gradient(135deg, #4A6FA5 0%, #1d4ed8 100%); border-radius:2px; padding: 16px; color: #fff;">
+    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;">Second Market</div>
+    <div style="font-size: 16px; font-weight: 800; margin: 4px 0;">North (Hanoi)</div>
+    <div style="font-size: 12px; opacity: 0.9;">B0 6 HC | B1-B3 6 HC | Field 7 HC | Legal 6 HC</div>
+    <div style="font-size: 11px; opacity: 0.7; margin-top: 4px;"><span style="color: #fbbf24;">FPD5+ 15.9%</span></div>
+  </div>
+  <div style="background: #fff; border: 2px solid #D4D4D4; border-radius:2px; padding: 16px;">
+    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #0D1B2A;">Under Review</div>
+    <div style="font-size: 14px; font-weight: 700; color: #333; margin: 4px 0;">Central</div>
+    <div style="font-size: 11px; color: #666;">Legal Call 3 HC | Proposal to dissolve</div>
+  </div>
+  <div style="background: #fff; border: 2px solid #D4D4D4; border-radius:2px; padding: 16px;">
+    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color:#0D1B2A;">Dissolving</div>
+    <div style="font-size: 14px; font-weight: 700; color: #333; margin: 4px 0;">Mekong</div>
+    <div style="font-size: 11px; color: #666;">Terminate underperforming FCs</div>
+  </div>
+  <div style="background: #fff; border: 1px solid #D4D4D4; border-radius:2px; padding: 16px;">
+    <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: #999;">Active</div>
+    <div style="font-size: 14px; font-weight: 700; color: #333; margin: 4px 0;">Eastern 1 & 2</div>
+    <div style="font-size: 11px; color: #666;">Mixed performance</div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END GEOGRAPHIC ============ -->
+
+<p><strong>Installment loan distribution by region (new loans Sep-Nov 2025):</strong></p>
+<ul>
+<li>Central: 28.6% of new loans (1,914 total)</li>
+<li>Ho Chi Minh: 23.4% (1,564 total)</li>
+<li>Northeast/Northwest: 18.6% (1,241 total)</li>
+<li>Binh Duong: 8.2% (549 total)</li>
+<li>Ha Noi: 6.0% (403 total)</li>
+<li>South Mekong: 5.7% (382 total)</li>
+</ul>
+<h3>2.5 Customer Base</h3>
+<!-- ============ CUSTOMER BASE KPIs ============ -->
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 24px 0;">
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Active Accounts</div>
+    <div style="font-size: 24px; font-weight: 800; color:#0D1B2A;">32,794</div>
+    <div style="font-size: 10px; color: #666;">Dec 2025</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">B0 Current Cases</div>
+    <div style="font-size: 24px; font-weight: 800; color: #0D1B2A;">25,008</div>
+    <div style="font-size: 10px; color: #666;">VND 621.1B POS</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Total Portfolio POS</div>
+    <div style="font-size: 24px; font-weight: 800; color: #0D1B2A;">1,882B</div>
+    <div style="font-size: 10px; color: #666;">VND (all buckets)</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4; grid-column: span 2;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">Write-Off Portfolio</div>
+    <div style="font-size: 24px; font-weight: 800; color:#0D1B2A;">91,805 cases / VND 1,639.9B</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999; text-transform: uppercase;">WAON Members</div>
+    <div style="font-size: 18px; font-weight: 800; color: #0D1B2A;">Active</div>
+    <div style="font-size: 10px; color: #666;">AEON ecosystem</div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END CUSTOMER BASE ============ -->
+
+<h3>2.6 Headcount by Function</h3>
+<p><strong>Collection Division Headcount (Feb 2026):</strong></p>
+<!-- ============ COLLECTION HEADCOUNT BARS ============ -->
+<div style="background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px;margin:24px 0;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+    <div style="font-size:13px;font-weight:700;color:#0D1B2A;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px;">Collection Division Headcount (Feb 2026)</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">143 HC</div>
+  </div>
+  <div style="margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 160px; font-size: 11px; color: #666; text-align: right;">Legal Collection Staff</div>
+    <div style="flex: 1; height: 20px; background: #f1f5f9; border-radius:1px;"><div style="width: 100%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:40px;">60</span>
+  </div>
+  <div style="margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 160px; font-size: 11px; color: #666; text-align: right;">Field Collection Staff</div>
+    <div style="flex: 1; height: 20px; background: #f1f5f9; border-radius:1px;"><div style="width: 42%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:40px;">25</span>
+  </div>
+  <div style="margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 160px; font-size: 11px; color: #666; text-align: right;">Tele Collection Staff</div>
+    <div style="flex: 1; height: 20px; background: #f1f5f9; border-radius:1px;"><div style="width: 38%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:40px;">23</span>
+  </div>
+  <div style="margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 160px; font-size: 11px; color: #666; text-align: right;">Leaders (all types)</div>
+    <div style="flex: 1; height: 20px; background: #f1f5f9; border-radius:1px;"><div style="width: 33%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:40px;">20</span>
+  </div>
+  <div style="margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 160px; font-size: 11px; color: #666; text-align: right;">Support & Planning</div>
+    <div style="flex: 1; height: 20px; background: #f1f5f9; border-radius:1px;"><div style="width: 18%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:40px;">11</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <div style="width: 160px; font-size: 11px; color: #666; text-align: right;">Heads + Outsource Lead</div>
+    <div style="flex: 1; height: 20px; background: #f1f5f9; border-radius:1px;"><div style="width: 7%; height: 100%; background: #0D1B2A; border-radius:1px; min-width: 30px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:40px;">4</span>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END COLLECTION HEADCOUNT ============ -->
+
+<p><strong>Planned ramp-up:</strong> Collection headcount planned to grow from 143 (Jan-26) to 200 (Dec-26), primarily through tele collection staff expansion (23 to 78).</p>
+<p><strong>Other divisions (estimated from operating data):</strong></p>
+<ul>
+<li>Operations Division (Credit Risk Dept, Back Office): ~20-30 staff</li>
+<li>Sales/Marketing: Telesales-dominant channel</li>
+<li>IT Division: Active project teams (LOOMS, T24, Product Service, ZNS/SMS Gateway)</li>
+<li>Finance &amp; Accounting Division: Dedicated team</li>
+<li>Risk Management (Credit Risk Dept under Operations Division): Senior Head of Risk (Lyttc) + team of 2-3 dedicated modeling headcount needed</li>
+</ul>
+<hr>
+<h2>3. Loan Origination</h2>
+<!-- ============ CHANNEL MIX DONUT ============ -->
+<div style="display: flex; align-items: center; gap: 32px; margin: 24px 0; background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px;">
+  <div style="position: relative; width: 180px; height: 180px; flex-shrink: 0;">
+    <div style="width: 180px; height: 180px; border-radius: 50%; background: conic-gradient(#0D1B2A 0% 67%, #B0B0B0 67% 100%); display: flex; align-items: center; justify-content: center;">
+      <div style="width: 100px; height: 100px; border-radius: 50%; background:#F2F2F0; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center;">
+          <div style="font-size: 20px; font-weight: 800; color:#0D1B2A;">VND</div>
+          <div style="font-size: 14px; font-weight: 600; color: #666;">102B</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div style="font-size:13px;font-weight:700;color:#0D1B2A;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 12px;">Channel Mix -- Jan 2026 Disbursement</div>
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+      <div style="width: 14px; height: 14px; border-radius:1px; background: #0D1B2A;"></div>
+      <span style="font-size: 14px; color: #333;"><strong>Telesales:</strong> 67% (VND 68.4B)</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+      <div style="width: 14px; height: 14px; border-radius:1px; background: #0D1B2A;"></div>
+      <span style="font-size: 14px; color: #333;"><strong>NSN Agent:</strong> 33% (VND 33.8B)</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div style="width: 14px; height: 14px; border-radius:1px; background: #d1d5db;"></div>
+      <span style="font-size: 14px; color: #333;"><strong>Digital:</strong> &lt;1% (Minimal)</span>
+    </div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END CHANNEL MIX DONUT ============ -->
+
+<h3>3.1 Channels</h3>
+<!-- ============ CHANNEL MIX BARS ============ -->
+<div style="background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px;margin:24px 0;">
+  <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #ECECEC;">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+      <span style="font-size: 13px; font-weight: 600; color: #333;">Telesales (ACS cross-sell dominant)</span>
+      <span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">VND 68.4B -- 67%</span>
+    </div>
+    <div style="height: 24px; background: #f1f5f9; border-radius:1px;"><div style="width: 67%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div>
+  </div>
+  <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #ECECEC;">
+    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+      <span style="font-size: 13px; font-weight: 600; color: #333;">NSN / POS (declining)</span>
+      <span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">VND 33.8B -- 33%</span>
+    </div>
+    <div style="height: 24px; background: #f1f5f9; border-radius:1px;"><div style="width: 33%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div>
+  </div>
+  <div>
+    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+      <span style="font-size: 13px; font-weight: 600; color: #333;">Digital / Self-service</span>
+      <span style="font-size: 13px; font-weight: 700; color: #999;">&lt;1%</span>
+    </div>
+    <div style="height: 24px; background: #f1f5f9; border-radius:1px;"><div style="width: 1%; height: 100%; background: #d1d5db; border-radius:1px; min-width: 4px;"></div></div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END CHANNEL MIX BARS ============ -->
+
+<p><strong>Total disbursement Jan 2026:</strong> VND 102 b<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF EXCO Report &quot;FIN_MMM_10.02.2026.pdf&quot; — Jan 2026 Disbursement</span></span>illion (down 20% MoM, but 24% above budget of VND 82.1 billion).</p>
+<h3>3.2 Product Mix (Disbursement)</h3>
+<!-- ============ PRODUCT MIX ============ -->
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 24px 0;">
+  <div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:2px; padding: 14px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Cash Loans</div>
+    <div style="font-size: 20px; font-weight: 800; color:#0D1B2A; margin: 4px 0;">VND 68.4B</div>
+    <div style="font-size: 11px; color: #666;">Balance: VND 137.8B</div>
+  </div>
+  <div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:2px; padding: 14px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Installment CD</div>
+    <div style="font-size: 20px; font-weight: 800; color:#0D1B2A; margin: 4px 0;">VND 703.0B</div>
+    <div style="font-size: 11px; color: #666;">77.3% of total balance</div>
+  </div>
+  <div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:2px; padding: 14px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Installment TW</div>
+    <div style="font-size: 20px; font-weight: 800; color: #0D1B2A; margin: 4px 0;">VND 68.5B</div>
+    <div style="font-size: 11px; color: #666;">7.5% of total balance</div>
+  </div>
+  <div style="background: #fff; border-left: 4px solid #D4D4D4; border-radius:2px; padding: 14px; border:1px solid #D4D4D4;">
+    <div style="font-size: 13px; font-weight: 700; color:#0D1B2A;">ACS Cross-sell</div>
+    <div style="font-size: 20px; font-weight: 800; color: #0D1B2A; margin: 4px 0;">VND 61B</div>
+    <div style="font-size: 11px; color: #666;">Within telesales; growing rapidly</div>
+  </div>
+  <div style="background: #fff; border-left: 4px solid #999; border-radius:2px; padding: 14px; border:1px solid #D4D4D4; grid-column: span 2;">
+    <div style="font-size: 13px; font-weight: 700; color: #999;">Revolving Loan</div>
+    <div style="font-size: 14px; font-weight: 600; color: #999; margin: 4px 0;">STOPPED since Nov 7, 2025</div>
+    <div style="font-size: 11px; color: #999;">Legacy portfolio only</div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END PRODUCT MIX ============ -->
+
+<h3>3.3 Approval Rates (Dec 2025)</h3>
+<!-- ============ APPROVAL RATES HORIZONTAL BARS ============ -->
+<div style="background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px;margin:24px 0;">
+  <div style="font-size:13px;font-weight:700;color:#0D1B2A;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Approval Rates by Product (Dec 2025)</div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 140px; font-size: 12px; font-weight: 600; color: #333; text-align: right;">Cash Loan Priority</div>
+    <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:1px;"><div style="width: 88.2%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:50px;">88.2%</span>
+    <span style="font-size: 10px; color:#0D1B2A; width: 70px;">-88.2% MoM</span>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 140px; font-size: 12px; font-weight: 600; color: #333; text-align: right;">Installment CD</div>
+    <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:1px;"><div style="width: 75.5%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:50px;">75.5%</span>
+    <span style="font-size: 10px; color: #0D1B2A; width: 70px;">+1.1%</span>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 140px; font-size: 12px; font-weight: 600; color: #333; text-align: right;">Installment Loan</div>
+    <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:1px;"><div style="width: 73.6%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:50px;">73.6%</span>
+    <span style="font-size: 10px; color: #0D1B2A; width: 70px;">+1.3%</span>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 140px; font-size: 12px; font-weight: 600; color: #333; text-align: right;">Total</div>
+    <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:1px;"><div style="width: 71.7%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:50px;">71.7%</span>
+    <span style="font-size: 10px; color: #0D1B2A; width: 70px;">+1.8%</span>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 140px; font-size: 12px; font-weight: 600; color: #333; text-align: right;">ACS Cross-sell</div>
+    <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:1px;"><div style="width: 70.6%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:50px;">70.6%</span>
+    <span style="font-size: 10px; color: #0D1B2A; width: 70px;">+6.6%</span>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 140px; font-size: 12px; font-weight: 600; color: #333; text-align: right;">Installment TW</div>
+    <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:1px;"><div style="width: 61.7%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:50px;">61.7%</span>
+    <span style="font-size: 10px; color: #0D1B2A; width: 70px;">+5.5%</span>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 140px; font-size: 12px; font-weight: 600; color: #333; text-align: right;">CL Existing</div>
+    <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:1px;"><div style="width: 47.1%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:50px;">47.1%</span>
+    <span style="font-size: 10px; color: #0D1B2A; width: 70px;">+47.1%</span>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 140px; font-size: 12px; font-weight: 600; color: #333; text-align: right;">Cash Loan</div>
+    <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:1px;"><div style="width: 35.4%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:50px;">35.4%</span>
+    <span style="font-size: 10px; color:#0D1B2A; width: 70px;">-7.1%</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <div style="width: 140px; font-size: 12px; font-weight: 600; color: #333; text-align: right;">CL NTB</div>
+    <div style="flex: 1; height: 22px; background: #f1f5f9; border-radius:1px;"><div style="width: 30.5%; height: 100%; background: #0D1B2A; border-radius:1px;"></div></div><span style="font-size:12px;font-weight:700;color:#0D1B2A;min-width:50px;">30.5%</span>
+    <span style="font-size: 10px; color:#0D1B2A; width: 70px;">-5.4%</span>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END APPROVAL RATES ============ -->
+
+<p><strong>Finding [MEDIUM]:</strong> Cash loan approval rates have been significantly tightened (from 81% in Jul-25 to 35.4% in Dec-25), indicating a defensive credit posture. This protects portfolio quality but constrains growth.</p>
+<h3>3.4 Credit Decision Process</h3>
+<p>The credit decision framework operates through:</p>
+<ol>
+<li><strong>Data Sources:</strong> CIC<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">National Credit Information Center (CIC), State Bank of Vietnam</span></span> (Credit In<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">National Credit Information Center (CIC), State Bank of Vietnam</span></span>formation Center) scores (R11A, B11T, R11A reports), internal scoring module (PTF Scoring Module), FPT eKYC for identity verification</li>
+<li><strong>Scorecard:</strong> CIC-based scoring with GINI coefficient of 26%&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;State Bank of Vietnam (sbv.gov.vn)&quot;Executive Summary Report_v.3.1.pptx&quot; (AdvisorsData)&quot;20251115_BDIT v5.pptx&quot; (AdvisorsData)&quot;LOS_Gantt-chart_General.xlsx&quot; (Package 11 Dec 2025)&quot;FIN_MMM_10.02.2026.pdf&quot; — Capital Adequacy Ratio&quot;FIN_MMM_10.02.2026.pdf&quot; (Package 6 Mar 2026)&quot;FIN_MMM_10.02.2026.pdf&quot; — Financial Summary&quot;FIN_MMM_10.02.2026.pdf&quot; (Package 6 Mar 2026)&quot;&gt;<span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#0D1B2A;color:white;font-size:8px;font-weight:700;font-style:italic;vertical-align:middle;line-height:1">i</span></span> (FPD10) and 27% (EverDPD10) -- classified as &quot;acceptable discriminatory power&quot; per green thresholds</li>
+<li><strong>Credit Approval Hierarchy:</strong> Formalized through Decision document &quot;Issuance of the Credit Approval Hierarchy and Authority System for Consumer Lending at AEON Finance&quot;</li>
+<li><strong>Policy Framework:</strong> Transitioning from Policy Framework No. 150 (covering Installment Product + Other) to NEW Policy Framework covering granular product segments: Installment CD, Installment TW, Cashloan NTB, Cashloan Existing (further split into Existing PTF, ACS Cross, NEW Segment Existing)</li>
+</ol>
+<p><strong>Finding [HIGH]:</strong> The CIC scorecard has limited backtest sample (5,867 loans) with low positive label rates (FPD10+ ~1.9%, EverDPD10+ ~2.8%), making it &quot;too early to draw a definitive conclusion&quot; on discriminatory power for unsecured cash and installment loans. The PSI (Population Stability Index) remained stable at 0.7% (Nov vs Oct), but initial sample limitations reduce confidence in model robustness.</p>
+<h3>3.5 STP Rate and Bottlenecks</h3>
+<p><strong>Finding [HIGH]:</strong> No automated straight-through processing (STP) rate data was provided. The loan origination process currently relies on:</p>
+<ul>
+<li>NewGen LOOMS (under migration) for application and approval workflows</li>
+<li>Manual interventions for field mapping, appraisal, and disbursement</li>
+<li>T24 core banking for account creation and balance management</li>
+<li>Multiple integration points (CIC, FPT eKYC, FPT eSign, Product Service, Scoring) creating process friction</li>
+</ul>
+<p><strong>Key bottlenecks identified:</strong></p>
+<ul>
+<li>LOOMS migration incomplete; DSD Phase issue list outstanding</li>
+<li>T24 limitations preventing automated loan classification</li>
+<li>Manual data entry processes for installment loan origination (separate guidelines for cash loans vs installment loans)</li>
+<li>eKYC and credit inquiry costs of VND 14 billion annually</li>
+</ul>
+<hr>
+<h2>4. Loan Servicing</h2>
+<h3>4.1 Disbursement</h3>
+<!-- ============ DISBURSEMENT KPIs ============ -->
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 24px 0;">
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999;">Total Disbursement</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">VND 102B</div>
+    <div style="font-size: 10px; color: #666;">Jan 2026</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999;">Cash Loan Avg Ticket</div>
+    <div style="font-size: 22px; font-weight: 800; color:#0D1B2A;">46.4M</div>
+    <div style="font-size: 10px; color:#0D1B2A;">221% of budget</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999;">Installment Avg Ticket</div>
+    <div style="font-size: 22px; font-weight: 800; color: #0D1B2A;">13.4M</div>
+    <div style="font-size: 10px; color: #0D1B2A;">67% of budget</div>
+  </div>
+  <div style="background: #fff; border-radius:2px; padding: 14px; text-align: center; border:1px solid #D4D4D4; border-top: 3px solid #D4D4D4;">
+    <div style="font-size: 10px; color: #999;">Direct Disbursement</div>
+    <div style="font-size: 22px; font-weight: 800; color: #0D1B2A;">64.8%</div>
+    <div style="font-size: 10px; color: #666;">SeABank + partners</div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END DISBURSEMENT KPIs ============ -->
+
+<p><strong>Disbursement flow:</strong> The payment API architecture (v1.2) shows:</p>
+<ol>
+<li>Loan information query via API (getLoansInfo, getLoansInfoLegal)</li>
+<li>Cash disbursement via API (createFTLoans) through T24 Adapter</li>
+<li>Bank account disbursement via API (createFTLoansToAcc) through SeABank<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF Banking Partner Agreement — Disbursement Channel</span></span></li>
+<li>Scheduled repayment collection via API (CreateFTPayment)</li>
+<li>Early settlement processing via separate flow with COB (Close of Business) check</li>
+</ol>
+<h3>4.2 Account Management</h3>
+<ul>
+<li>Core account management on Temenos T24 (R25 upgrade in progress)</li>
+<li>Contract management, comprehensive credit management, balance management, billing &amp; delinquency management all handled by T24</li>
+<li>WAON<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty Program Documentation</span></span> Point redemption and PTF Point Payment integrated with T24</li>
+<li>Customer Portal provides online access to loan information, payment options, and account services</li>
+<li>Sales Portal provides web interface for sales agents</li>
+<li>Merchant Portal tracks loan-related transactions for merchants</li>
+<li>Sales App (Mobile) for field staff to onboard customers and submit applications</li>
+</ul>
+<h3>4.3 Payment Processing</h3>
+<p>Payment collection operates through multiple channels:</p>
+<ul>
+<li><strong>Partner collection agents</strong> (third-party) with ded<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF Banking Partner Agreement — Disbursement Channel</span></span>icated API integration (partner management, loan query, scheduled payment, early settlement, partial prepayment)</li>
+<li><strong>Bank transfer</strong> via SeABank (primary banking partner for disbursement and collection)</li>
+<li><strong>NAPAS<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">NAPAS — National Payment Corporation of Vietnam</span></span> integration</strong> for fast payment channel</li>
+<li><strong>Direct debit</strong> arrangements</li>
+<li>Collection fee processing embedded in payment flow (minimum payment amount must cover collection fees)</li>
+</ul>
+<p><strong>Finding [MEDIUM]:</strong> Payment collection relies heavily on third-party collection partners with relatively simple system integration (partn<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">NAPAS — National Payment Corporation of Vietnam</span></span>er information entry is a basic manual process). The disbursement architecture has multiple fallback channels (SeABank direct, CITAD, NAPAS fast) suggesting operational resilience but also complexity.</p>
+<hr>
+<h2>5. Collections</h2>
+<h3>5.1 Portfolio Overview by Bucket (Jan 2026)</h3>
+<!-- ============ PORTFOLIO BY BUCKET VISUAL ============ -->
+<div style="background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px;margin:24px 0;">
+  <div style="font-size:13px;font-weight:700;color:#0D1B2A;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Portfolio Overview by Bucket (Jan 2026)</div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 60px; font-size: 13px; font-weight: 700; color: #0D1B2A;">B0</div>
+    <div style="flex: 1; height: 32px; background: #f1f5f9; border-radius:1px;">
+      <div style="width: 33%; height: 100%; background: linear-gradient(90deg, #4A8C6F, #4ade80); border-radius:1px; display: flex; align-items: center; padding: 0 8px; justify-content: space-between;">
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">25,008 cases</span>
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">VND 621.1B</span>
+      </div>
+    </div>
+    <div style="width: 90px; text-align: right;"><span style="font-size: 12px; font-weight: 700; color: #0D1B2A;">98.59% Res</span></div>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 60px; font-size: 13px; font-weight: 700; color: #0D1B2A;">B1</div>
+    <div style="flex: 1; height: 32px; background: #f1f5f9; border-radius:1px;">
+      <div style="width: 1%; height: 100%; background: #0D1B2A; border-radius:1px; min-width: 110px; display: flex; align-items: center; padding: 0 8px; justify-content: space-between;">
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">595</span>
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">VND 14.0B</span>
+      </div>
+    </div>
+    <div style="width: 90px; text-align: right;"><span style="font-size: 12px; font-weight: 700; color: #0D1B2A;">54.97% Res</span></div>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 60px; font-size: 13px; font-weight: 700; color: #ea580c;">B2</div>
+    <div style="flex: 1; height: 32px; background: #f1f5f9; border-radius:1px;">
+      <div style="width: 1%; height: 100%; background: #ea580c; border-radius:1px; min-width: 110px; display: flex; align-items: center; padding: 0 8px; justify-content: space-between;">
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">463</span>
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">VND 10.0B</span>
+      </div>
+    </div>
+    <div style="width: 90px; text-align: right;"><span style="font-size: 12px; font-weight: 700; color: #ea580c;">41.67% Res</span></div>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 60px; font-size: 13px; font-weight: 700; color: #dc2626;">B3</div>
+    <div style="flex: 1; height: 32px; background: #f1f5f9; border-radius:1px;">
+      <div style="width: 1%; height: 100%; background: #dc2626; border-radius:1px; min-width: 110px; display: flex; align-items: center; padding: 0 8px; justify-content: space-between;">
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">323</span>
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">VND 7.0B</span>
+      </div>
+    </div>
+    <div style="width: 90px; text-align: right;"><span style="font-size: 12px; font-weight: 700; color: #dc2626;">31.45% Res</span></div>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 60px; font-size: 13px; font-weight: 700; color:#0D1B2A;">B4+</div>
+    <div style="flex: 1; height: 32px; background: #f1f5f9; border-radius:1px;">
+      <div style="width: 65%; height: 100%; background: linear-gradient(90deg, #1B2A4A, #991b1b); border-radius:1px; display: flex; align-items: center; padding: 0 8px; justify-content: space-between;">
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">88,833 cases</span>
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">VND 1,230.0B</span>
+      </div>
+    </div>
+    <div style="width: 90px; text-align: right;"><span style="font-size: 12px; font-weight: 700; color:#0D1B2A;">0.31% Res</span></div>
+  </div>
+  <div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #ECECEC;display:flex;align-items:center;gap:8px;">
+    <div style="width: 60px; font-size: 13px; font-weight: 700; color: #991b1b;">WO</div>
+    <div style="flex: 1; height: 32px; background: #f1f5f9; border-radius:1px;">
+      <div style="width: 87%; height: 100%; background: linear-gradient(90deg, #991b1b, #450a0a); border-radius:1px; display: flex; align-items: center; padding: 0 8px; justify-content: space-between;">
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">91,805 cases</span>
+        <span style="color: #fff; font-size: 11px; font-weight: 700;">VND 1,639.9B</span>
+      </div>
+    </div>
+    <div style="width: 90px; text-align: right;"><span style="font-size: 12px; font-weight: 700; color: #991b1b;">0.10% Res</span></div>
+  </div>
+  <div style="border-top: 1px solid #D4D4D4; padding-top: 8px; display: flex; justify-content: space-between;">
+    <span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Grand Total: 115,222 cases / VND 1,882.1B POS</span>
+    <span style="font-size: 13px; font-weight: 700; color:#0D1B2A;">Collection: VND 50.4B</span>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END PORTFOLIO BY BUCKET ============ -->
+
+<h3>5.2 Collection Strategies by DPD Bucket</h3>
+<p><strong>B0 (Current -- DPD 0):</strong></p>
+<ul>
+<li>Strategy: Pre-due reminder calls, SMS/ZNS notifications</li>
+<li>Team: South_Predue (6 HC), North_B0 Daily (6 HC), B0 team (9 HC as of Feb-26, up from 1 in Aug-25)</li>
+<li>Performance: RFR 1.41% (Jan-26), up from 1.33% in Dec-25</li>
+<li>B0 portfolio grew strongly from VND 414.2B (Oct-25) to VND 622.1B (Jan-26)</li>
+<li><strong>Finding [MEDIUM]:</strong> B0 RFR increased to 1.41%, above the target, indicating more new accounts are missing first payments</li>
+</ul>
+<p><strong>B1-B3 (DPD 1-90):</strong></p>
+<ul>
+<li>Strategy: Phone collection (tele collection), escalation to field for non-contact</li>
+<li>Team: 2 staff per bucket (B1, B2, B3) -- very lean staffing</li>
+<li>B1 performance: 54.97% resolution (Jan-26), down 2.16% MoM, missing KPI by 4.62%</li>
+<li>B2 performance: 41.67% resolution (Jan-26), down 1.09% MoM, missing KPI by 2.53%</li>
+<li>B3 performance: 31.45% resolution (Jan-26), up 5.61% MoM, exceeding KPI by 17.22%</li>
+<li><strong>Finding [HIGH]:</strong> B1 and B2 resolution rates have been continuously declining since April 2025 (B1 RFR from 88% peak to 44.7%<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF Collection Report — B0→B1 Roll Rate, Package 13 Feb 2026</span></span>; B2 from 85.3% to 57.7%<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF Collection Report — B1→B2 Roll Rate, Package 13 Feb 2026</span></span>; B3 from 56.8% to 66.9%<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ACF Collection Report — B2→B3 Roll Rate, Package 13 Feb 2026</span></span>). The declining trend is structural, not seasonal.</li>
+</ul>
+<p><strong>B4-B6 (DPD 91-180):</strong></p>
+<ul>
+<li>Strategy: Late call team + field collection</li>
+<li>B4-6 POS: VND 16,755M (Jan-26), ROR: 0.90%</li>
+<li>Payment collected: VND 150M (Jan-26), down from VND 317M (Dec-25)</li>
+<li><strong>Finding [MEDIUM]:</strong> B4-6 ROR declining; 60% of B4+ portfolio has no staff coverage (Not_Cover portion at 65K cases, VND 1,377B POS)</li>
+</ul>
+<p><strong>B7+ and NPL (DPD 180+):</strong></p>
+<ul>
+<li>Strategy: Legal call team (33 HC) + field collection (23 HC) + outsourced agency (2 HC)</li>
+<li>B7+ POS: VND 73,944M (Jan-26), Payment: VND 655M, ROR: 0.89%</li>
+<li>WO collections: VND 1,870.1M (Jan-26), up VND 727M vs LY but down VND 600.1M vs Dec-25</li>
+<li>B13+/WO new POS: VND 1,139,331M, ROR: 0.16%</li>
+<li>Total NPL collections (all B4+): VND 2,675.3M (Jan-26), down VND 798.1M MoM</li>
+</ul>
+<!-- ============ COLLECTION ROLL RATE FUNNEL ============ -->
+<div style="background: linear-gradient(135deg, #2D4A7A 0%, #2d5a8a 100%); border-radius:2px; padding: 24px; margin: 24px 0;">
+  <div style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 20px;">Collection Roll Rate Funnel -- Portfolio Deterioration Flow</div>
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="width: 100%; background: rgba(230,0,18,0.2); border-radius:1px; height: 44px; display: flex; align-items: center;">
+        <div style="width: 100%; background: linear-gradient(90deg, #1B2A4A, #ff4d4d); height: 100%; border-radius:1px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px;">
+          <span style="color: #fff; font-weight: 700; font-size: 14px;">B0 to B1 (First Roll)</span>
+          <span style="color: #fff; font-weight: 800; font-size: 18px;">44.7%</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; color: rgba(255,255,255,0.5); font-size: 18px;">&#9660;</div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="width: 85%; background: rgba(234,88,12,0.2); border-radius:1px; height: 44px; display: flex; align-items: center; margin: 0 auto;">
+        <div style="width: 100%; background: linear-gradient(90deg, #ea580c, #f97316); height: 100%; border-radius:1px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px;">
+          <span style="color: #fff; font-weight: 700; font-size: 14px;">B1 to B2 (Roll Forward)</span>
+          <span style="color: #fff; font-weight: 800; font-size: 18px;">57.7%</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; color: rgba(255,255,255,0.5); font-size: 18px;">&#9660;</div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div style="width: 70%; background: rgba(245,158,11,0.2); border-radius:1px; height: 44px; display: flex; align-items: center; margin: 0 auto;">
+        <div style="width: 100%; background: linear-gradient(90deg, #C5A572, #fbbf24); height: 100%; border-radius:1px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px;">
+          <span style="color: #fff; font-weight: 700; font-size: 14px;">B2 to B3 (Deep Roll)</span>
+          <span style="color: #fff; font-weight: 800; font-size: 18px;">66.9%</span>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; color: rgba(255,255,255,0.5); font-size: 18px;">&#9660;</div>
+    <div style="width: 55%; margin: 0 auto; background: rgba(127,29,29,0.4); border-radius:1px; padding: 12px; text-align: center;">
+      <span style="color: #fca5a5; font-weight: 700; font-size: 13px;">NPL (B4+): 88,833 cases / VND 1,230B</span>
+    </div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec 2025 - Mar 2026); EY "Executive Summary Report_v.3.1.pptx"; IKIGAI ODD Analysis</div>
+<!-- ============ END COLLECTION ROLL RATE FUNNEL ============ -->
+
+<h3>5.3 Roll Rates (Jan 2026)</h3>
+<!-- ============ ROLL RATES HEATMAP ============ -->
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 24px 0;">
+  <div style="background: #0D1B2A; border-radius:2px; padding: 14px; text-align: center; color: #fff;">
+    <div style="font-size: 10px; text-transform: uppercase; opacity: 0.8;">B0 &#8594; B1</div>
+    <div style="font-size: 26px; font-weight: 800;">1.41%</div>
+    <div style="font-size: 10px; opacity: 0.8;">RFR</div>
+  </div>
+  <div style="background: #ea580c; border-radius:2px; padding: 14px; text-align: center; color: #fff;">
+    <div style="font-size: 10px; text-transform: uppercase; opacity: 0.8;">B1 &#8594; B2</div>
+    <div style="font-size: 26px; font-weight: 800;">44.7%</div>
+    <div style="font-size: 10px; opacity: 0.8;">Roll Forward</div>
+  </div>
+  <div style="background: #dc2626; border-radius:2px; padding: 14px; text-align: center; color: #fff;">
+    <div style="font-size: 10px; text-transform: uppercase; opacity: 0.8;">B2 &#8594; B3</div>
+    <div style="font-size: 26px; font-weight: 800;">57.7%</div>
+    <div style="font-size: 10px; opacity: 0.8;">Roll Forward</div>
+  </div>
+  <div style="background: #991b1b; border-radius:2px; padding: 14px; text-align: center; color: #fff;">
+    <div style="font-size: 10px; text-transform: uppercase; opacity: 0.8;">B3 &#8594; NPL</div>
+    <div style="font-size: 26px; font-weight: 800;">66.9%</div>
+    <div style="font-size: 10px; opacity: 0.8;">Roll Forward</div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ACF RawData Packages (Dec</body></html>

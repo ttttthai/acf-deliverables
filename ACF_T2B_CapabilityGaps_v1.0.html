@@ -1,0 +1,547 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACF_T2B_CapabilityGaps_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ACF_T2B_CapabilityGaps_v1.0</h1><p>AEON Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ACF Technology Capability Gaps v1.0</h1>
+<p><strong>Prepared for:</strong> Ikigai Advisory -- Project ACF
+<strong>Prepared by:</strong> Team 2 -- Due Diligence (Technology)
+<strong>Date:</strong> March 15, 2026
+<strong>Classification:</strong> Internal -- Strictly Confidential
+<strong>Version:</strong> 1.0</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>This report identifies technology capability gaps across five dimensions: (1) current business needs, (2) credit card launch readiness, (3) BNPL launch readiness, (4) 2-wheeler financing readiness, (5) industry best practice, and (6) regulatory requirements. Each gap is assessed for severity and remediation priority, with investment estimates where quantifiable.</p>
+<p>ACF faces <strong>38 distinct technology capability gaps</strong> across these dimensions. The most critical gaps are in digital customer experience (no mobile app), data &amp; analytics maturity, automated loan classification, and the absence of a card management system. Total estimated investment to close all gaps ranges from <strong>VND 150-250 billion (USD 6-10 million)</strong> <span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ESTIMATE</span> over 18-24 months.</p>
+<hr>
+<h2>1. Gaps vs Current Business Needs</h2>
+<p>These are capabilities required to operate the existing cash loan and installment loan business effectively.</p>
+<h3>1.1 Loan Origination</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.1.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **End-to-end digital origination**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Manual/semi-automated via LOOMS (under migration); no customer self-service origination</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Fully digital origination with customer-initiated applications via mobile/web; real-time decisioning; STP >60% <span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**CRITICAL**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Customer experience; processing cost; competitive positioning</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.1.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**Automated credit decisioning**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">CIC-based scoring with limited GINI (26%); manual credit assessment for certain segments</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">AI/ML-powered decisioning engine with >20 models (AND Solution planned); real-time scoring; automated approval for low-risk segments</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Approval speed; risk accuracy; operational efficiency</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.1.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **eKYC at scale**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">FPT eKYC used during onboarding; VND 14B annual cost for eKYC + credit inquiry</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Embedded eKYC within mobile app; biometric authentication for returning customers; reduced per-transaction cost</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Cost reduction; customer friction; compliance</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.1.4</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Document management**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> LOOMS DMS V3.0 under implementation; currently fragmented</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Centralized, searchable, compliant document management with automated classification and retention</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**MEDIUM**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Audit readiness; operational efficiency</div>
+</div>
+</div></div>
+
+
+<h3>1.2 Core Banking and Account Management</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.2.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **5-group loan classification**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> T24 cannot support R18-based 5-group classification; maintained off-system in Excel</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Automated 5-group classification in T24 aligned with SBV Circular 31 and R18 requirements; real-time provisioning calculation</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**CRITICAL**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Regulatory compliance; data integrity; audit risk</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.2.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Batch processing flexibility**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> T24 cannot support back-up date or semi-auto at same time as normal monthly processing</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Flexible batch processing supporting concurrent operations (normal cycle + write-off/restructuring)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Month-end processing efficiency; operational risk</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.2.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Product configuration engine**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Product Service system under development; manual product setup</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Self-service product configuration with pricing engine, subsidy calculations, scheme management</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**MEDIUM**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Time-to-market for new products; operational efficiency</div>
+</div>
+</div></div>
+
+
+<h3>1.3 Collections</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.3.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Digital collection channels**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Primarily phone-based (tele + legal call); ZNS/SMS gateway under development</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Multi-channel digital collections (automated SMS, Zalo, email, push notifications, self-service payment portal); AI-driven contact optimization</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Coverage of 65K uncovered B4+ accounts (VND 1.4T); cost per collection attempt</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.3.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Collection scoring and segmentation**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No behavioral scoring for collections; manual case assignment</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Behavioral scoring to predict likelihood of payment; automated segmentation for treatment strategies; dynamic case prioritization</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Collector productivity (currently VND 15M/FC <span style="background:#F8D7DA;color:#721C24;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">REQUIRES ACF CONFIRMATION</span> for field); recovery rates</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.3.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Skip-tracing capability**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">External skip-tracing required; 7.3% contact rate for B1</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Integrated skip-tracing with alternative data sources (social media, telco, utility); automated contact enrichment</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Contact rates; B1 resolution (currently 54.97% vs 59.92% KPI)</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.3.4</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**Predictive dialing**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Manual calling through Nexusti Collection 4.0</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Predictive/progressive dialing with answering machine detection; optimal time-to-call algorithms</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**MEDIUM**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Calls per collector per day; connect rates</div>
+</div>
+</div></div>
+
+
+<h3>1.4 Customer Experience</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.4.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Customer-facing mobile app**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No production app; WebApp and Smartphone App under development</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Full-featured mobile app with loan management, payments, QR, WAON<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Group Loyalty Program Documentation</span></span> points, push notifications, self-service</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**CRITICAL**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Customer engagement; digital transactions; AEON ecosystem integration</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.4.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Customer 360 view**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No unified customer view; data siloed across T24, LOOMS, Collection system, WAON</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Single customer view integrating all touchpoints, transactions, interactions, AEON retail<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">AEON Vietnam Ecosystem — "Lotte vs AEON – Vietnam Ecosystem.pdf" OtherData</span></span> data</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Cross-sell effectiveness; service quality; risk assessment</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.4.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Self-service payment portal**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Limited to Customer Portal (basic)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Rich self-service with multiple payment methods (bank transfer, QR, e-wallet), payment scheduling, statement access</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">B0 RFR reduction; customer satisfaction; cost savings</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.4.4</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Customer satisfaction measurement**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No NPS, CSAT, or complaint tracking system</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Real-time satisfaction monitoring, complaint management, sentiment analysis</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**MEDIUM**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Service improvement; regulatory compliance (SBV consumer protection)</div>
+</div>
+</div></div>
+
+
+<h3>1.5 Data and Analytics</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.5.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Data warehouse / analytics platform**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No centralized data store; Power BI for basic reporting</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Modern data warehouse (cloud or on-premise) with ETL pipelines, data quality monitoring, self-service analytics</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Management decision-making; regulatory reporting efficiency; model development</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.5.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **IFRS 9 ECL capability**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Not implemented; EDA planned with AFS Japan</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Automated IFRS 9 Expected Credit Loss calculation; PD/LGD/EAD models; stress testing</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**HIGH**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> AFS Group reporting compliance; accurate provisioning; investor confidence</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">1.5.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Real-time reporting**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Monthly batch reporting; some weekly reports</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required State:</span> Near-real-time dashboards for portfolio, collections, sales, risk KPIs</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**MEDIUM**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Faster decision-making; early warning capability</div>
+</div>
+</div></div>
+
+
+<hr>
+<h2>2. Gaps for Credit Card Launch</h2>
+<p>Based on the vendor RFP evaluation (11 vendors assessed) and the assumed business flow from the BDIT v5 presentation, the following capabilities are needed but currently absent.</p>
+<h3>2.1 Card Management System (CMS)</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.1.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **CMS core platform**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Card issuance, activation, status management, embossing/virtual card generation</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Estimated Investment:</span> VND 30-60B (based on vendor commercial proposals: BPC On-Prem vs SaaS) <span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI ESTIMATE</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.1.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Authorization engine**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Real-time transaction authorization; stand-in processing; decline management</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Estimated Investment:</span> Included in CMS</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.1.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Billing & statement management**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Billing cycle management (billed/unbilled); statement generation; minimum payment calculation</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Estimated Investment:</span> Included in CMS</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.1.4</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**Available credit management**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Real-time available balance/credit tracking; temporary credit limit increases</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Estimated Investment:</span> Included in CMS</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.1.5</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Fraud management**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Real-time fraud detection; rule engine; velocity checks; 3D Secure (3DS)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Estimated Investment:</span> Included in CMS or separate fraud platform</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.1.6</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Sales promotion management**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Campaign management; promotional offers; reward programs</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Estimated Investment:</span> Included in CMS</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+</div></div>
+
+
+<h3>2.2 Rewards and Loyalty Engine</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.2.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**WAON Point integration for credit cards**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Point earning on card transactions; redemption against statement balance; WAON coupon exchange</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">WAON Point system exists (ACSTV InHouse) but no credit card integration</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.2.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Campaign/promotion engine**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Dynamic reward rules; merchant-specific offers; seasonal campaigns; tiered rewards</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Not available</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.2.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Cashback management**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Cashback calculation, accrual, and disbursement engine</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Not available; consumer survey shows 60-70% of customers expect cashback from AEON credit card</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+</div></div>
+
+
+<h3>2.3 Card Operations</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.3.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **NAPAS certification**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Domestic card scheme certification for virtual card issuance</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Notes:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Required for domestic credit card in Vietnam</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.3.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Clearing & settlement**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> NAPAS clearing and settlement integration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Notes:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Required for transaction processing</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.3.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Chargeback management**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Dispute handling, chargeback processing, representment</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Notes:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Required per card scheme rules</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.3.4</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Card lifecycle management**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Card renewal, replacement, reissuance; dormancy management; cancellation</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Notes:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Required for card operations</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.3.5</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Dunning for card payments**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Next payment date notification; minimum payment reminders; late payment escalation</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Notes:</span> Separate from loan dunning; card-specific cycles</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+</div></div>
+
+
+<h3>2.4 Digital Card Experience</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.4.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Virtual card issuance in-app**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Instant virtual card issuance upon approval; tokenization for mobile wallets</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Notes:</span> App under development; virtual card is core strategy (no physical card initially)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.4.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **QR payment (CPM/MPM)**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">QR code payment at POS using credit card; integration with NAPAS QR standards</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Notes:</span> Planned in WebApp/App but not built</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.4.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **NFC contactless payment**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> NFC payment capability via mobile device tokenization</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Notes:</span> Planned but no NFC infrastructure</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">2.4.4</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Installment plan conversion**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Post-purchase installment; deferred revolving; flexible repayment plan selection</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Notes:</span> Planned in App features but requires CMS integration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+</div></div>
+
+
+<h3>2.5 Estimated Investment for Credit Card Launch</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">CMS license and implementation</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 30-60</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 12-18 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">NAPAS certification and integration</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 5-10</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 6-9 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">App development (card features)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 10-20</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 6-12 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">WAON Point integration</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 3-5</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 3-6 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Infrastructure (if on-premise)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 5-15</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 3-6 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Testing and UAT</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 3-5</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 3-4 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Staff and training</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 5-8</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> Ongoing</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">**Total Credit Card Launch**</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> **61-123**</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> **12-18 months**</div>
+</div>
+</div></div>
+
+
+<hr>
+<h2>3. Gaps for BNPL Launch</h2>
+<h3>3.1 Merchant Integration</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">3.1.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Merchant onboarding portal**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Self-service merchant registration, KYC, contract management</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No merchant onboarding platform; current POS dealers managed manually</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">3.1.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Checkout integration SDK/API**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> JavaScript SDK for e-commerce checkout; mobile SDK for in-app BNPL; POS terminal integration for in-store</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No such capability exists</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">3.1.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Merchant settlement**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Real-time or T+1 settlement to merchants; reconciliation portal; MDR/fee management</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Current settlement through T24 FT transactions; not designed for high-volume merchant settlement</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">3.1.4</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Merchant analytics dashboard**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Transaction reporting, conversion rates, average ticket, refund tracking for merchants</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Not available</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+</div></div>
+
+
+<h3>3.2 Real-Time Decisioning</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">3.2.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**Sub-second credit decisioning**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Real-time credit assessment at checkout; pre-approved credit limits; instant approval/decline</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Current scoring requires API calls to CIC + internal scoring; not optimized for <1 second response</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">3.2.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Pre-qualification engine**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Pre-assess customer eligibility before purchase; display available BNPL limit</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No pre-qualification capability</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">3.2.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Real-time fraud detection for BNPL**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Transaction-level fraud scoring at checkout; device fingerprinting; behavioral analytics</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Anti-fraud module at V3.0 but designed for loan origination, not real-time transaction screening</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+</div></div>
+
+
+<h3>3.3 BNPL Product Engine</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">3.3.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Flexible installment terms**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> 1, 2, 3, 4, 6, 12 month terms; interest-free and interest-bearing options; merchant-subsidized 0% offers</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Current installment products designed for consumer durables, not checkout BNPL</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P1**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">3.3.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**Dynamic credit limit management**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Real-time limit updates based on repayment behavior; shared limits across BNPL + other products</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Static limits managed in T24</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+</div></div>
+
+
+<h3>3.4 Estimated Investment for BNPL Launch</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px">
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">BNPL platform (build or buy)</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 15-30</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 9-12 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Merchant integration SDK/API</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 5-10</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 6-9 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Real-time decisioning engine</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 8-15</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 6-9 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">Merchant operations team and tools</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> 3-5</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> 3-6 months</div>
+</div>
+<div style="background:white;border-radius:1px;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px">**Total BNPL Launch**</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Estimated Range (VND Billion):</span> **31-60**</div>
+<div style="font-size:13px;color:#555;margin:3px 0"><span style="font-weight:600;color:#0D1B2A">Timeline:</span> **9-12 months**</div>
+</div>
+</div></div>
+
+
+<hr>
+<h2>4. Gaps for 2-Wheeler Financing Launch</h2>
+<h3>4.1 Dealer Integration</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">4.1.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Dealer management portal**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Dealer onboarding, inventory tracking, application submission, commission management</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> Current dealer management is basic; installment product performance tracked by dealer but no dedicated portal</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">4.1.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">**Dealer financing workflow**</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> In-dealer application tablet/kiosk; real-time approval notification; digital contract signing at dealer</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Sales App exists but designed for general installment, not dealer-specific 2W workflow</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">4.1.3</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **OEM integration**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> API integration with VinFast, Honda, Yamaha dealer management systems for inventory and pricing</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No OEM integration exists</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+</div></div>
+
+
+<h3>4.2 Collateral Management</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif;background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">4.2.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Vehicle registration tracking**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Integration with Vietnam vehicle registration database; lien registration; ownership transfer tracking</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No collateral management system</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">4.2.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> **Collateral valuation**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Required Capability:</span> Blue book valuation for used vehicles; depreciation models; market price database</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Current State:</span> No capability</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> **P2**</div>
+</div>
+<div style="flex:1;min-width:200px;backgroun</body></html>
