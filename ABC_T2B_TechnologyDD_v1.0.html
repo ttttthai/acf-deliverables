@@ -1,4 +1,5 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ABC_T2B_TechnologyDD_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ABC_T2B_TechnologyDD_v1.0</h1><p>ABC Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ABC Technology Due Diligence Report v1.0</h1>
+<!DOCTYPE html><html><head><meta charset=UTF-8><meta name=viewport content='width=device-width,initial-scale=1'><title>ABC_T2B_TechnologyDD_v1.0</title><link href='https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap' rel=stylesheet><link rel=stylesheet href=style.css></head><body><a href=index.html class=nav-back>Back to Index</a><div class=header-bar><h1>ABC_T2B_TechnologyDD_v1.0</h1><p>ABC Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div>
+<h1>ABC Technology Due Diligence Report v1.0</h1>
 <p><strong>Prepared for:</strong> Ikigai Advisory -- Project ACF
 <strong>Prepared by:</strong> Team 2 -- Due Diligence (Technology)
 <strong>Date:</strong> March 15, 2026
@@ -662,63 +663,65 @@
 <li>Semi-automated reporting process under development by Accounting team</li>
 </ul>
 <hr>
-<h2>5. Data Architecture</h2>
-<h3>5.1 Current State</h3>
-<p><strong>Finding [HIGH]:</strong> ABC lacks a modern data architecture:</p>
-<!-- ============ DATA ARCHITECTURE STATUS ============ -->
-<div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 24px 0;">
-  <div style="background: #F5E8E82e2; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #991b1b; font-weight: 700;">NOT IMPL</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">Data Warehouse</div>
+<h2>4A. Scoring System Architecture</h2>
+<h3>4A.1 System Overview</h3>
+<p>The <strong>AEON Scoring Service</strong> is a standalone credit decisioning service developed and maintained by AND Solutions. It is architecturally separate from LOOMS but tightly integrated via Open API. LOOMS components involved in the integration include: Back-Office Admin Portal, BPM Engine, and Rule Engine.</p>
+<!-- ============ SCORING SYSTEM ARCHITECTURE ============ -->
+<div style="background:#F2F2F0;border:1px solid #D4D4D4;border-radius:2px;padding:24px 28px;margin:24px 0;">
+  <div style="font-size:13px;font-weight:700;color:#0D1B2A;text-transform:uppercase;letter-spacing:1px;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px; margin-bottom: 16px;">Scoring Service &mdash; Technical Architecture</div>
+
+  <!-- Layer 1: Entry -->
+  <div style="display: flex; align-items: center; gap: 0; justify-content: center; flex-wrap: wrap; margin-bottom: 16px;">
+    <div style="background: #0D1B2A; color: #fff; padding: 12px 18px; border-radius:2px; text-align: center; min-width: 130px;">
+      <div style="font-size: 12px; font-weight: 700;">Sales Portal V3.1</div>
+      <div style="font-size: 9px; opacity: 0.7;">Agent interface / Mobile App</div>
+    </div>
+    <div style="font-size: 20px; color: #0D1B2A; padding: 0 8px;">&#8594;</div>
+    <div style="background: #0D1B2A; color: #fff; padding: 12px 18px; border-radius:2px; text-align: center; min-width: 130px;">
+      <div style="font-size: 12px; font-weight: 700;">LOOMS</div>
+      <div style="font-size: 9px; opacity: 0.7;">BPM Engine + Rule Engine V3.0</div>
+    </div>
+    <div style="font-size: 20px; color: #0D1B2A; padding: 0 8px;">&#8594;</div>
+    <div style="background: #1a3a5c; color: #fff; padding: 12px 18px; border-radius:2px; text-align: center; min-width: 150px; border: 2px solid #C5A572;">
+      <div style="font-size: 12px; font-weight: 700;">Scoring Service</div>
+      <div style="font-size: 9px; opacity: 0.7;">AND Solutions | Open API | Token Auth</div>
+    </div>
+    <div style="font-size: 20px; color: #0D1B2A; padding: 0 8px;">&#8594;</div>
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="background: #fff; border: 2px solid #0D1B2A; padding: 6px 14px; border-radius:2px; font-size: 10px; font-weight: 600; color: #0D1B2A;">Blacklist / AML DB</div>
+      <div style="background: #fff; border: 2px solid #0D1B2A; padding: 6px 14px; border-radius:2px; font-size: 10px; font-weight: 600; color: #0D1B2A;">CIC (B11T / S40A / R11A)</div>
+      <div style="background: #fff; border: 2px solid #0D1B2A; padding: 6px 14px; border-radius:2px; font-size: 10px; font-weight: 600; color: #0D1B2A;">PCB (Private Credit Bureau)</div>
+    </div>
   </div>
-  <div style="background: #F5E8E82e2; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #991b1b; font-weight: 700;">NOT IMPL</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">Data Lake</div>
-  </div>
-  <div style="background: #F5E8E82e2; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #991b1b; font-weight: 700;">NOT IMPL</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">Customer 360</div>
-  </div>
-  <div style="background: #F5E8E82e2; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #991b1b; font-weight: 700;">NOT IMPL</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">IFRS 9 ECL</div>
-  </div>
-  <div style="background: #fef3c7; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #92400e; font-weight: 700;">PLANNED</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">AI/ML Scoring</div>
-  </div>
-  <div style="background: #fef3c7; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #92400e; font-weight: 700;">MANUAL</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">ETL Pipeline</div>
-  </div>
-  <div style="background: #dcfce7; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #15803d; font-weight: 700;">ACTIVE</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">Power BI</div>
-  </div>
-  <div style="background: #F5E8E82e2; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #991b1b; font-weight: 700;">CONCERN</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">Data Quality</div>
-  </div>
-  <div style="background: #F5E8E82e2; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #991b1b; font-weight: 700;">LOW</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">Analytics</div>
-  </div>
-  <div style="background: #F5E8E82e2; border-radius:1px; padding: 10px; text-align: center;">
-    <div style="font-size: 10px; color: #991b1b; font-weight: 700;">NOT IMPL</div>
-    <div style="font-size: 12px; font-weight: 700; color: #333; margin: 4px 0;">Data Mart</div>
+
+  <!-- Service Inventory -->
+  <div style="font-size: 10px; font-weight: 700; color:#0D1B2A; margin-bottom: 6px;">CHECK SERVICES PROVIDED</div>
+  <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
+    <div style="background: #0D1B2A; border-radius:1px; padding: 8px; color: #fff; text-align: center;">
+      <div style="font-size: 10px; font-weight: 700;">Blacklist</div>
+      <div style="font-size: 8px; opacity: 0.7;">NID / Phone lookup</div>
+    </div>
+    <div style="background: #0D1B2A; border-radius:1px; padding: 8px; color: #fff; text-align: center;">
+      <div style="font-size: 10px; font-weight: 700;">B11T</div>
+      <div style="font-size: 8px; opacity: 0.7;">CIC individual credit</div>
+    </div>
+    <div style="background: #0D1B2A; border-radius:1px; padding: 8px; color: #fff; text-align: center;">
+      <div style="font-size: 10px; font-weight: 700;">S40A</div>
+      <div style="font-size: 8px; opacity: 0.7;">CIC corporate/addtl</div>
+    </div>
+    <div style="background: #0D1B2A; border-radius:1px; padding: 8px; color: #fff; text-align: center;">
+      <div style="font-size: 10px; font-weight: 700;">R11A</div>
+      <div style="font-size: 8px; opacity: 0.7;">CIC outbound report</div>
+    </div>
+    <div style="background: #0D1B2A; border-radius:1px; padding: 8px; color: #fff; text-align: center;">
+      <div style="font-size: 10px; font-weight: 700;">PCB</div>
+      <div style="font-size: 8px; opacity: 0.7;">Private bureau check</div>
+    </div>
   </div>
 </div>
-<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ABC IT Division (Package 13 Feb 2026); EY "Executive Summary Report_v.3.1.pptx"; "LOS_Gantt-chart_General.xlsx"; IKIGAI Analysis</div>
-<!-- ============ END DATA ARCHITECTURE ============ -->
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: INT - Scoring V3.1.docx; SRS_Scoring_v0.6.docx; SRS_CICS40A_v0.2.docx; ABC RawData Packages</div>
+<!-- ============ END SCORING SYSTEM ARCHITECTURE ============ -->
 
-<h3>5.2 Data Sources</h3>
-<!-- ============ DATA SOURCES BOX DIAGRAM ============ -->
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 24px 0;">
-  <div style="background: #0D1B2A; border-radius:1px; padding: 10px; color: #fff;"><div style="font-size: 11px; font-weight: 700;">T24</div><div style="font-size: 9px; opacity: 0.8;">Core SoR | Loans, GL, balances</div></div>
-  <div style="background: #0D1B2A; border-radius:1px; padding: 10px; color: #fff;"><div style="font-size: 11px; font-weight: 700;">LOOMS</div><div style="font-size: 9px; opacity: 0.8;">Under migration | Apps, decisions</div></div>
-  <div style="background: #0D1B2A; border-radius:1px; padding: 10px; color: #fff;"><div style="font-size: 11px; font-weight: 700;">Nexusti 4.0</div><div style="font-size: 9px; opacity: 0.8;">Separate | Collection activities</div></div>
-  <div style="background: #0D1B2A; border-radius:1px; padding: 10px; color: #fff;"><div style="font-size: 11px; font-weight: 700;">CIC</div><div style="font-size: 9px; opacity: 0.8;">API | Credit bureau data</div></div>
-  <div style="background: #0D1B2A; border-radius:1px; padding: 10px; color: #fff;"><div style="font-size: 11px; font-weight: 700;">FPT eKYC</div><div style="font-size: 9px; opacity: 0.8;">API | Identity verification</div></div>
-  <div style="background: #0D1B2A; border-radius:1px; padding: 10px; color: #fff;"><div style="font-size: 11px; font-weight: 700;">Payment API</div><div style="font-size: 9px; opacity: 0.8;">Middleware | Disbursement/collection</div></div>
-  <div style="background: #0D1B2A; border-radius:1px; padding: 10px; color: #fff;"><div style="font-size: 11px; font-weight: 700;">Product Service</div><div style="font-size: 9px; opacity: 0.8;">Under dev | Config, pricing</div></div>
-  <div style="background: #999;</body></html>
+<p><strong>Key design principle:</strong> LOOMS does not integrate directly with CIC or any credit bureau vendor. All external credit data connections are managed exclusively through the Scoring Service, which handles token lifecycle management, error handling, monitoring, and audit logging.</p>
+<h3>4A.2 Technical Assessment</h3>
+<p><strong>Finding [CRITICAL]:</strong> Scoring model GINI is <strong>26%</strong>, significantly below the consumer finance industry benchmark of 40-50%. The backtest sample of 5,867 loans provides limited validation confidence. The model lacks alternative data inputs (WAON membership, device data, behavioral signals) that could mater</body></html>
