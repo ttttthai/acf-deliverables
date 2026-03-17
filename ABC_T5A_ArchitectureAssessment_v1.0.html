@@ -1,0 +1,679 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ABC_T5A_ArchitectureAssessment_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ABC_T5A_ArchitectureAssessment_v1.0</h1><p>ABC Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ABC Architecture Assessment &amp; Future State Design v1.0</h1>
+<p><strong>Document ID:</strong> ABC_T5A_ArchitectureAssessment_v1.0
+<strong>Prepared for:</strong> ABC Consumer Finance Vietnam -- Technology Steering Committee &amp; AFS Japan
+<strong>Prepared by:</strong> Team 5 -- Architecture &amp; Implementation
+<strong>Date:</strong> March 15, 2026
+<strong>Classification:</strong> Internal -- Strictly Confidential
+<strong>Version:</strong> 1.0
+<strong>Sources:</strong> Team 2 (Technology DD, Capability Gaps, Operational DD), Team 4 (Technology Strategy, Digital Transformation, Corporate Strategy, Product Strategy, Sales Strategy)</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>This document provides a comprehensive architecture assessment of ABC&#39;s current technology estate and designs the future-state architecture required to support the 3-stage corporate strategy (Stabilize, Grow, Lead). The current architecture is characterized by monolithic core banking (T24 R25<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC IT Division, &quot;20251115_BDIT v5.pptx&quot; AdvisorsData</span></span>), point-to-point integrations, no API management, no data platform, critical security gaps (no firewall<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">EY &quot;Executive Summary Report_v.3.1.pptx&quot; — Cybersecurity Findings</span></span>, no SIEM<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">EY &quot;Executive Summary Report_v.3.1.pptx&quot; — Cybersecurity Findings</span></span>, no WAF<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">EY &quot;Executive Summary Report_v.3.1.pptx&quot; — Cybersecurity Findings</span></span> per EY findings), and single-site hosting with unvalidated DR. The future-state design transitions ABC to an API-first, event-driven, cloud-ready, composable architecture capable of supporting 800,000+ customers, 5+ product lines, real-time AI/ML decisioning, and embedded finance across the ABC ecosystem.</p>
+<h3>Architecture Maturity Score <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span></h3>
+<!-- Architecture Maturity Score - Visual Horizontal Bars -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;padding:16px 20px;background:#fff">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px;margin-bottom:14px">Architecture Maturity Score (1-5 Scale)</div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600">Application Architecture</span><span><span style="color:#0D1B2A;font-weight:700">1.5</span> &#8594; <span style="color:#0D1B2A">3.0</span> &#8594; <span style="color:#0D1B2A;font-weight:700">4.5</span></span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:16px;overflow:hidden;position:relative">
+      <div style="background:#0D1B2A;height:100%;width:90%;border-radius:0;opacity:0.15;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:60%;border-radius:0;opacity:0.3;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:30%;border-radius:0;position:absolute"></div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600">Integration Architecture</span><span><span style="color:#0D1B2A;font-weight:700">1.5</span> &#8594; <span style="color:#0D1B2A">3.5</span> &#8594; <span style="color:#0D1B2A;font-weight:700">4.5</span></span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:16px;overflow:hidden;position:relative">
+      <div style="background:#0D1B2A;height:100%;width:90%;border-radius:0;opacity:0.15;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:70%;border-radius:0;opacity:0.3;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:30%;border-radius:0;position:absolute"></div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600">Data Architecture</span><span><span style="color:#0D1B2A;font-weight:700">1.0</span> &#8594; <span style="color:#0D1B2A">3.0</span> &#8594; <span style="color:#0D1B2A;font-weight:700">4.5</span></span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:16px;overflow:hidden;position:relative">
+      <div style="background:#0D1B2A;height:100%;width:90%;border-radius:0;opacity:0.15;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:60%;border-radius:0;opacity:0.3;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:20%;border-radius:0;position:absolute"></div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600">Infrastructure Architecture</span><span><span style="color:#0D1B2A;font-weight:700">1.5</span> &#8594; <span style="color:#0D1B2A">3.5</span> &#8594; <span style="color:#0D1B2A;font-weight:700">4.0</span></span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:16px;overflow:hidden;position:relative">
+      <div style="background:#0D1B2A;height:100%;width:80%;border-radius:0;opacity:0.15;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:70%;border-radius:0;opacity:0.3;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:30%;border-radius:0;position:absolute"></div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600">Security Architecture</span><span><span style="color:#0D1B2A;font-weight:700">1.0</span> &#8594; <span style="color:#0D1B2A">3.5</span> &#8594; <span style="color:#0D1B2A;font-weight:700">4.5</span></span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:16px;overflow:hidden;position:relative">
+      <div style="background:#0D1B2A;height:100%;width:90%;border-radius:0;opacity:0.15;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:70%;border-radius:0;opacity:0.3;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:20%;border-radius:0;position:absolute"></div>
+    </div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:10px 16px;display:flex;justify-content:space-between;color:white;font-size:12px;margin-top:12px">
+    <span style="font-weight:700">Overall Maturity</span>
+    <span><span style="color:#fca5a5;font-weight:700">1.3</span> (Current) &#8594; <span style="color:#fbbf24;font-weight:700">3.3</span> (Year 2) &#8594; <span style="color:#86efac;font-weight:700">4.4</span> (Year 5)</span>
+  </div>
+  <div style="display:flex;gap:16px;font-size:10px;color:#666;margin-top:8px">
+    <span><span style="display:inline-block;width:10px;height:10px;background:#0D1B2A;border-radius:0;vertical-align:middle;margin-right:3px"></span>Current</span>
+    <span><span style="display:inline-block;width:10px;height:10px;background:#0D1B2A;border-radius:0;vertical-align:middle;margin-right:3px;opacity:0.6"></span>Year 2 Target</span>
+    <span><span style="display:inline-block;width:10px;height:10px;background:#0D1B2A;border-radius:0;vertical-align:middle;margin-right:3px;opacity:0.3"></span>Year 5 Target</span>
+  </div>
+</div>
+
+<hr>
+<!-- ============ CURRENT STATE ARCHITECTURE DIAGRAM ============ -->
+<div style="background:#0D1B2A; border-radius:0; padding: 28px; margin: 24px 0;">
+  <div style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 20px; text-align: center;">Current State Architecture</div>
+  <!-- Core System -->
+  <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+    <div style="background: #0D1B2A; border-radius:0; padding: 20px 32px; text-align: center; border:1px solid #D4D4D4;">
+      <div style="font-size: 10px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px;">Core Banking</div>
+      <div style="font-size: 22px; font-weight: 800; color: #fff;">T24 R25</div>
+      <div style="font-size: 11px; color: rgba(255,255,255,0.7);">Temenos / IBM Power / Oracle RAC 19c</div>
+    </div>
+  </div>
+  <!-- Connection lines -->
+  <div style="display: flex; justify-content: center; gap: 40px; margin: 4px 0;">
+    <div style="text-align: center; color: rgba(255,255,255,0.3);">&#9474;</div>
+    <div style="text-align: center; color: rgba(255,255,255,0.3);">&#9474;</div>
+    <div style="text-align: center; color: rgba(255,255,255,0.3);">&#9474;</div>
+  </div>
+  <!-- Connected Systems -->
+  <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px;">
+    <div style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius:0; padding: 12px 18px; text-align: center; min-width: 120px;">
+      <div style="font-size: 14px; font-weight: 700; color: #0D1B2A;">LOOMS</div>
+      <div style="font-size: 10px; color: rgba(255,255,255,0.6);">Newgen LOS</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius:0; padding: 12px 18px; text-align: center; min-width: 120px;">
+      <div style="font-size: 14px; font-weight: 700; color: #0D1B2A;">Nexusti 4.0</div>
+      <div style="font-size: 10px; color: rgba(255,255,255,0.6);">Collections</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius:0; padding: 12px 18px; text-align: center; min-width: 120px;">
+      <div style="font-size: 14px; font-weight: 700; color: #0D1B2A;">Payment API</div>
+      <div style="font-size: 10px; color: rgba(255,255,255,0.6);">Middleware v1.2</div>
+    </div>
+  </div>
+  <!-- External connections -->
+  <div style="display: flex; justify-content: center; gap: 40px; margin: 4px 0;">
+    <div style="text-align: center; color: rgba(255,255,255,0.3);">&#9474;</div>
+    <div style="text-align: center; color: rgba(255,255,255,0.3);">&#9474;</div>
+    <div style="text-align: center; color: rgba(255,255,255,0.3);">&#9474;</div>
+  </div>
+  <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+    <div style="background: rgba(255,255,255,0.08); border: 1px dashed rgba(255,255,255,0.2); border-radius:0; padding: 8px 14px; text-align: center;">
+      <div style="font-size: 11px; color: rgba(255,255,255,0.7);">SeABank DC</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.08); border: 1px dashed rgba(255,255,255,0.2); border-radius:0; padding: 8px 14px; text-align: center;">
+      <div style="font-size: 11px; color: rgba(255,255,255,0.7);">CIC Bureau</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.08); border: 1px dashed rgba(255,255,255,0.2); border-radius:0; padding: 8px 14px; text-align: center;">
+      <div style="font-size: 11px; color: rgba(255,255,255,0.7);">NAPAS</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.08); border: 1px dashed rgba(255,255,255,0.2); border-radius:0; padding: 8px 14px; text-align: center;">
+      <div style="font-size: 11px; color: rgba(255,255,255,0.7);">FPT eKYC</div>
+    </div>
+    <div style="background: rgba(255,255,255,0.08); border: 1px dashed rgba(255,255,255,0.2); border-radius:0; padding: 8px 14px; text-align: center;">
+      <div style="font-size: 11px; color: rgba(255,255,255,0.7);">FPT eSign</div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 14px; font-size: 11px; color: rgba(255,255,255,0.4);">Point-to-Point Integration / No API Gateway / Single-Site Hosting</div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ABC Architecture Team, IKIGAI Analysis</div>
+<!-- ============ END CURRENT STATE ARCHITECTURE ============ -->
+
+<!-- ============ FUTURE STATE ARCHITECTURE DIAGRAM ============ -->
+<div style="background:#0D1B2A;opacity:0.85; border-radius:0; padding: 28px; margin: 24px 0;">
+  <div style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 20px; text-align: center;">Future State Architecture (Target Year 5)</div>
+  <!-- Digital Layer -->
+  <div style="background: rgba(255,255,255,0.15); border-radius:0; padding: 12px; margin-bottom: 8px;">
+    <div style="font-size: 10px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Digital Layer</div>
+    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+      <span style="background: rgba(255,255,255,0.2); color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Mobile App</span>
+      <span style="background: rgba(255,255,255,0.2); color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Web Portal</span>
+      <span style="background: rgba(255,255,255,0.2); color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Partner APIs</span>
+      <span style="background: rgba(255,255,255,0.2); color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Agent App</span>
+      <span style="background: rgba(255,255,255,0.2); color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">AI Chatbot</span>
+    </div>
+  </div>
+  <div style="text-align: center; color: rgba(255,255,255,0.4); font-size: 14px;">&#9660;</div>
+  <!-- API Gateway -->
+  <div style="background: rgba(255,255,255,0.25); border-radius:0; padding: 10px 16px; margin-bottom: 8px; text-align: center;">
+    <div style="font-size: 13px; font-weight: 700; color: #fff;">API Gateway / Event Bus (Kong + Kafka)</div> <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span>
+  </div>
+  <div style="text-align: center; color: rgba(255,255,255,0.4); font-size: 14px;">&#9660;</div>
+  <!-- Services Layer -->
+  <div style="background: rgba(255,255,255,0.15); border-radius:0; padding: 12px; margin-bottom: 8px;">
+    <div style="font-size: 10px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Services Layer</div>
+    <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+      <span style="background: #0D1B2A; color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">T24 R25</span>
+      <span style="background: #0D1B2A; color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">CMS (Cards)</span>
+      <span style="background: #0D1B2A; color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">LOOMS+</span>
+      <span style="background: #0D1B2A; color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Credgenics</span>
+      <span style="background: #0D1B2A; color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">AI/ML Engine</span>
+    </div>
+  </div>
+  <div style="text-align: center; color: rgba(255,255,255,0.4); font-size: 14px;">&#9660;</div>
+  <!-- Data Layer -->
+  <div style="background: rgba(255,255,255,0.15); border-radius:0; padding: 12px; margin-bottom: 8px;">
+    <div style="font-size: 10px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Data Platform (Medallion Architecture)</div>
+    <div style="display: flex; gap: 6px;">
+      <span style="background: rgba(255,255,255,0.2); color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px;">Bronze (Raw)</span>
+      <span style="background: rgba(255,255,255,0.3); color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px;">Silver (Clean)</span>
+      <span style="background: rgba(255,255,255,0.4); color: #fff; padding: 5px 12px; border-radius:0; font-size: 12px; font-weight: 600;">Gold (Analytics)</span> <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span>
+    </div>
+  </div>
+  <div style="text-align: center; color: rgba(255,255,255,0.4); font-size: 14px;">&#9660;</div>
+  <!-- Infrastructure -->
+  <div style="background: rgba(0,0,0,0.2); border-radius:0; padding: 10px 16px; text-align: center;">
+    <div style="font-size: 10px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Infrastructure</div>
+    <div style="font-size: 13px; font-weight: 600; color: #fff;">Private Cloud (Viettel IDC DC/DR) + AWS (Digital) + Zero Trust Security</div>
+  </div>
+</div>
+<div style="margin-top:16px;font-size:10px;font-style:italic;color:#999">Source: ABC Architecture Team, IKIGAI Analysis</div>
+<!-- ============ END FUTURE STATE ARCHITECTURE ============ -->
+
+<h2>1. Current State Architecture <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span></h2>
+<h3>1.1 Application Architecture Map <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span></h3>
+<p>ABC&#39;s application landscape consists of a fragmented set of systems with limited integration maturity. The following map describes the current production and in-development systems.</p>
+<h4>1.1.1 Core Banking Layer</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**T24 Transact**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Temenos</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Version:</span> R25 (upgrade in progress)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Core banking: accounts, lending (AA module), GL, FX, MM, billing, delinquency management, WAON point redemption, PTF point payment</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**T24 Batch Upload**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Temenos</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Version:</span> R25</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Bulk data processing for end-of-day/month operations</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**T24 Close of Business (COB)**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Temenos</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Version:</span> R25</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> End-of-day batch processing; creates downtime windows for early settlement, partial prepayment</div>
+</div>
+</div></div>
+
+
+<p><strong>Key Findings:</strong></p>
+<ul>
+<li>T24 operates on IBM Power Systems with Oracle RAC 19c database</li>
+<li>Cannot support automated 5-group R18-based loan classification (SBV regulatory requirement)</li>
+<li>Cannot support back-up date or semi-auto processing simultaneously with normal monthly automation</li>
+<li>Monthly closing requires multi-system orchestration: Credit Screening System -&gt; Card Solution System -&gt; Core Banking -&gt; final closing result sharing</li>
+<li>Significant customizations for ACF-specific products (cash loan, installment CD/TW, revolving, ACS cross-sell) create upgrade complexity</li>
+<li>BPR documents finalized for Lending (v1.6), Account (Final), Customer (v1.3 Final), GL (v3.1 Final), FX (v2.1 Final), MM (Final), Batch Upload (v2.0)</li>
+</ul>
+<h4>1.1.2 Loan Origination Layer</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**LOOMS**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Newgen</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Version:</span> V3.0-V3.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Under migration (Aug 2026 target)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Loan application, appraisal, disbursement, rule engine, MDM, DMS, contract/eSign, anti-fraud, audit log, access control, reporting, auto assignment</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Legacy NewGen LOS**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Newgen</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Version:</span> Legacy</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active (to be decommissioned)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Current loan origination (being replaced by LOOMS)</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Product Service**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Custom</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Version:</span> V3.0</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Under development</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Product configuration, pricing, subsidy calculation</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Sales Portal**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Newgen/Custom</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Version:</span> V3.1</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active/Under migration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Web interface for sales agents, lead management, loan submissions</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Sales App (Mobile)**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Custom</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Version:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Internal mobile app for field staff customer onboarding and application submission</div>
+</div>
+</div></div>
+
+
+<p><strong>Key Findings:</strong></p>
+<ul>
+<li>LOOMS comprises 13 modules with extensive PRD documentation (V3.0-V3.2)</li>
+<li>DSD Phase issues remain outstanding -- active issue list being tracked</li>
+<li>Field mapping between legacy and new schemas requires extensive reconciliation</li>
+<li>No parallel run planning documented; no rollback strategy documented</li>
+<li>6+ integration points creating deployment complexity</li>
+</ul>
+<h4>1.1.3 Digital Channels Layer</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Customer Portal**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Web</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Live</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Basic loan information, payment options, account services</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**WebApp**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Under development</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not live</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Payment functions (NAPAS virtual card, QR CPM/MPM/NFC, cash advance, installment payment, revolving payment), loan services, points, balance management</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Smartphone App**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Under development</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not live</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Same as WebApp; full payment and loan services; NAPAS virtual card issuance</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Merchant Portal**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Web</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Loan-related transaction tracking for merchants</div>
+</div>
+</div></div>
+
+
+<p><strong>Critical Gap:</strong> No production customer-facing mobile app. ABC is approximately 2-3 years behind competitors (FE Credit: 14M app users; Home Credit: mature app). Less than 1% of originations through digital channels.</p>
+<h4>1.1.4 Collections Layer</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Debt Collection System**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> PTF InHouse</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Collection management, case assignment, workflow</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Nexusti Collection 4.0**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Nexusti</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Collection activities, contact history, payment promises</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Stringee**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> SaaS</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Contact center integration (phone, email, chat)</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**ZNS/SMS Gateway**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Custom</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Under development</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Zalo notification service and SMS notifications for collections and marketing</div>
+</div>
+</div></div>
+
+
+<p><strong>Key Findings:</strong></p>
+<ul>
+<li>Collections are primarily phone-based (tele + legal call + field)</li>
+<li>No digital collection channels operational (ZNS/SMS under development)</li>
+<li>No behavioral scoring for collections; manual case assignment</li>
+<li>60% of B4+ portfolio uncovered by collection staff</li>
+<li>Contact rate for B1 at only 7.3% despite 18 call attempts per contract</li>
+</ul>
+<h4>1.1.5 Supporting Systems</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**WAON Point System (ACSTV)**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> InHouse</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Point inquiry, redemption, coupon exchange for AEON loyalty</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Scoring Module (PTF)**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> InHouse</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Internal credit scoring engine (CIC-based, GINI 26-27%)</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Credit Screening System**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Custom</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Membership application and credit assessment</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Card Solution System**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Vendor-dependent</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Under evaluation (RFP)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Credit card management -- 11 vendors evaluated</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Power BI**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Platform:</span> Microsoft</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Function:</span> Interactive dashboards for business performance monitoring</div>
+</div>
+</div></div>
+
+
+<h3>1.2 Integration Architecture <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span></h3>
+<h4>1.2.1 Current Integration Map</h4>
+<p>ABC&#39;s integration architecture is point-to-point with no centralized API management, no event bus, and no service mesh.</p>
+<p><strong>External Integrations:</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**CIC (R11A, B11T)**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> REST API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Inbound</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Credit bureau inquiry for scoring and risk assessment</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**FPT eKYC**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> REST API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Bidirectional</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> OCR, facial recognition, database checks during onboarding</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**FPT eSign**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> REST API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Bidirectional</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> Digital contract signing with legally valid digital signatures</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**SeABank**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> API/FT</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Outbound</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> Disbursement and settlement via bank transfer</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**NAPAS**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Bidirectional</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Planned</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> Fast payment, virtual card issuance, QR payments</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Payment Partners**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> REST API v1.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Bidirectional</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> Collection partner integration (loan query, disbursement, payment, early settlement)</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Zalo (ZNS)**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Outbound</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Under development</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> Notification service for collections and marketing</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**SMS Gateway**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Outbound</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Under development</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> SMS notifications</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**SBV**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> File-based</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Outbound</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> Regulatory reporting (manual/semi-automated)</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**eWallet (MoMo, ZaloPay)**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> Planned</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Under development</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Part of app strategy</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**PCB (Private Credit Bureau)**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> Not documented</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Unknown</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not mentioned in available documents</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**VNEID**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> Not documented</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Unknown</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not mentioned in available documents</div>
+</div>
+</div></div>
+
+
+<p><strong>Internal Integrations:</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**T24 <-> LOOMS**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> API (T24 Adapter)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Bidirectional</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active (V3.0)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> Loan account creation, balance inquiry, repayment processing</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Scoring Module**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Internal</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active (V3.1)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Internal credit scoring engine</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**Product Service**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Internal</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Under development (V3.0)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> Product configuration, pricing</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">**WAON Point System**</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Protocol:</span> Internal API</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Direction:</span> Bidirectional</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Active</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Purpose:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Point inquiry, redemption, coupon exchange</span></div>
+</div>
+</div></div>
+
+
+<h4>1.2.2 Payment API Architecture (v1.2)</h4>
+<p>The Payment API is the most documented integration layer and serves as middleware between collection partners and backend systems.</p>
+<p><strong>Key APIs:</strong></p>
+<ol>
+<li><code>getLoansInfo</code> -- Query loan information by loan_id and partner_id</li>
+<li><code>getLoansInfoLegal</code> -- Query loans by legal_id (CCCD number) and partner_id</li>
+<li><code>createFTLoans</code> -- Cash disbursement via T24 Adapter</li>
+<li><code>createFTLoansToAcc</code> -- Bank account disbursement via SeABank<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC Banking Partner Agreement — Disbursement Channel</span></span></li>
+<li><code>CreateFTPayment</code> -- Scheduled repayment collection via T24</li>
+</ol>
+<p><strong>Database Ta<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC Banking Partner Agreement — Disbursement Channel</span></span>bles:</strong> PARTNER, LOANS_INFO, LOANS_PAYMENT_INFO
+<strong>Disbursement Status Tracking:</strong> READY -&gt; PAID
+<strong>Multi-channel Disbursement Fallback:</strong> SeABank direct -&gt; CITAD -&gt; NAPAS fast</p>
+<h4>1.2.3 Integration Architecture Gaps</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">No API gateway or management platform</div> <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> No centralized authentication, rate limiting, throttling, monitoring, or analytics for API calls</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">No event-driven architecture</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">Cannot support real-time event processing for BNPL, credit card transactions, or behavioral triggers</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">No service mesh</div> <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">MEDIUM</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> No service discovery, load balancing, or circuit breaker patterns between microservices</div> <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">No API versioning strategy beyond v1.2</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">MEDIUM</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Risk of breaking changes affecting partner integrations</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Point-to-point integration pattern</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">HIGH</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Each new system integration increases complexity exponentially; N systems require N*(N-1)/2 connections</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">No message queue or dead letter queue</div> <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">MEDIUM</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> No resilience for failed integration calls; no asynchronous processing capability</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">No API developer portal</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Severity:</span> <span style="display:inline-block;padding:2px 10px;border-radius:0;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">MEDIUM</span></div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Impact:</span> Cannot onboard external partners (BNPL merchants, e-wallet providers) self-service</div>
+</div>
+</div></div>
+
+
+<h3>1.3 Data Architecture <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span></h3>
+<h4>1.3.1 Current Data Flows</h4>
+<pre><code>[T24 Core Banking]
+    |-- Loan accounts, transactions, customer data, balances, GL entries
+    |-- Daily batch extraction for reporting (manual/semi-automated)
+    |-- Monthly closing data for SBV regulatory reports
+    ↓
+[Excel / Manual Processes]
+    |-- Loan classification (5-group R18) maintained off-system
+    |-- Annex files (Application Fields, Anti-Fraud Fields, Audit Log)
+    ↓
+[Power BI]
+    |-- PQR (Portfolio Quality Report)
+    |-- EWR (Early Warning Report)
+    |-- Basic descriptive analytics
+
+[LOOMS&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ABC IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025&lt;/span&gt;&lt;/span&gt; (Under Migration)]
+    |-- Application data, credit decisions, documents
+    |-- Field mappings between old/new schemas
+    ↓
+[No c&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ABC IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025&lt;/span&gt;&lt;/span&gt;entralized data store]
+
+[Collection System (Nexusti&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ABC IT Division — Integration Architecture, Package 13 Feb 2026&lt;/span&gt;&lt;/span&gt; 4.0)]
+    |-- Collection activities, contact history, payment promises
+    |-- Separate from T24 and LOOMS data
+    ↓
+[No integration with analytics]
+
+[CIC&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;National Credit Information Center (CIC), State Bank of Vietnam&lt;/span&gt;&lt;/span&gt; Bureau]
+    |-- External credit data (R11A, B11T reports)
+    |-- On-demand API calls during origination
+    ↓
+[No persistent storage of bureau data for analytics]
+
+[WAON&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ABC Group Loyalty Program Documentation&lt;/span&gt;&lt;/span&gt; Point System (ACSTV)]
+    |-- Loyalty data: purchase frequency, basket, recency
+    ↓
+[Not integrated into credit scoring or analytics]
+
+[AEON POS (IDPOS)]
+    |-- Retail purchase data from AEON stores
+    ↓
+[Not yet integrated (planned per NTT DATA strategy)]
+</code></pre>
+<h4>1.3.2 Data Warehousing</h4>
+<p><strong>Current State: NON-EXISTENT</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Data Warehouse</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not implemented</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> No centralized analytical data store</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Data Lake</div> <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not implemented</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> No raw data repository</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Data Mart</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not implemented</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> No departmental analytical views</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Customer 360</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not implemented</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> No unified customer view across channels</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">ETL Pipeline</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Manual/semi-automated</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> Data extraction from T24 for reporting is largely manual</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Data Quality Framework</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not implemented</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> No data governance, quality monitoring, or lineage tracking</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">IFRS 9 ECL Model</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not implemented</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> EDA (Exploratory Data Analysis) planned with AFS Japan</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">AI/ML Infrastructure</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not deployed</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> AND Solution engagement planned (20+ models); not yet operational</div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#0D1B2A">Real-time Analytics</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Status:</span> Not available</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Gap:</span> Monthly batch reporting; some weekly reports</div>
+</div>
+</div></div>
+
+
+<h4>1.3.3 Data Quality Assessment</h4>
+<p><strong>Critical Issues Identified:</strong></p>
+<ol>
+<li>Loan classification maintained off-system in Excel (critical data integrity risk for regulatory compliance)</li>
+<li>Contact information quality is poor -- B1 contact and connection rate at only 7.3% despite 18 call attempts per contract</li>
+<li>Field mapping between old and new LOS (LOOMS) requires extensive reconciliation</li>
+<li>No documented data governance framework o<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC Group Loyalty Program Documentation</span></span>r data quality monitoring</li>
+<li>No master data management across systems -- customer data exists in silos (T24, LOOMS, Collection, WAON)</li>
+<li>SBV reporting relies on semi-automated processes with manual data extraction</li>
+<li>STRAVIS reporting for AFS Group require<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC IT Division, &quot;20251115_BDIT v5.pptx&quot; AdvisorsData</span></span>s manual compilation</li>
+</ol>
+<h3>1.4 Infrastructure Architecture <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span></h3>
+<h4>1.4.1 Current Deployment Topology <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span></h4>
+<pre><code>[SeABank Data Center (DC)]
+ &lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ABC IT Division — Integration Architecture, Package 13 Feb 2026&lt;/span&gt;&lt;/span&gt;   |-- T24 R25 Core Banking (IBM Power Systems / Oracle RAC 19c)
+    |-- LOOMS (Newgen -- under migration)
+    |-- Collection System (PTF InHouse + Nexusti)
+    |-- Point System (ACSTV InHouse)
+    |-- Payment API Middleware
+    |-- Network Equipment
+    |
+[SeABank DR Site]
+    |-- T24 DC/DR Deployment (AF_Transact_DC_DR_Deployment_Pattern_V1.0)
+    |-- DR architecture do&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;National Credit Information Center (CIC), State Bank of Vietnam&lt;/span&gt;&lt;/span&gt;cumented but test results NOT available
+    |
+[External SaaS]
+    |-- Stringee (Contact Center)
+    |-- FPT eKYC / FPT eSign (Identity/Signing)
+    |-- CIC (Credit Bureau)
+    |-- Power BI (Analytics)
+</code></pre>
+<h4>1.4.2 On-Premise vs Cloud Assessment</h4>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;align-items:center;gap:8px;margin</body></html>

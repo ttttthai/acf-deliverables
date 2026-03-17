@@ -1,0 +1,687 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ABC_T5D_ProcessKPIs_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ABC_T5D_ProcessKPIs_v1.0</h1><p>ABC Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ABC Process KPI Framework v1.0</h1>
+<p><strong>Document ID:</strong> ABC_T5D_ProcessKPIs_v1.0
+<strong>Prepared for:</strong> ABC Consumer Finance Vietnam -- Operations &amp; Performance Management
+<strong>Prepared by:</strong> Team 5 -- Architecture &amp; Implementation
+<strong>Date:</strong> March 15, 2026
+<strong>Classification:</strong> Internal -- Strictly Confidential
+<strong>Version:</strong> 1.0
+<strong>Sources:</strong> Team 2 (Operational DD, Technology DD), Team 4 (Corporate Strategy, Digital Transformation, Product Strategy), Team 5 (Process Design)</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>This document establishes the Process KPI Framework for ABC, defining measurable performance indicators for each core process (Origination, Servicing, Collections, Customer Service, Compliance Reporting). Each KPI includes the current baseline (where available from Team 2 operational data), Year 1 target, Year 3 target, and industry benchmark. The framework covers 48 KPIs across 5 process domains, providing the measurement backbone for ABC&#39;s digital transformation. <span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span></p>
+<hr>
+<h2>1. Origination Process KPIs</h2>
+<h3>1.1 Application &amp; Conversion KPIs</h3>
+<!-- Origination KPIs - Metric Cards with Current/Target/Benchmark -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:600">O-01 STP RATE</div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin:4px 0">
+      <span style="font-size:22px;font-weight:800;color:#0D1B2A">&lt;30%</span>
+      <span style="font-size:10px;color:#999">current</span>
+    </div>
+    <div style="display:flex;gap:8px;font-size:10px;margin-top:4px">
+      <span style="color:#0D1B2A;font-weight:600">Y1: 50%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span>
+      <span style="color:#0D1B2A;font-weight:600">Y3: 80%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span>
+    </div>
+    <div style="font-size:9px;color:#999;margin-top:4px;border-top:1px solid #D4D4D4;padding-top:4px">Best: 85%+ (MCredit)</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:600">O-02 APPROVAL TIME (AUTO)</div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin:4px 0">
+      <span style="font-size:22px;font-weight:800;color:#0D1B2A">1-3 days</span>
+    </div>
+    <div style="display:flex;gap:8px;font-size:10px;margin-top:4px">
+      <span style="color:#0D1B2A;font-weight:600">Y1: &lt;5 sec</span>
+      <span style="color:#0D1B2A;font-weight:600">Y3: &lt;3 sec</span>
+    </div>
+    <div style="font-size:9px;color:#999;margin-top:4px;border-top:1px solid #D4D4D4;padding-top:4px">MCredit: 2 min; Home Credit: &lt;15 min</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:600">O-03 APPROVAL TIME (MANUAL)</div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin:4px 0">
+      <span style="font-size:22px;font-weight:800;color:#0D1B2A">1-3 days</span>
+    </div>
+    <div style="display:flex;gap:8px;font-size:10px;margin-top:4px">
+      <span style="color:#0D1B2A;font-weight:600">Y1: &lt;4 hr</span>
+      <span style="color:#0D1B2A;font-weight:600">Y3: &lt;2 hr</span>
+    </div>
+    <div style="font-size:9px;color:#999;margin-top:4px;border-top:1px solid #D4D4D4;padding-top:4px">Industry: &lt;24 hours</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:600">O-04 E2E ORIGINATION (DIGITAL)</div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin:4px 0">
+      <span style="font-size:22px;font-weight:800;color:#0D1B2A">N/A</span>
+    </div>
+    <div style="display:flex;gap:8px;font-size:10px;margin-top:4px">
+      <span style="color:#0D1B2A;font-weight:600">Y1: &lt;15 min</span>
+      <span style="color:#0D1B2A;font-weight:600">Y3: &lt;10 min</span>
+    </div>
+    <div style="font-size:9px;color:#999;margin-top:4px;border-top:1px solid #D4D4D4;padding-top:4px">Nubank: &lt;5 min; VietCredit: &lt;10 min</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:600">O-05 OVERALL APPROVAL RATE</div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin:4px 0">
+      <span style="font-size:22px;font-weight:800;color:#0D1B2A">71.7%</span>
+    </div>
+    <div style="display:flex;gap:8px;font-size:10px;margin-top:4px">
+      <span style="color:#0D1B2A;font-weight:600">Y1: 65%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span>
+      <span style="color:#0D1B2A;font-weight:600">Y3: 72%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span>
+    </div>
+    <div style="font-size:9px;color:#999;margin-top:4px;border-top:1px solid #D4D4D4;padding-top:4px">Industry: 50-80% by product</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:600">O-06 COST PER LOAN</div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin:4px 0">
+      <span style="font-size:22px;font-weight:800;color:#0D1B2A">~450K</span>
+    </div>
+    <div style="display:flex;gap:8px;font-size:10px;margin-top:4px">
+      <span style="color:#0D1B2A;font-weight:600">Y1: 300K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span>
+      <span style="color:#0D1B2A;font-weight:600">Y3: 150K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span>
+    </div>
+    <div style="font-size:9px;color:#999;margin-top:4px;border-top:1px solid #D4D4D4;padding-top:4px">Digital: 50-150K; Telesales: 400-500K</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:600">O-07 DROP-OFF RATE</div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin:4px 0">
+      <span style="font-size:22px;font-weight:800;color:#0D1B2A">&gt;50%</span>
+    </div>
+    <div style="display:flex;gap:8px;font-size:10px;margin-top:4px">
+      <span style="color:#0D1B2A;font-weight:600">Y1: &lt;20%</span>
+      <span style="color:#0D1B2A;font-weight:600">Y3: &lt;10%</span>
+    </div>
+    <div style="font-size:9px;color:#999;margin-top:4px;border-top:1px solid #D4D4D4;padding-top:4px">Best practice: &lt;15%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:10px;color:#666;text-transform:uppercase;letter-spacing:1px;font-weight:600">O-08 DIGITAL ORIGINATION SHARE</div>
+    <div style="display:flex;align-items:baseline;gap:6px;margin:4px 0">
+      <span style="font-size:22px;font-weight:800;color:#0D1B2A">&lt;1%</span>
+    </div>
+    <div style="display:flex;gap:8px;font-size:10px;margin-top:4px">
+      <span style="color:#0D1B2A;font-weight:600">Y1: 15%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span>
+      <span style="color:#0D1B2A;font-weight:600">Y3: 40%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span>
+    </div>
+    <div style="font-size:9px;color:#999;margin-top:4px;border-top:1px solid #D4D4D4;padding-top:4px">FE Credit: 70%+; VietCredit: 95%+</div>
+  </div>
+</div>
+
+<h3>1.2 eKYC KPIs</h3>
+<!-- eKYC KPIs - Metric Cards -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-09 eKYC COMPLETION RATE</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">~50%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &gt;85%</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &gt;92%</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">FE Credit: ~85%; Best: &gt;90%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-10 eKYC TIME</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">10-20 min</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &lt;3 min</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &lt;2 min</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: 2-3 minutes</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-11 CCCD OCR ACCURACY</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">N/A</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &gt;95%</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &gt;98%</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">VNPT eKYC: 98%+</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-12 NFC CHIP READ SUCCESS</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">~85%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &gt;90%</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &gt;95%</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: 90-95%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-13 LIVENESS PASS RATE</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">~90%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &gt;95%</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &gt;97%</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: 95%+</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-14 eKYC COST/VERIFICATION</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">VND 14B<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span>/yr</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 20K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>/ea</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 15K<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>/ea</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Market: VND 10-25K</div>
+  </div>
+</div>
+
+<h3>1.3 Credit Decision KPIs</h3>
+<!-- Credit Decision KPIs - Metric Cards -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-15 SCORECARD GINI</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">26-27%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 35%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 45<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>-50%</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Home Credit: ~45%; FE Credit: ~40%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-16 PSI (STABILITY)</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">0.7%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &lt;5%</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &lt;5%</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">&lt;10% acceptable; &lt;25% action</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-17 FPD5+ RATE</div>
+    <div style="font-size:14px;font-weight:700;color:#0D1B2A;margin:4px 0">NTB:11.8% CD:2% TW:9.5%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: NTB&lt;5% CD&lt;2%</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Market: CD 4.3%; Cash 3.4%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-18 AUTO-APPROVE RATE</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">&lt;30%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 40%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 60%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best practice: 60-80%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-19 AUTO-DECLINE RATE</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">N/A</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 10%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 12%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: 10-15%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">O-20 MANUAL REVIEW RATE</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">&gt;70%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 50%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 28%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best practice: 15-25%</div>
+  </div>
+</div>
+
+<hr>
+<h2>2. Servicing Process KPIs</h2>
+<h3>2.1 Disbursement KPIs</h3>
+<!-- Disbursement KPIs -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">S-01 DISBURSEMENT TIME</div>
+    <div style="font-size:16px;font-weight:700;color:#0D1B2A;margin:4px 0">Same-next day</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &lt;1hr/instant</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &lt;5 min</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">MCredit: instant; NAPAS 24/7: real-time</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">S-02 DIRECT DISBURSEMENT %</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">64.8%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 80%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 95%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: 90%+ bank transfer</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">S-03 SUCCESS RATE (1ST ATTEMPT)</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">N/A</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &gt;95%</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &gt;99%</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: &gt;98%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">S-04 E-WALLET SHARE</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">0%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 10%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 30%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Emerging: MoMo/ZaloPay growing</div>
+  </div>
+</div>
+
+<h3>2.2 Payment &amp; Account Management KPIs</h3>
+<!-- Payment KPIs -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">S-05 AUTO-DEBIT PENETRATION</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">~0%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 30%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 60%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best: 70-80%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">S-06 DIGITAL SELF-SERVICE %</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">&lt;5%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 25%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 60%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">FE Credit: 40%+; Home Credit: 50%+</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">S-07/S-08 VIETQR + E-WALLET</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">0%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 15%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 45%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Growing rapidly in Vietnam</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">S-10 ON-TIME PAYMENT (B0)</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">98.59%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 99.0%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 99.5%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best practice: &gt;99%</div>
+  </div>
+</div>
+
+<hr>
+<h2>3. Collections Process KPIs</h2>
+<h3>3.1 Contact &amp; Resolution KPIs</h3>
+<!-- Collections Resolution KPIs - Bar Charts -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;padding:16px 20px;background:#fff">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px;margin-bottom:12px">Resolution Rates: Current vs Target</div>
+  <div style="margin-bottom:10px">
+    <div style="font-size:11px;font-weight:600;color:#0D1B2A;margin-bottom:3px">C-02 B1 Resolution <span style="float:right;color:#0D1B2A">54.97%</span> <span style="float:right;color:#0D1B2A;margin-right:8px">Y3: 75%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>&nbsp;</span> <span style="float:right;color:#0D1B2A;margin-right:8px">Y1: 65%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>&nbsp;</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;position:relative">
+      <div style="background:#0D1B2A;height:100%;width:75%;border-radius:0;opacity:0.2;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:65%;border-radius:0;opacity:0.3;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:54.97%;border-radius:0;position:absolute"></div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="font-size:11px;font-weight:600;color:#0D1B2A;margin-bottom:3px">C-03 B2 Resolution <span style="float:right;color:#0D1B2A">41.67%</span> <span style="float:right;color:#0D1B2A;margin-right:8px">Y3: 60%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>&nbsp;</span> <span style="float:right;color:#0D1B2A;margin-right:8px">Y1: 50%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>&nbsp;</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;position:relative">
+      <div style="background:#0D1B2A;height:100%;width:60%;border-radius:0;opacity:0.2;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:50%;border-radius:0;opacity:0.3;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:41.67%;border-radius:0;position:absolute"></div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="font-size:11px;font-weight:600;color:#0D1B2A;margin-bottom:3px">C-04 B3 Resolution <span style="float:right;color:#0D1B2A">31.45%</span> <span style="float:right;color:#0D1B2A;margin-right:8px">Y3: 50%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>&nbsp;</span> <span style="float:right;color:#0D1B2A;margin-right:8px">Y1: 40%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>&nbsp;</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;position:relative">
+      <div style="background:#0D1B2A;height:100%;width:50%;border-radius:0;opacity:0.2;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:40%;border-radius:0;opacity:0.3;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:31.45%;border-radius:0;position:absolute"></div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="font-size:11px;font-weight:600;color:#0D1B2A;margin-bottom:3px">C-05 B1 Contact Rate <span style="float:right;color:#0D1B2A">7.3%</span> <span style="float:right;color:#0D1B2A;margin-right:8px">Y3: 60%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>&nbsp;</span> <span style="float:right;color:#0D1B2A;margin-right:8px">Y1: 30%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>&nbsp;</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;position:relative">
+      <div style="background:#0D1B2A;height:100%;width:60%;border-radius:0;opacity:0.2;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:30%;border-radius:0;opacity:0.3;position:absolute"></div>
+      <div style="background:#0D1B2A;height:100%;width:7.3%;border-radius:0;position:absolute"></div>
+    </div>
+  </div>
+  <div style="display:flex;gap:16px;font-size:10px;color:#666;margin-top:12px">
+    <span><span style="display:inline-block;width:10px;height:10px;background:#0D1B2A;border-radius:0;vertical-align:middle;margin-right:3px"></span>Current</span>
+    <span><span style="display:inline-block;width:10px;height:10px;background:#0D1B2A;border-radius:0;vertical-align:middle;margin-right:3px;opacity:0.6"></span>Year 1 Target</span>
+    <span><span style="display:inline-block;width:10px;height:10px;background:#0D1B2A;border-radius:0;vertical-align:middle;margin-right:3px;opacity:0.4"></span>Year 3 Target</span>
+  </div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">C-01 B0 RFR</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">1.41%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 1.2%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &lt;1.0%</span></div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">C-08 DIGITAL SELF-CURE (B1)</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">0%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 15%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 35%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">C-09 CONTACT ATTEMPTS/RESOLUTION</div>
+    <div style="font-size:22px;font-weight:800;color:#0D1B2A;margin:4px 0">18+</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 8<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 5<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span> (AI)</span></div>
+  </div>
+</div>
+
+<h3>3.2 Roll Rate &amp; Recovery KPIs</h3>
+<!-- Roll Rate KPIs - Visual Bar Chart -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;padding:16px 20px;background:#fff">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px;margin-bottom:12px">Roll Forward Rates -- Waterfall Effect (Current)</div>
+  <div style="display:flex;gap:6px;align-items:flex-end;height:140px;margin-bottom:8px;padding:0 20px">
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end">
+      <div style="font-size:10px;font-weight:700;color:#0D1B2A;margin-bottom:2px">44.7%</div>
+      <div style="width:100%;background:#0D1B2A;border-radius:1px 4px 0 0;height:63px"></div>
+      <div style="font-size:9px;color:#666;margin-top:3px">B1 RFR</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end">
+      <div style="font-size:10px;font-weight:700;color:#0D1B2A;margin-bottom:2px">57.7%</div>
+      <div style="width:100%;background:#0D1B2A;border-radius:1px 4px 0 0;height:82px"></div>
+      <div style="font-size:9px;color:#666;margin-top:3px">B2 RFR</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end">
+      <div style="font-size:10px;font-weight:700;color:#0D1B2A;margin-bottom:2px">66.9%</div>
+      <div style="width:100%;background:#0D1B2A;border-radius:1px 4px 0 0;height:95px"></div>
+      <div style="font-size:9px;color:#666;margin-top:3px">B3 RFR</div>
+    </div>
+    <div style="width:2px;background:#ECECEC;height:140px;margin:0 8px"></div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end">
+      <div style="font-size:10px;font-weight:700;color:#0D1B2A;margin-bottom:2px">0.90%</div>
+      <div style="width:100%;background:#0D1B2A;border-radius:1px 4px 0 0;height:12px"></div>
+      <div style="font-size:9px;color:#666;margin-top:3px">B4-6 ROR</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end">
+      <div style="font-size:10px;font-weight:700;color:#0D1B2A;margin-bottom:2px">0.89%</div>
+      <div style="width:100%;background:#0D1B2A;border-radius:1px 4px 0 0;height:12px"></div>
+      <div style="font-size:9px;color:#666;margin-top:3px">B7+ ROR</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end">
+      <div style="font-size:10px;font-weight:700;color:#0D1B2A;margin-bottom:2px">0.16%</div>
+      <div style="width:100%;background:#0D1B2A;border-radius:1px 4px 0 0;height:4px"></div>
+      <div style="font-size:9px;color:#666;margin-top:3px">WO ROR</div>
+    </div>
+  </div>
+  <div style="background:#fef2f2;border-radius:0;padding:10px;text-align:center;font-size:11px;color:#0D1B2A;font-weight:600">Total NPL: 22.8% (current) &rarr; Y1 Target: 15% &rarr; Y3 Target: 7% &middot; Industry avg: 6-10%</div>
+</div>
+
+<h3>3.3 Productivity &amp; Cost KPIs</h3>
+<!-- Productivity KPIs -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">C-17 TELE PRODUCTIVITY</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">VND 48M/HC</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 60M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 80M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best: 80-120M/HC</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">C-18 FIELD PRODUCTIVITY</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">VND 15M/HC</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 25M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 35M<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best: 30-50M/HC</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">C-22 B4+ STAFF COVERAGE</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">40%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 70%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 100%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">60% currently uncovered</div>
+  </div>
+</div>
+
+<hr>
+<h2>4. Customer Service KPIs</h2>
+<!-- Customer Service KPIs - Most are unmeasured -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CS-01 FIRST CALL RESOLUTION</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">Not measured</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 65%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 80%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: 70-80%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CS-03 NPS</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">Not measured</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 30<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 55<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best-in-class FinCo: 50-60</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CS-06 AI CHATBOT RESOLUTION</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">0%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 25%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 65%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best practice: 60-80%</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CS-10 SELF-SERVICE RATE</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">&lt;5%</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 30%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 65%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">FE Credit: ~40%; Best: 60%+</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CS-02 AVG HANDLE TIME</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">Not measured</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &lt;6 min</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &lt;4 min</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: 4-6 minutes</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CS-07 AVG WAIT TIME</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">Not measured</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &lt;60s</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &lt;30s</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: &lt;45 seconds</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CS-08 COMPLAINT RESOLUTION</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">No tracking</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: &lt;48hr</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &lt;24hr</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Industry: &lt;24 hours</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CS-11 APP STORE RATING</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">N/A</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 3.5<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>+</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 4.3<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>+</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best practice: 4.0+</div>
+  </div>
+</div>
+
+<hr>
+<h2>5. Compliance Reporting KPIs</h2>
+<!-- Compliance KPIs -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CR-01 SBV REPORT PREP TIME</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">3-5 days</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 2<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span> days</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: &lt;1 day</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Best: Automated real-time</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CR-02 CLASSIFICATION ACCURACY</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">Manual Excel</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: 95%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span> auto</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: 100%<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">Required: 100% accuracy</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:9px;color:#999">CR-04 IFRS 9 ECL</div>
+    <div style="font-size:18px;font-weight:700;color:#0D1B2A;margin:4px 0">Not impl.</div>
+    <div style="font-size:10px"><span style="color:#0D1B2A;font-weight:600">Y1: Quarterly</span> &middot; <span style="color:#0D1B2A;font-weight:600">Y3: Monthly auto</span></div>
+    <div style="font-size:9px;color:#999;margin-top:4px">AFS Group deadline: 2026</div>
+  </div>
+</div>
+
+<hr>
+<h2>6. Cross-Process Digital Transformation KPIs</h2>
+<!-- DT KPIs - Growth Trajectory Cards -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0">
+  <div style="background:#0D1B2A;border-radius:0;padding:14px;color:white;text-align:center">
+    <div style="font-size:9px;opacity:0.7;text-transform:uppercase">DT-01 App Downloads</div>
+    <div style="font-size:10px;opacity:0.8;margin:6px 0">0 &rarr; 200K &rarr; 1M &rarr; <strong style="font-size:16px">2M</strong></div>
+    <div style="background:rgba(255,255,255,0.2);border-radius:0;height:8px;margin-top:6px">
+      <div style="background:white;height:100%;width:0%;border-radius:1px"></div>
+    </div>
+    <div style="font-size:9px;opacity:0.7;margin-top:3px">Now &rarr; Y1 &rarr; Y3 &rarr; Y5</div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:14px;color:white;text-align:center">
+    <div style="font-size:9px;opacity:0.7;text-transform:uppercase">DT-02 Monthly Active Users</div>
+    <div style="font-size:10px;opacity:0.8;margin:6px 0">0 &rarr; 80K &rarr; 400K &rarr; <strong style="font-size:16px">800K</strong></div>
+    <div style="background:rgba(255,255,255,0.2);border-radius:0;height:8px;margin-top:6px">
+      <div style="background:white;height:100%;width:0%;border-radius:1px"></div>
+    </div>
+    <div style="font-size:9px;opacity:0.7;margin-top:3px">Now &rarr; Y1 &rarr; Y3 &rarr; Y5</div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:14px;color:white;text-align:center">
+    <div style="font-size:9px;opacity:0.7;text-transform:uppercase">DT-04 Digital Origination %</div>
+    <div style="font-size:10px;opacity:0.8;margin:6px 0">&lt;1% &rarr; 15% &rarr; 40% &rarr; <strong style="font-size:16px">70%</strong></div>
+    <div style="background:rgba(255,255,255,0.2);border-radius:0;height:8px;margin-top:6px">
+      <div style="background:white;height:100%;width:1%;border-radius:1px"></div>
+    </div>
+    <div style="font-size:9px;opacity:0.7;margin-top:3px">Now &rarr; Y1 &rarr; Y3 &rarr; Y5</div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:14px;color:white;text-align:center">
+    <div style="font-size:9px;opacity:0.7;text-transform:uppercase">DT-03 DAU/MAU Ratio</div>
+    <div style="font-size:10px;opacity:0.8;margin:6px 0">N/A &rarr; &gt;25% &rarr; &gt;35% &rarr; <strong style="font-size:16px">&gt;40%</strong></div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:14px;color:white;text-align:center">
+    <div style="font-size:9px;opacity:0.7;text-transform:uppercase">DT-05 API Uptime</div>
+    <div style="font-size:10px;opacity:0.8;margin:6px 0">N/A &rarr; 99.5% &rarr; 99.9% &rarr; <strong style="font-size:16px">99.95%</strong></div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:14px;color:white;text-align:center">
+    <div style="font-size:9px;opacity:0.7;text-transform:uppercase">DT-06 API Avg Latency</div>
+    <div style="font-size:10px;opacity:0.8;margin:6px 0">N/A &rarr; &lt;500ms &rarr; &lt;200ms &rarr; <strong style="font-size:16px">&lt;100ms</strong></div>
+  </div>
+</div>
+
+<hr>
+<h2>7. KPI Governance</h2>
+<h3>7.1 Reporting Cadence</h3>
+<!-- Reporting Cadence - Visual Cards -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:24px 0">
+  <div style="background:#fff;border-radius:0;padding:12px;border-top:3px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A">Origination (O-01 to O-20)</div>
+    <div style="font-size:10px;color:#666;margin:4px 0">Weekly (ops) / Monthly (mgmt)</div>
+    <div style="font-size:9px;color:#999">CTO, CDO, Head of Sales, Head of Risk</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-top:3px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A">Servicing (S-01 to S-11)</div>
+    <div style="font-size:10px;color:#666;margin:4px 0">Monthly</div>
+    <div style="font-size:9px;color:#999">CFO, Head of Operations</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-top:3px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A">Collections (C-01 to C-22)</div>
+    <div style="font-size:10px;color:#666;margin:4px 0">Daily (B0-B3) / Weekly (B4+) / Monthly</div>
+    <div style="font-size:9px;color:#999">Head of Collections, CRO, CEO</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-top:3px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A">Customer Service (CS-01 to CS-12)</div>
+    <div style="font-size:10px;color:#666;margin:4px 0">Daily (ops) / Monthly (mgmt)</div>
+    <div style="font-size:9px;color:#999">Head of Operations, CDO</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-top:3px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A">Compliance (CR-01 to CR-06)</div>
+    <div style="font-size:10px;color:#666;margin:4px 0">Monthly (SBV) / Quarterly (IFRS 9)</div>
+    <div style="font-size:9px;color:#999">CFO, Head of Compliance, CRO</div>
+  </div>
+  <div style="background:#fff;border-radius:0;padding:12px;border-top:3px solid #D4D4D4;border:1px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A">Digital Transformation (DT-01 to DT-06)</div>
+    <div style="font-size:10px;color:#666;margin:4px 0">Weekly (sprint) / Monthly (steering)</div>
+    <div style="font-size:9px;color:#999">CTO, CDO, CEO, AFS Japan</div>
+  </div>
+</div>
+
+<h3>7.2 KPI Ownership</h3>
+<!-- KPI Ownership - Visual Flow -->
+<div style="margin:24px 0;display:flex;flex-direction:column;gap:6px">
+  <div style="display:flex;align-items:center;background:#fef2f2;border-radius:0;padding:8px 14px;border-left:4px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A;width:140px">Origination</div>
+    <div style="font-size:11px;color:#666;flex:1">Head of Sales / CDO &rarr; CTO, Head of Risk &rarr; <span style="color:#0D1B2A;font-weight:600">CEO &rarr; AFS Stecomi</span></div>
+  </div>
+  <div style="display:flex;align-items:center;background:#f0fdf4;border-radius:0;padding:8px 14px;border-left:4px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A;width:140px">Servicing</div>
+    <div style="font-size:11px;color:#666;flex:1">Head of Operations &rarr; CFO &rarr; <span style="color:#0D1B2A;font-weight:600">CEO</span></div>
+  </div>
+  <div style="display:flex;align-items:center;background:#fffbeb;border-radius:0;padding:8px 14px;border-left:4px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A;width:140px">Collections</div>
+    <div style="font-size:11px;color:#666;flex:1">Head of Collections &rarr; CRO &rarr; <span style="color:#0D1B2A;font-weight:600">CEO &rarr; AFS Stecomi</span></div>
+  </div>
+  <div style="display:flex;align-items:center;background:#f0f4f8;border-radius:0;padding:8px 14px;border-left:4px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A;width:140px">Customer Service</div>
+    <div style="font-size:11px;color:#666;flex:1">Head of Operations / CDO &rarr; CTO &rarr; <span style="color:#0D1B2A;font-weight:600">CEO</span></div>
+  </div>
+  <div style="display:flex;align-items:center;background:#faf5ff;border-radius:0;padding:8px 14px;border-left:4px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A;width:140px">Compliance</div>
+    <div style="font-size:11px;color:#666;flex:1">Head of Compliance / CFO &rarr; CRO &rarr; <span style="color:#0D1B2A;font-weight:600">CEO &rarr; AFS &rarr; SBV</span></div>
+  </div>
+  <div style="display:flex;align-items:center;background:#f0fdf4;border-radius:0;padding:8px 14px;border-left:4px solid #D4D4D4">
+    <div style="font-size:12px;font-weight:700;color:#0D1B2A;width:140px">Digital Transform</div>
+    <div style="font-size:11px;color:#666;flex:1">CDO / CTO &rarr; CEO &rarr; <span style="color:#0D1B2A;font-weight:600">AFS-ABC Technology Review</span></div>
+  </div>
+</div>
+
+<h3>7.3 Target-Setting Methodology</h3>
+<!-- Target Setting - Visual Cards -->
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:24px 0">
+  <div style="background:#0D1B2A;border-radius:0;padding:10px;color:white;text-align:center">
+    <div style="font-size:11px;font-weight:700">Baseline</div>
+    <div style="font-size:9px;opacity:0.8;margin-top:4px">Team 2 operational data (Jan-Mar 2026)</div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:10px;color:white;text-align:center">
+    <div style="font-size:11px;font-weight:700">Year 1 Targets</div>
+    <div style="font-size:9px;opacity:0.8;margin-top:4px">Conservative; Phase 1 investments</div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:10px;color:white;text-align:center">
+    <div style="font-size:11px;font-weight:700">Year 3 Targets</div>
+    <div style="font-size:9px;opacity:0.8;margin-top:4px">Aggressive; Phase 2-3 investments</div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:10px;color:white;text-align:center">
+    <div style="font-size:11px;font-weight:700">Benchmarks</div>
+    <div style="font-size:9px;opacity:0.8;margin-top:4px">FE Credit, Home Credit, VietCredit, EY</div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:10px;color:white;text-align:center">
+    <div style="font-size:11px;font-weight:700">Review Cycle</div>
+    <div style="font-size:9px;opacity:0.8;margin-top:4px">Quarterly by Steering Committee</div>
+  </div>
+</div>
+
+<h3>7.4 KPI Alert Thresholds</h3>
+<!-- Alert Thresholds - Visual Indicator Cards -->
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:24px 0">
+  <div style="background:#f0fdf4;border:2px solid #D4D4D4;border-radius:0;padding:12px;text-align:center">
+    <div style="font-size:24px;font-weight:700;color:#0D1B2A">GREEN</div>
+    <div style="font-size:11px;font-weight:600;color:#0D1B2A;margin:4px 0">At or above target</div>
+    <div style="font-size:10px;color:#666">Continue monitoring; document in monthly report</div>
+  </div>
+  <div style="background:#fffbeb;border:2px solid #D4D4D4;border-radius:0;padding:12px;text-align:center">
+    <div style="font-size:24px;font-weight:700;color:#0D1B2A">AMBER</div>
+    <div style="font-size:11px;font-weight:600;color:#0D1B2A;margin:4px 0">Within 10% of target</div> <span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>
+    <div style="font-size:10px;color:#666">Root cause analysis within 5 business days</div>
+  </div>
+  <div style="background:#fef2f2;border:2px solid #D4D4D4;border-radius:0;padding:12px;text-align:center">
+    <div style="font-size:24px;font-weight:700;color:#0D1B2A">RED</div>
+    <div style="font-size:11px;font-weight:600;color:#0D1B2A;margin:4px 0">&gt;10% below target</div> <span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span>
+    <div style="font-size:10px;color:#666">Immediate escalation; corrective action 48hr</div>
+  </div>
+  <div style="background:#0D1B2A;border:2px solid #D4D4D4;border-radius:0;padding:12px;text-align:center;color:white">
+    <div style="font-size:24px;font-weight:700">CRITICAL</div>
+    <div style="font-size:11px;font-weight:600;margin:4px 0">Regulatory non-compliance</div>
+    <div style="font-size:10px;opacity:0.8">CEO + AFS notification within 24 hours</div>
+  </div>
+</div>
+
+<hr>
+<h2>Appendix: KPI-to-Process Mapping Summary</h2>
+<!-- KPI Mapping - Visual Summary with Bar Charts -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;padding:16px 20px;background:#fff">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px;margin-bottom:12px">KPI Measurability Gap: 74% of KPIs require new systems</div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+      <span style="font-weight:600;color:#0D1B2A">Origination (20 KPIs)</span>
+      <span style="font-size:10px;color:#666">4 measurable / <span style="color:#0D1B2A;font-weight:600">16 need new systems</span></span>
+    </div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;display:flex">
+      <div style="background:#0D1B2A;width:20%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">4</div>
+      <div style="background:#0D1B2A;width:80%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">16</div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+      <span style="font-weight:600;color:#0D1B2A">Servicing (11 KPIs)</span>
+      <span style="font-size:10px;color:#666">3 measurable / <span style="color:#0D1B2A;font-weight:600">8 need new systems</span></span>
+    </div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;display:flex">
+      <div style="background:#0D1B2A;width:27%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">3</div>
+      <div style="background:#0D1B2A;width:73%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">8</div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+      <span style="font-weight:600;color:#0D1B2A">Collections (22 KPIs)</span>
+      <span style="font-size:10px;color:#666">12 measurable / <span style="color:#0D1B2A;font-weight:600">10 need new systems</span></span>
+    </div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;display:flex">
+      <div style="background:#0D1B2A;width:55%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">12</div>
+      <div style="background:#0D1B2A;width:45%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">10</div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+      <span style="font-weight:600;color:#0D1B2A">Customer Service (12 KPIs)</span>
+      <span style="font-size:10px;color:#666">0 measurable / <span style="color:#0D1B2A;font-weight:600">12 need new systems</span></span>
+    </div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;display:flex">
+      <div style="background:#0D1B2A;width:100%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">12 -- Complete measurement gap</div>
+    </div>
+  </div>
+  <div style="margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+      <span style="font-weight:600;color:#0D1B2A">Compliance (6 KPIs)</span>
+      <span style="font-size:10px;color:#666">1 measurable / <span style="color:#0D1B2A;font-weight:600">5 need new systems</span></span>
+    </div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;display:flex">
+      <div style="background:#0D1B2A;width:17%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">1</div>
+      <div style="background:#0D1B2A;width:83%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">5</div>
+    </div>
+  </div>
+  <div>
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">
+      <span style="font-weight:600;color:#0D1B2A">Digital Transformation (6 KPIs)</span>
+      <span style="font-size:10px;color:#666">0 measurable / <span style="color:#0D1B2A;font-weight:600">6 need new systems</span></span>
+    </div>
+    <div style="background:#e5e7eb;border-radius:0;height:18px;overflow:hidden;display:flex">
+      <div style="background:#0D1B2A;width:100%;display:flex;align-items:center;justify-content:center;font-size:9px;color:white;font-weight:600">6 -- No digital infrastructure yet</div>
+    </div>
+  </div>
+  <div style="background:#0D1B2A;border-radius:0;padding:10px;margin-top:12px;display:flex;justify-content:space-between;color:white;font-size:12px">
+    <span style="font-weight:700">TOTAL: 77 KPIs</span>
+    <span>20 measurable today</span>
+    <span style="font-weight:700;color:#0D1B2A">57 require new systems (74%)</span>
+  </div>
+</div>
+
+<hr>
+<p><em>End of Document -- ABC Process KPI Framework v1.0</em>
+<em>Total lines: 250+</em>
+<em>Framework aligned with Team 4 Corporate Strategy targets and Team 5 Process Design current/future state analysis.</em></p>
+
+</body></html>

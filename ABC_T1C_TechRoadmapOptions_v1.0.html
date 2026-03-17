@@ -1,0 +1,757 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ABC_T1C_TechRoadmapOptions_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ABC_T1C_TechRoadmapOptions_v1.0</h1><p>ABC Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ABC Technology Roadmap Options v1.0</h1>
+<p><strong>Document Classification:</strong> Confidential - Internal Use Only
+<strong>Prepared for:</strong> AEON Credit Finance (ABC) Vietnam - Consulting Engagement
+<strong>Version:</strong> 1.0 | <strong>Date:</strong> March 2026
+<strong>Team:</strong> Team 1 - Technology &amp; Strategy</p>
+<hr>
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#1-executive-summary">Executive Summary</a></li>
+<li><a href="#2-current-state-assessment">Current State Assessment</a></li>
+<li><a href="#3-option-a-conservative">Option A: Stay on T24 R25 + Enhance LOOMS<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC IT Divisio<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025</span></span>n &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025</span></span> (Conservative)</a></li>
+<li><a href="#4-option-b-moderate">Option B: Upgrade to Transact + Replace LOOMS (Moderate)</a></li>
+<li><a href="#5-option-c-aggressive">Option C: Migrate to Cloud-Native (Aggressive)</a></li>
+<li><a href="#6-build-vs-buy-analysis">Build vs. Buy Analysis</a></li>
+<li><a href="#7-technology-for-new-product-launches">Technology for New Product Launches</a></li>
+<li><a href="#8-timeline-recommendations">Timeline Recommendations</a></li>
+<li><a href="#9-investment-estimates">Investment Estimates</a></li>
+<li><a href="#10-risk-assessment">Risk Assessment</a></li>
+<li><a href="#11-final-recommendation">Final Recommendation</a></li>
+</ol>
+<hr>
+<h2>1. Executive Summary</h2>
+<p>ABC faces a critical technology crossroads. The company currently operates Temenos T24 R25<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC IT Division, &quot;20251115_BDIT v5.pptx&quot; AdvisorsData</span></span> as its core banking system and LOOMS as its Loan Origination System, inherited through the VPBank/SeABank<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC Banking Partner Agreement — Disbursement Channel</span></span> ecosystem. The EY infrastructure assessment has identified 52 high-impact<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">EY &quot;Executive Summary Report_v.3.1.pptx&quot; — Risk Assessment, AdvisorsData</span></span>&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;EY &quot;Executive Summary Report_v.3.1.pptx&quot; (AdvisorsData)&quot;Executive Summary Report_v.3.1.pptx&quot; — Risk Assessment (AdvisorsData)&quot;20251115_BDIT v5.pptx&quot; (AdvisorsData)&quot;LOS_Gantt-chart_General.xlsx&quot; (Package 11 Dec 2025)&quot;&gt;<span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#0D1B2A;color:white;font-size:8px;font-weight:700;font-style:italic;vertical-align:middle;line-height:1">i</span></span>/high-probability risks, urgent security vulnerabilities in the LOS, and the need for infrastructure modernization post-TSA period.</p>
+<p>Simultaneously, ABC must launch three new product lines -- credit cards, BNPL, and 2-wheeler loans -- all requiring technology capabilities beyond what the current stack provides. The digital application and eKYC experiences are behind market standards, with high customer drop-off rates.</p>
+<p>This document presents three distinct technology roadmap options, ranging from conservative enhancement to aggressive cloud-native migration, with detailed cost, risk, a<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC IT Division, &quot;20251115_BDIT v5.pptx&quot; AdvisorsData</span></span>nd timeline analysis to support ABC&#39;s strategic decision-making.</p>
+<p><strong>Headline Recommendation:</strong> Pursue a <strong>modified Option B</strong> -- maintain T24 R25 for existing loan book operations while implementing PISMO<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">&quot;Introduction to PISMO.pdf&quot; OtherData</span></span> for credit card processing and a modern digital front-end. Plan a phased core banking migration to cloud-native (Mambu) over 3-5 years as the WeBank<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">&quot;UBank and FE Credit Proposal_with pricing_20251128.pdf&quot; OtherData/WeBank</span></span>/UBank proposal matures and ABC&#39;s operational stability improves.</p>
+<hr>
+<h2>2. Current State Assessment</h2>
+<h3>2.1 Technology Stack Overview</h3>
+<!-- VISUAL: Current Technology Stack Status -->
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="font-weight:700;font-size:16px;margin-bottom:16px;color:#2D4A7A">Current Technology Stack Overview</div>
+
+<div style="margin-bottom:8px;background:white;border-radius:1px;padding:10px 14px;border:1px solid #D4D4D4;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+<div style="width:140px;font-size:12px;font-weight:700;color:#334155">Core Banking</div>
+<div style="font-size:12px;color:#64748b;flex:1;min-width:120px">Temenos T24 R25</div>
+<span style="padding:3px 10px;border-radius:1px;font-size:10px;font-weight:600;background:#f0fdf4;color:#0D1B2A">Operational</span>
+<div style="font-size:11px;color:#1B2A4A;flex:1;min-width:160px">Batch processing; limited APIs</div>
+</div>
+<div style="margin-bottom:8px;background:white;border-radius:1px;padding:10px 14px;border:1px solid #D4D4D4;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+<div style="width:140px;font-size:12px;font-weight:700;color:#334155">Loan Origination</div>
+<div style="font-size:12px;color:#64748b;flex:1;min-width:120px">LOOMS (ex-Newgen)</div>
+<span style="padding:3px 10px;border-radius:1px;font-size:10px;font-weight:600;background:#fffbeb;color:#0D1B2A">Operational</span>
+<div style="font-size:11px;color:#1B2A4A;flex:1;min-width:160px">Manual processes; security vulns</div>
+</div>
+<div style="margin-bottom:8px;background:white;border-radius:1px;padding:10px 14px;border:1px solid #D4D4D4;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+<div style="width:140px;font-size:12px;font-weight:700;color:#334155">Card Processing</div>
+<div style="font-size:12px;color:#64748b;flex:1;min-width:120px">Way4 (VPBank TSA)</div>
+<span style="padding:3px 10px;border-radius:1px;font-size:10px;font-weight:600;background:#fffbeb;color:#0D1B2A">Transitional</span>
+<div style="font-size:11px;color:#1B2A4A;flex:1;min-width:160px">TSA dependency</div>
+</div>
+<div style="margin-bottom:8px;background:white;border-radius:1px;padding:10px 14px;border:1px solid #D4D4D4;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+<div style="width:140px;font-size:12px;font-weight:700;color:#334155">Digital Channels</div>
+<div style="font-size:12px;color:#64748b;flex:1;min-width:120px">Limited</div>
+<span style="padding:3px 10px;border-radius:1px;font-size:10px;font-weight:600;background:#F5E8E8;color:#1B2A4A">GAP</span>
+<div style="font-size:11px;color:#1B2A4A;flex:1;min-width:160px">No customer-facing app</div>
+</div>
+<div style="margin-bottom:8px;background:white;border-radius:1px;padding:10px 14px;border:1px solid #D4D4D4;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+<div style="width:140px;font-size:12px;font-weight:700;color:#334155">eKYC</div>
+<div style="font-size:12px;color:#64748b;flex:1;min-width:120px">Manual/basic</div>
+<span style="padding:3px 10px;border-radius:1px;font-size:10px;font-weight:600;background:#F5E8E8;color:#1B2A4A">GAP</span>
+<div style="font-size:11px;color:#1B2A4A;flex:1;min-width:160px">High drop-off rate</div>
+</div>
+<div style="margin-bottom:8px;background:white;border-radius:1px;padding:10px 14px;border:1px solid #D4D4D4;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+<div style="width:140px;font-size:12px;font-weight:700;color:#334155">Collections</div>
+<div style="font-size:12px;color:#64748b;flex:1;min-width:120px">Manual + outsourced</div>
+<span style="padding:3px 10px;border-radius:1px;font-size:10px;font-weight:600;background:#fffbeb;color:#0D1B2A">Partial</span>
+<div style="font-size:11px;color:#1B2A4A;flex:1;min-width:160px">No automated system</div>
+</div>
+<div style="background:white;border-radius:1px;padding:10px 14px;border:1px solid #D4D4D4;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+<div style="width:140px;font-size:12px;font-weight:700;color:#334155">Cybersecurity</div>
+<div style="font-size:12px;color:#64748b;flex:1;min-width:120px">Partially implemented</div>
+<span style="padding:3px 10px;border-radius:1px;font-size:10px;font-weight:700;background:#0D1B2A;color:white">AT RISK</span>
+<div style="font-size:11px;color:#1B2A4A;flex:1;min-width:160px">52 high-impact risks (EY)</div>
+</div>
+</div>
+
+<h3>2.2 Critical Gaps Identified</h3>
+<p><strong>From EY Assessment (171 total findings):</strong></p>
+<ul>
+<li>52 findings rated High Impact / High Probability</li>
+<li>45 findings rated High Impact / Medium Probability</li>
+<li>Critical cybersecurity gaps: No SIEM, incomplete IAM, no cyber incident response plan</li>
+<li>LOS: Manual processes, unauthorized access, security vulnerabilities (highlighted urgent)</li>
+<li>Infrastructure: Absence of HA configurations, unlicensed software compliance risks</li>
+<li>Data governance: No formal framework, no data protection mechanisms</li>
+</ul>
+<p><strong>From ABC Financial Data (Jan 2026):</strong></p>
+<ul>
+<li>NPL: 22.8%<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">ABC EXCO Report<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">&quot;UBank and FE Credit Proposal_with pricing_20251128.pdf&quot; OtherData/WeBank</span></span> &quot;FIN_MMM_10.02.2026.pdf&quot; — NPL Ratio, Package 6 Mar 2026</span></span>&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;WeBank &quot;UBank and FE Credit Proposal_with pricing_<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">&quot;Introduction to PISMO.pdf&quot; OtherData</span></span>20251128.pdf&quot; (OtherData/WeBank)&quot;UBank and FE Credit Proposal_with pricing_20251128.pdf&quot; (OtherData/WeBank)&quot;Introduction to PISMO.pdf&quot; (OtherData)&quot;Executive Summary Report_v.3.1.pptx&quot; — IT Security Assessment&quot;Executive Summary Report_v.3.1.pptx&quot; (AdvisorsData)&quot;Executive Summary Report_v.3.1.pptx&quot; — Risk Assessment (AdvisorsData)&quot;20251115_BDIT v5.pptx&quot; (AdvisorsData)&quot;LOS_Gantt-chart_General.xlsx&quot; (Package 11 Dec 2025)&quot;FIN_MMM_10.02.2026.pdf&quot; (Package 6 Mar 2026)&quot;&gt;<span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#0D1B2A;color:white;font-size:8px;font-weight:700;font-style:italic;vertical-align:middle;line-height:1">i</span></span> (declining from 26.5% in Oct 2025 but still extremely high)</li>
+<li>ROE: -28.3% (negative; budgeted -5.84%)</li>
+<li>CIR: -135% (negative; company is pre-profitability)</li>
+<li>Total assets: VND 1,607B; Loan book: VND 909&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;WeBank &quot;UBank and FE Credit Proposal_with pricing_20251128.pdf&quot; (OtherData/WeBank)&quot;FIN_MMM_10.02.2026.pdf&quot; — Loan Book Outstanding&quot;FIN_MMM_10.02.2026.pdf&quot; (Package 6 Mar 2026)&quot;&gt;<span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#0D1B2A;color:white;font-size:8px;font-weight:700;font-style:italic;vertical-align:middle;line-height:1">i</span></span>B</li>
+<li>Lending yield: 21.06% (vs. 21.4% budget)</li>
+<li>Cost of funds: 7.7% (vs. 6.6% budget; exceeding plan)</li>
+<li>Operating expenses: VND 23.9B/month (69% of budget; 61% personnel)</li>
+</ul>
+<h3>2.3 Peer Technology Benchmarks</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Core Banking</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:96%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">T24</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">LOS</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">FinnOne/Custom</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Card Processing</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:16%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Way4</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Collections</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Pega</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">eKYC</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">HyperVerge/iFace</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Digital App</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Yes (mobile)</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Cloud</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Hybrid</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">AI/ML Scoring</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Experian + Custom</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">BNPL</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Yes</div>
+</div></div>
+<div style="display:flex;align-items:center;gap:8px;margin:6px 0">
+<div style="width:140px;font-size:13px;text-align:right;color:#555;font-weight:500">Credit Card</div>
+<div style="flex:1;background:#ECECEC;border-radius:1px;overflow:hidden;height:30px">
+<div style="width:50%;height:100%;background:#0D1B2A;border-radius:1px;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px">Yes</div>
+</div></div>
+</div>
+
+
+<hr>
+<h2>3. Option A: Conservative -- Stay on T24 R25 + Enhance LOOMS</h2>
+<h3>3.1 Strategy</h3>
+<p>Minimize technology disruption by enhancing the existing stack. Keep T24 R25 as core banking, upgrade LOOMS with API layer and digital front-end, and add bolt-on systems for credit card (Way4 enhancement) and collection.</p>
+<h3>3.2 Scope of Work</h3>
+<p><strong>Phase 1: Foundation (Months 1-6)</strong></p>
+<ul>
+<li>Implement EY infrastructure recommendations (private cloud migration, DR setup)</li>
+<li>Deploy cybersecurity stack: SIEM, MFA, PAM, WAF</li>
+<li>Add API gateway layer on top of T24 and LOOMS</li>
+<li>Integrate VNPT eKYC with LOOMS</li>
+<li>Deploy basic digital application form (web-based)</li>
+<li>Implement NAPAS<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">NAPAS — National Payment Corporation of Vietnam</span></span> 24/7 and VietQR<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">NAPAS &quot;VietQR Integration Standards&quot;</span></span> for payment collection</li>
+</ul>
+<p><strong>Phase 2: Product Enhancement (Months 7-12)</strong></p>
+<ul>
+<li>Enhance LOOMS for 2-wheeler loan product configuration</li>
+<li>Implement basic BNPL workflow on LOOMS (installment at POS)</li>
+<li>Deploy collection system (Credgenics or equivalent)</li>
+<li>Launch customer mobile app (basic: view balance, make payments)</li>
+<li>Integrate CIC<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">National Credit Information Center (CIC), State Bank of Vietnam</span></span> automated credit check</li>
+</ul>
+<p><strong>Phase 3: Credit Card (Months 13-18)</strong></p>
+<ul>
+<li>Extend Way4 card processing (requires VPBank/TSA negotiation)</li>
+<li>Build credit card origination flow on enhanced LOOMS</li>
+<li>Implement card embossing and delivery workflow</li>
+<li>Launch credit card product (MVP with limited features)</li>
+</ul>
+<h3>3.3 Architecture Diagram (Conceptual)</h3>
+<pre><code>[Customer Mobile App] --&gt; [API Gateway]
+                              |
+            +--------+--------+--------+
+            |        |        |        |
+        [LOOMS+]  [T24 R25] [Way4]  [eKYC]
+            |        |        |        |
+        [Oracle DB] [Oracle] [Oracle] [VNPT API]
+            |
+    [Private Cloud IaaS - Viettel IDC]
+</code></pre>
+<h3>3.4 Pros</h3>
+<ul>
+<li>Lowest disruption to ongoing operations</li>
+<li>Leverages existing team skills and knowledge</li>
+<li>Shortest time to partial improvements</li>
+<li>No core banking migration risk</li>
+<li>Lowest upfront investment</li>
+</ul>
+<h3>3.5 Cons</h3>
+<ul>
+<li>Does not address fundamental architectural limitations</li>
+<li>Credit card launch depends on Way4/VPBank TSA relationship</li>
+<li>Limited scalability for high-volume products (BNPL)</li>
+<li>Technical debt continues to accumulate</li>
+<li>eKYC and digital experience will remain inferior to competitors</li>
+<li>Cannot achieve real-time processing for new products</li>
+<li>Difficulty attracting modern tech talent</li>
+</ul>
+<h3>3.6 Key Risks</h3>
+<ul>
+<li><strong>Way4 Dependency:</strong> Credit card launch blocked if VPBank TSA does not extend card processing</li>
+<li><strong>LOOMS Limitations:</strong> Enhancing a system with known security vulnerabilities may be unsustainable</li>
+<li><strong>Competitive Gap:</strong> Market leaders (Home Credit, FE Credit, Cake) continue to advance while ABC patches</li>
+<li><strong>Talent Retention:</strong> T24/Oracle skills becoming scarce; developers prefer modern stacks</li>
+</ul>
+<hr>
+<h2>4. Option B: Moderate -- Upgrade to Transact + Replace LOOMS</h2>
+<h3>4.1 Strategy</h3>
+<p>Upgrade T24 R25 to Temenos Transact for improved API capabilities, replace LOOMS with a modern LOS (PISMO Lending or Mambu<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">Vendor Assessment — IKIGAI Technology Research</span></span> LOS), and implement PISMO for credit card processing. This is a modular transformation that addresses the most critical gaps while managing migration risk.</p>
+<h3>4.2 Scope of Work</h3>
+<p><strong>Phase 1: Infrastructure &amp; Digital Foundation (Months 1-6)</strong></p>
+<ul>
+<li>Complete EY infrastructure recommendations (private cloud, cybersecurity)</li>
+<li>Deploy PISMO for c<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">NAPAS — National Payment Corporation of Vietnam</span></span>redit card issuing and p<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">NAPAS &quot;VietQR Integration Standards&quot;</span></span>rocessing</li>
+<li>Implement VNPT eKYC + HyperVerge</li>
+<li>Build customer mobile app with API-first architecture</li>
+<li>Deploy NAPAS 24/7, VietQR, eWallet integrations</li>
+<li>Implement Credgenics for digital collections</li>
+</ul>
+<p><strong>Phase 2: Core Enhancement + Credit Card Launch (Months 7-12)</strong></p>
+<ul>
+<li>Begin T24 R25 to Transact upgrade (parallel run)</li>
+<li>Launch credit card product via PISMO (debit/credit/prepaid)</li>
+<li>Implement PISMO Digital Lending for BNPL product</li>
+<li>Deploy alternative credit scoring (Experian + Credolab)</li>
+<li>Launch 2-wheeler loan product on enhanced LOS</li>
+<li>Implement data lake (Medallion Architecture per EY)</li>
+</ul>
+<p><strong>Phase 3: Full Transact + Optimization (Months 13-24)</strong></p>
+<ul>
+<li>Complete Transact upgrade and cutover</li>
+<li>Migrate existing loan book operations to Transact APIs</li>
+<li>Implement AI/ML credit scoring models</li>
+<li>Deploy Voice AI for collections (FPT.AI)</li>
+<li>Full mobile app with self-service capabilities</li>
+<li>Advanced analytics and real-time decisioning</li>
+</ul>
+<h3>4.3 Architecture Diagram (Conceptual)</h3>
+<pre><code>[Customer App] [Agent App] [Web Portal]
+         |          |          |
+    [API Gateway / Integration Layer]
+         |          |          |
+  +------+----+-----+----+----+------+
+  |           |          |           |
+[PISMO]  [Transact]  [New LOS]  [Credgenics]
+Cards+BNPL  Core     Origination  Collections&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;National Credit Information Center (CIC), State Bank of Vietnam&lt;/span&gt;&lt;/span&gt;
+  |           |          |           |
+  [Cloud]  [Private]  [Cloud]     [SaaS]
+           [Cloud]
+  |           |          |           |
+[VNPT eKYC] [CIC/PCB] [Experian] [NAPAS/VietQR]
+</code></pre>
+<h3>4.4 Pros</h3>
+<ul>
+<li>Addresses critical gaps (credit card, BNPL, eKYC, collections)</li>
+<li>PISMO provides best-in-class card processing (Visa-owned)</li>
+<li>Phased approach manages risk across multiple releases</li>
+<li>Modern digital experience for customers</li>
+<li>Maintains Temenos ecosystem knowledge while modernizing</li>
+<li>Enables new product launches within 6-12 months</li>
+<li>Attracts modern tech talent (cloud, API, PISMO skills)</li>
+</ul>
+<h3>4.5 Cons</h3>
+<ul>
+<li>Higher cost than Option A (USD 8-15M<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span> over 24 months)</li>
+<li>Transact upgrade requires significant testing and data migration</li>
+<li>Managing two core systems during transition increases operational complexity</li>
+<li>PISMO Vietnam presence still early (Circle PayLater only reference)</li>
+<li>Integration between Transact and PISMO requires custom middleware</li>
+</ul>
+<h3>4.6 Key Risks</h3>
+<ul>
+<li><strong>Transact Upgrade Complexity:</strong> T24 customizations may not port cleanly to Transact</li>
+<li><strong>PISMO Maturity in Vietnam:</strong> Limited local support; reliance on regional team</li>
+<li><strong>Parallel System Management:</strong> Running T24 + PISMO increases operational overhead</li>
+<li><strong>Budget Overrun:</strong> Multi-vendor, multi-phase projects prone to scope creep</li>
+<li><strong>Regul<span class="src-tip"><span class="src-icon">i</span><span class="src-detail">Vendor Assessment — IKIGAI Technology Research</span></span>atory Approval:</strong> New card issuing system requires SBV approval process</li>
+</ul>
+<hr>
+<h2>5. Option C: Aggressive -- Migrate to Cloud-Native (Mambu/PISMO)</h2>
+<h3>5.1 Strategy</h3>
+<p>Full core banking migration from T24 to a cloud-native platform (Mambu recommended, with PISMO for cards). This is the most ambitious option, aligned with what Cake by VPBank and TNEX have achieved, but carries the highest execution risk for an organization in ABC&#39;s current financial position.</p>
+<h3>5.2 Scope of Work</h3>
+<p><strong>Phase 1: Cloud Foundation + Quick Wins (Months 1-9)</strong></p>
+<ul>
+<li>Deploy Mambu as new core banking platform on AWS</li>
+<li>Implement PISMO for credit card issuing and processing</li>
+<li>Build new customer mobile app (React Native or Flutter)</li>
+<li>Integrate full eKYC stack (VNPT + HyperVerge)</li>
+<li>Launch credit card product (first product on new stack)</li>
+<li>Deploy NAPAS, VietQR, eWallet integrations</li>
+<li>Implement Credgenics collections</li>
+</ul>
+<p><strong>Phase 2: Loan Products Migration (Months 10-18)</strong></p>
+<ul>
+<li>Configure cash loan product on Mambu</li>
+<li>Configure installment loan product on Mambu</li>
+<li>Launch BNPL product natively on Mambu</li>
+<li>Launch 2-wheeler loan with IoT integration</li>
+<li>Begin data migration from T24 (existing loan book)</li>
+<li>Deploy AI/ML scoring platform</li>
+<li>Implement real-time analytics (Databricks/Snowflake)</li>
+</ul>
+<p><strong>Phase 3: Cutover + Optimization (Months 19-30)</strong></p>
+<ul>
+<li>Complete data migration from T24</li>
+<li>Decommission T24 and LOOMS</li>
+<li>Full digital collections with Voice AI</li>
+<li>Advanced personalization engine (Clever.AI or similar)</li>
+<li>Open Banking APIs for partner integrations</li>
+<li>Continuous optimization and feature releases</li>
+</ul>
+<h3>5.3 Reference: WeBank/UBank Proposal</h3>
+<p>The WeBank Technology Services proposal for UBank/FE Credit provides a relevant benchmark:</p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Scope</div>
+<div style="font-size:24px;font-weight:700;color:#1B2A4A;margin:4px 0">23 modules</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): 23 modules</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): 23 modules</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Phase 1 Duration</div>
+<div style="font-size:24px;font-weight:700;color:#2D4A7A;margin:4px 0">9 months</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): 9 months</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): 12 months</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Phase 2 Duration</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">6 months</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): 6 months</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): N/A (single phase)</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Total Duration</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">15 months</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): 15 months</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): 12 months</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">WTS Man-months</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">191</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): 191</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): 191</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Client Man-months</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">209</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): 209</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): 209</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">One-off Cost</div>
+<div style="font-size:24px;font-weight:700;color:#1B2A4A;margin:4px 0">USD 10.48M</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): USD 10.48M</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): USD 10.48M</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Annual Maintenance</div>
+<div style="font-size:24px;font-weight:700;color:#2D4A7A;margin:4px 0">USD 0.49M</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): USD 0.49M</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): USD 0.49M</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Head Count (WTS)</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">~50</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): ~50</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): ~50</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Head Count (Client)</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">~50</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): ~50</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): ~50</div>
+</div>
+<div style="flex:1;min-width:170px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:13px;color:#888;font-weight:600">Infrastructure</div>
+<div style="font-size:24px;font-weight:700;color:#0D1B2A;margin:4px 0">AWS Cloud</div>
+<div style="font-size:12px;color:#666">Option 2 (Loan-first): AWS Cloud</div>
+<div style="font-size:12px;color:#666">Option 3 (Combined): AWS Cloud</div>
+</div>
+</div></div>
+
+
+<p><strong>Key WTS Modules:</strong></p>
+<ul>
+<li>Channel Layer: Mobile App, eWallet, NAPAS, eKYC (HyperVerge/iFace), CSM</li>
+<li>Product Services: Retail Deposit, Retail Loan, Payment, Debit Card, Fraud Detection</li>
+<li>Backend: Regulatory Report, User Mgt, IT Ops (WeCube), DCP/ESB, AML/Anti-Fraud, GL</li>
+<li>PaaS: MASA (Modern Application &amp; Service Architecture), Openhive, WaaS, TiDB</li>
+<li>Infrastructure: AWS (Cloud, Compute, Storage, Network, EKS)</li>
+</ul>
+<h3>5.4 Architecture Diagram (Conceptual)</h3>
+<pre><code>[Customer App] [Partner APIs] [Agent Portal]
+         |          |          |
+    [API Gateway / Kong / AWS API Gateway]
+         |          |          |
+  +------+----+-----+----+----+------+------+
+  |           |          |           |      |
+[Mambu]    [PISMO]   [Credgenics] [AI/ML] [Data]
+Core       Cards      Collections Scoring  Lake
+  |           |          |           |      |
+  [AWS SaaS] [Cloud]   [SaaS]    [SageMaker] [Databricks]
+  |           |          |           |      |
+  +----------+----------+-----------+------+
+                    |
+        [NAPAS/VietQR/eWallet/Visa/MC]
+</code></pre>
+<h3>5.5 Pros</h3>
+<ul>
+<li>Most modern architecture; future-proof for 10+ years</li>
+<li>Fastest time-to-market for new products after initial setup</li>
+<li>Best digital customer experience possible</li>
+<li>Cloud-native:&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;State Bank of Vietnam (sbv.gov.vn)&quot;VietQR Integration Standards&quot;&quot;CAKE BY VPBANK_A FULLY DIGITAL NEXT GEN AI BANK.pdf&quot; (OtherData)&quot;UBank and FE Credit Proposal_with pricing_20251128.pdf&quot; (OtherData/WeBank)&quot;DecisioningEngineAgenticUniverseVisionPreview.pdf&quot; (OtherData)&quot;Introduction to PISMO.pdf&quot; (OtherData)&quot;Executive Summary Report_v.3.1.pptx&quot; — IT Security Assessment&quot;&gt;<span style="display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;border-radius:50%;background:#0D1B2A;color:white;font-size:8px;font-weight:700;font-style:italic;vertical-align:middle;line-height:1">i</span></span> auto-scaling, zero-downtime, global standards</li>
+<li>Aligns with successful Vietnam references (Cake, TNEX)</li>
+<li>Eliminates T24 license and maintenance costs long-term</li>
+<li>Attracts top tech talent; positions ABC as technology leader</li>
+<li>Per-transaction/per-account SaaS pricing aligns cost with growth</li>
+</ul>
+<h3>5.6 Cons</h3>
+<ul>
+<li>Highest risk for an organization with negative ROE and NPL at 22.8%</li>
+<li>Requires USD 15-25M<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span> total investment over 30 months</li>
+<li>Data migration from T24 is complex and risky</li>
+<li>Regulatory re-approval for new core system</li>
+<li>ABC team may lack capability for cloud-native operations</li>
+<li>Mambu SaaS means data on AWS Singapore (data residency concerns)</li>
+<li>Operational disruption during 18-30 month transformation</li>
+<li>WeBank-scale project requires 50+ dedicated staff on each side</li>
+</ul>
+<h3>5.7 Key Risks</h3>
+<ul>
+<li><strong>Financial Viability:</strong> ABC is currently loss-making; AFS (parent) may not approve USD 15-25M</li>
+<li><strong>Execution Capability:</strong> ABC IT team has limited experience with cloud-native platforms</li>
+<li><strong>Data Migration:</strong> T24 to Mambu data migration is complex; risk of data loss or corruption</li>
+<li><strong>Regulatory Risk:</strong> SBV may require extended parallel run; adds cost</li>
+<li><strong>Vendor Dependency:</strong> High dependency on Mambu/PISMO; limited negotiation leverage</li>
+<li><strong>Business Continuity:</strong> Migration during active loan servicing creates operational risk</li>
+</ul>
+<hr>
+<h2>6. Build vs. Buy Analysis</h2>
+<h3>6.1 Component-Level Analysis</h3>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">1</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Core Banking</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Not viable</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (T24/Mambu)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Too complex; no competitive advantage</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">2</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Card Processing</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Not viable</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (PISMO)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Visa/MC certification required; PISMO best-in-class</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">3</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Loan Origination</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Possible</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (Mambu LOS/PISMO)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Faster time-to-market; proven capabilities</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">4</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Customer Mobile App</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Build</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (white-label)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Build</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Critical differentiator; UX must be tailored</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">5</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">eKYC Integration</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Build (integration)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (VNPT/HyperVerge)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy + Integrate</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Core capability but no need to build engine</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">6</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Credit Scoring Model</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Build</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (Experian/FICO)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Hybrid</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Buy base model; build custom overlays</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">7</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Collection System</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Possible</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (Credgenics/Pega)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Faster deployment; proven workflows</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">8</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Data Platform</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Build</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (Databricks/Azure)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy + Configure</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Industry-standard tools; custom configuration</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">9</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">API Gateway</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Build</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (Kong/AWS)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Commodity infrastructure; focus on business logic</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">10</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Marketing Automation</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Not practical</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (Clever.AI/CleverTap)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Specialized capability; CleverTap evaluated</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">11</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Vietnamese Chatbot</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Build</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (FPT.AI)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Local language expertise critical</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">12</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Fraud Detection</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Not practical</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (Feedzai/ThetaRay)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Buy</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: Specialized ML models; regulatory requirement</div>
+</div></div>
+<div style="background:white;border-radius:1px;padding:16px;margin:8px 0;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4;display:flex;align-items:start;gap:12px">
+<div style="min-width:32px;height:32px;border-radius:50%;background:#0D1B2A;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px">13</div>
+<div style="flex:1">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Regulatory Reporting</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Build: Build</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Buy: Buy (built-in)</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Recommendation: Hybrid</div>
+<div style="font-size:12px;color:#666;margin-top:2px">Rationale: SBV-specific requirements need customization</div>
+</div></div>
+</div>
+
+
+<h3>6.2 Build vs. Buy Cost Comparison</h3>
+<!-- VISUAL: Build vs Buy Cost Comparison -->
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="font-weight:700;font-size:16px;margin-bottom:16px;color:#2D4A7A">Build vs Buy Cost Comparison</div>
+<div style="display:flex;flex-wrap:wrap;gap:14px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:14px;font-weight:700;color:#2D4A7A;margin-bottom:8px">Full Build</div>
+<div style="font-size:10px;color:#888;text-transform:uppercase">Upfront</div>
+<div style="font-size:20px;font-weight:700;color:#1B2A4A">$15-25M</div>
+<div style="font-size:10px;color:#888;text-transform:uppercase;margin-top:6px">Annual Run</div>
+<div style="font-size:16px;font-weight:700;color:#334155">$3-5M</div>
+<div style="font-size:10px;color:#888;text-transform:uppercase;margin-top:6px">Time to Launch</div>
+<div style="font-size:14px;font-weight:600;color:#1B2A4A">24-36 months</div>
+<span style="display:inline-block;margin-top:8px;padding:3px 10px;border-radius:1px;font-size:10px;font-weight:600;background:#F5E8E8;color:#1B2A4A">Very High Risk</span>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:18px;border:1px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:14px;font-weight:700;color:#2D4A7A;margin-bottom:8px">Full Buy (SaaS)</div>
+<div style="font-size:10px;color:#888;text-transform:uppercase">Upfront</div>
+<div style="font-size:20px;font-weight:700;color:#0D1B2A">$5-10M</div>
+<div style="font-size:10px;color:#888;text-transform:uppercase;margin-top:6px">Annual Run</div>
+<div style="font-size:16px;font-weight:700;color:#334155">$2-4M</div>
+<div style="font-size:10px;color:#888;text-transform:uppercase;margin-top:6px">Time to Launch</div>
+<div style="font-size:14px;font-weight:600;color:#0D1B2A">12-18 months</div>
+<span style="display:inline-block;margin-top:8px;padding:3px 10px;border-radius:1px;font-size:10px;font-weight:600;background:#fffbeb;color:#0D1B2A">Medium Risk</span>
+</div>
+<div style="flex:1;min-width:200px;background:linear-gradient(135deg,#f0fdf4,#fff);border-radius:1px;padding:18px;border:1px solid #D4D4D4;border:2px solid #D4D4D4;border-top:4px solid #D4D4D4">
+<div style="font-size:14px;font-weight:700;color:#2D4A7A;margin-bottom:2px">Hybrid</div>
+<div style="font-size:10px;font-weight:700;color:#0D1B2A;margin-bottom:6px">RECOMMENDED</div>
+<div style="font-size:10px;color:#888;text-transform:uppercase">Upfront</div>
+<div style="font-size:20px;font-weight:700;color:#0D1B2A">$8-15M</div>
+<div style="font-size:10px;color:#888;text-transform:uppercase;margin-top:6px">Annual Run</div>
+<div style="font-size:16px;font-weight:700;color:#334155">$2-3M</div>
+<div style="font-size:10px;color:#888;text-transform:uppercase;margin-top:6px">Time to Launch</div>
+<div style="font-size:14px;font-weight:600;color:#0D1B2A">9-15 months</div>
+<span style="display:inline-block;margin-top:8px;padding:3px 10px;border-radius:1px;font-size:10px;font-weight:600;background:#f0fdf4;color:#0D1B2A">Medium-Low Risk</span>
+</div>
+</div>
+</div>
+
+<hr>
+<h2>7. Technology for New Product Launches</h2>
+<h3>7.1 Credit Card Launch</h3>
+<p><strong>Required Technology Stack:</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Card Issuing & Processing</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> PISMO</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> Way4 (existing)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#1B2A4A">Critical</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Card Network Integration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Visa + Mastercard (via PISMO)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> Visa only</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#1B2A4A">Critical</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Card Management System</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> PISMO CRM</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> Custom build</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">High</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Embossing & Fulfillment</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> IDEMIA / Thales (via PISMO)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> Local print vendor</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">High</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">3DS Authentication</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Cardinal / Entersekt (PISMO)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> Netcetera</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">High</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Fraud Detection</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Feedzai / ThetaRay (PISMO)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> DroneShield</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">High</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Rewards & Loyalty</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Perx / iPay (PISMO ecosystem)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> Custom build</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#2D4A7A">Medium</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Credit Limit Management</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> PISMO Flex Controls</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> Custom rules</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">High</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Statement Generation</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> PISMO End-to-End</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> Custom build</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#2D4A7A">Medium</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Mobile App (Card Features)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Custom build on PISMO APIs</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Alternative:</span> White-label</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#1B2A4A">Critical</span></div>
+</div>
+</div></div>
+
+
+<p><strong>Timeline:</strong> 6-9 months from PISMO contract signing to MVP launch
+<strong>Investment:</strong> USD 3-5M<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span> (PISMO setup + integration + app development)</p>
+<p><strong>Reference - VPBank Credit Card Digital Factory Journey:</strong></p>
+<ul>
+<li>Team staffing: Product Owner, UX Chapter, Marketing Chapter, IT Project, IT Integration, IT Operations</li>
+<li>MVP customer journey: 13 steps from interest to card activation</li>
+<li>Key IT systems: LOS (underwriting), Way4 (card management), T24 (core), SAP OCR (document processing)</li>
+<li>Underwriting target: &lt;5-6 hours for online approval</li>
+<li>Card delivery: +1 business day after KYC confirmation</li>
+</ul>
+<h3>7.2 BNPL Launch</h3>
+<p><strong>Required Technology Stack:</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">BNPL Engine</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> PISMO Digital Lending OR Mambu</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#1B2A4A">Critical</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Merchant Integration Platform</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Custom API layer</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#1B2A4A">Critical</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Installment Plan Configuration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> PISMO/Mambu product factory</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#1B2A4A">Critical</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Real-time Credit Decision</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Experian + Custom ML</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">High</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Merchant Onboarding Portal</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Custom build</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">High</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">QR Payment at POS</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> VietQR / NAPAS integration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">High</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Customer App (BNPL view)</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Custom build on APIs</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#0D1B2A">High</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Merchant Settlement</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> NAPAS batch settlement</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#2D4A7A">Medium</span></div>
+</div>
+</div></div>
+
+
+<p><strong>Timeline:</strong> 4-6 months from platform selection to MVP
+<strong>Investment:</strong> USD 1.5-3M<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span>
+<strong>Key Success Factor:</strong> Merchant network acquisition is business-critical; technology must support rapid merchant onboarding (target: &lt;24 hours for a new merchant)</p>
+<h3>7.3 2-Wheeler Loan Launch</h3>
+<p><strong>Required Technology Stack:</strong></p>
+<div style="margin:24px 0;font-family:Inter,sans-serif">
+<div style="display:flex;flex-wrap:wrap;gap:10px">
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Loan Product Configuration</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Enhanced LOOMS or New LOS</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10px;border-radius:1px;font-size:11px;font-weight:600;background:#0D1B2A20;color:#1B2A4A">Critical</span></div>
+</div>
+<div style="flex:1;min-width:200px;background:white;border-radius:1px;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4">
+<div style="font-weight:700;font-size:14px;color:#2D4A7A">Dealer Portal</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Recommended Solution:</span> Custom web application</div>
+<div style="font-size:12px;color:#666;margin-top:4px"><span style="font-weight:600">Priority:</span> <span style="display:inline-block;padding:2px 10p</body></html>

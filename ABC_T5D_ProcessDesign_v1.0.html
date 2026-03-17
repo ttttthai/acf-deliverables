@@ -1,0 +1,714 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ABC_T5D_ProcessDesign_v1.0</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body><a href="index.html" class="nav-back">Back to Index</a><div class="header-bar"><h1>ABC_T5D_ProcessDesign_v1.0</h1><p>ABC Consumer Finance Vietnam — IKIGAI Corporation — March 2026</p></div><h1>ABC Process Design -- Current &amp; Future State v1.0</h1>
+<p><strong>Document ID:</strong> ABC_T5D_ProcessDesign_v1.0
+<strong>Prepared for:</strong> ABC Consumer Finance Vietnam -- Operations &amp; Technology Teams
+<strong>Prepared by:</strong> Team 5 -- Architecture &amp; Implementation
+<strong>Date:</strong> March 15, 2026
+<strong>Classification:</strong> Internal -- Strictly Confidential
+<strong>Version:</strong> 1.0
+<strong>Sources:</strong> Team 2 (Operational DD, Technology DD, Capability Gaps), Team 4 (Digital Transformation, Product Strategy, Sales Strategy)</p>
+<hr>
+<h2>Executive Summary</h2>
+<p>This document provides text-based BPMN process descriptions for ABC&#39;s 5 core processes (Loan Origination, Loan Servicing, Collections, Customer Service, Compliance Reporting) in both current and future states. The analysis identifies 27 process bottlenecks, 19 automation opportunities ranked by ROI, 12 handoff inefficiencies, and 8 critical control gaps. The future-state processes target 80% straight-through processing (STP) for origination, 60% digital collection resolution, and fully automated SBV regulatory reporting. <span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI TARGET</span></p>
+<hr>
+<h2>1. Current State Processes</h2>
+<h3>1.1 Loan Origination Process</h3>
+<h4>1.1.1 Application Intake -- All Channels</h4>
+<p><strong>Channel: ACS Telesales (60% of volume -- VND 61B<span style="background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI PROJECTION</span>/month)</strong></p>
+<pre><code>START → [ACS Cross-Sell Engine identifies eligible customer]
+    |
+    → [Telesales agent calls existing ACS installment customer]
+    |
+    → [Agent presents cash loan offer (pre-calculated amount and terms)]
+    |
+    → DECISION: Customer interested?
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ [Agent initiates loan application in LOOMS]&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ [Application data populated from existing ACS customer record]&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ PROCEED to eKYC Verification&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;NO → [Agent logs call outcome; schedule follow-up or close]&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ END (No Application)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+</code></pre>
+<p><strong>Channel: NSN / POS Dealer (33% of volume -- VND 33.8B<span style="background:#FFF3CD;color:#856404;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">ESTIMATE</span>/month)</strong></p>
+<pre><code>START → [Customer visits retail store (AEON, electronics dealer, motorbike dealer)]
+    |
+    → [Customer selects product and asks about installment financing]
+    |
+    → [Sales agent at POS opens Sales App (Mobile)]
+    |
+    → [Agent captures customer CCCD via Sales App camera]
+    |
+    → [Agent enters loan amount, product details, dealer information]
+    |
+    → [Application created in LOOMS&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;ABC IT Division &quot;LOS_Gantt-chart_General.xlsx&quot; Package 11 Dec 2025&lt;/span&gt;&lt;/span&gt; via Sales App]
+    |
+    → PROCEED to eKYC Verification
+</code></pre>
+<p><strong>Channel: VPBank NEO Agent Banking (~2-3% of volume)</strong></p>
+<pre><code>START → [Customer sees ABC loan offer in VPBank NEO app]
+    |
+    → [Customer taps &quot;Apply&quot; within VPBank NEO interface]
+    |
+    → [VPBank NEO routes to ABC application flow]
+    |
+    → [Customer provides CCCD and personal information]
+    |
+    → [Application data transferred to ABC systems]
+    |
+    → PROCEED to eKYC Verification
+</code></pre>
+<p><strong>Channel: Digital / Self-Service (&lt;1% of volume)</strong></p>
+<pre><code>START → [Customer visits ABC Customer Portal (web)]
+    |
+    → [Limited loan information available; no online application capability]
+    |
+    → [Customer calls hotline 1900 23 23 56 to apply]
+    |
+    → [Redirected to telesales channel]
+    |
+    → END (Effectively no digital origination)
+</code></pre>
+<h4>1.1.2 eKYC Verification Steps</h4>
+<pre><code>START (eKYC) → [FPT eKYC SDK initiated]
+    |
+    → [Step 1: CCCD Document Capture]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ OCR extracts: Full name, DOB, CCCD number, issue date, expiry&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ DECISION: OCR quality sufficient?&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;YES → PROCEED&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;NO → [Retry up to 3 times] → FAIL if still unsuccessful&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;BOTTLENECK: ~10% drop-off at this stage (poor lighting, old/damaged CCCD)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+    → [Step 2: CCCD NFC Chip Read (if CCCD has chip)]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Extracts: Chip data, digital photo, fingerprint hash&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ DECISION: NFC read successful?&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;YES → PROCEED (highest confidence identity verification)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;NO → [Skip NFC; proceed with OCR data only]&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;BOTTLENECK: ~15% failure rate (older phones without NFC, chip read errors)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+    → [Step 3: Facial Recognition / Liveness Check]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Liveness detection (blink, head turn, or passive)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Face comparison: Selfie vs CCCD photo vs NFC chip photo (if available)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ DECISION: Face match confidence &gt; threshold?&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;YES → PROCEED&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;NO → [Retry up to 2 times] → FAIL if still unsuccessful&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;BOTTLENECK: ~8% drop-off (poor camera, incorrect positioning, liveness failure)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+    → [Step 4: Database Verification]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Verify: CCCD validity, blacklist check, duplicate check&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ DECISION: Verification passed?&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;YES → eKYC COMPLETE → PROCEED to Credit Assessment&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;NO → APPLICATION REJECTED (identity verification failure)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → OVERALL eKYC COMPLETION RATE: ~50% (estimated)
+    → OVERALL eKYC COST: VND 14B&lt;span style=&quot;background:#D4EDDA;color:#155724;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI PROJECTION&lt;/span&gt;/year for eKYC + credit inquiry combined
+</code></pre>
+<h4>1.1.3 Credit Assessment</h4>
+<pre><code>START (Credit Assessment) → [LOOMS triggers CIC inquiry]
+    |
+    → [Step 1: CIC&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;National Credit Information Center (CIC), State Bank of Vietnam&lt;/span&gt;&lt;/span&gt; Bureau Check]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ API call to CIC for B11T report (debt balance)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Receive: CIC score, credit history, existing obligations, inquiry count&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ DECISION: CIC Group?&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;Group 1-2 → PROCEED to internal scoring&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;Group 3-5 → AUTO DECLINE (blacklisted/delinquent)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → [Step 2: Internal Scoring Module (PTF Scoring)]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Scoring model: CIC-based logistic regression (GINI 26-27%)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Output: Risk score + risk band assignment&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ LIMITATION: Only 5,867 loans in backtest sample; low positive label rates&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ LIMITATION: No WAON data, no device fingerprint, no behavioral data&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+    → [Step 3: Rule Engine Check (LOOMS Rule Engine V3.0)]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Pricing rules (rate assignment by risk band and product)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Policy rules (maximum exposure, dealer restrictions, geographic limits)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ DECISION: Rules passed?&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;YES → PROCEED to approval decision&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;NO → DECLINE or route to manual review&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → [Step 4: Manual Review Triggers]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;flex-wrap:wrap;gap:10px&quot;&gt;
+&lt;div style=&quot;flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A&quot;&gt;→ IF: Self-employed applicant&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A&quot;&gt;→ IF: High loan amount (above product threshold)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A&quot;&gt;→ IF: Inconsistent information detected&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A&quot;&gt;→ IF: First-time cash loan NTB&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A&quot;&gt;→ THEN: Route to Credit Assessor for manual review&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A&quot;&gt;→ BOTTLENECK: Manual review adds 1-3 business days&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;flex:1;min-width:200px;background:white;border-radius:0;padding:16px;border-left:4px solid #D4D4D4;border:1px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A&quot;&gt;→ BOTTLENECK: Limited credit assessor capacity (estimated 5-10 staff)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → [Step 5: Approval Decision]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;AUTO APPROVE → If score &gt; threshold AND rules passed AND no manual trigger&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;Current STP rate: NOT MEASURED (estimated &lt;30%)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;MANUAL APPROVE → Credit assessor reviews and approves with conditions&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;DECLINE → Score below threshold OR rules failed OR manual decline&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Credit Approval Hierarchy applied per Decision document&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ &quot;Issuance of the Credit Approval Hierarchy and Authority System for Consumer Lending&quot;&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+    → PROCEED to Disbursement (if approved)
+</code></pre>
+<p><strong>Current Approval Rates (Dec 2025):</strong></p>
+<!-- Approval Rates - Horizontal Bar Chart -->
+<div style="margin:24px 0;border:1px solid #D4D4D4;border-radius:0;padding:16px 20px;background:#fff">
+  <div style="text-transform:uppercase;letter-spacing:1px;font-size:13px;font-weight:700;color:#0D1B2A;border-bottom:2px solid #0D1B2A;display:inline-block;padding-bottom:4px;margin-bottom:12px">Approval Rates by Product (Dec 2025)</div>
+  <div style="margin-bottom:8px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600;color:#0D1B2A">Installment CD</span><span style="font-weight:700;color:#0D1B2A">75.5%</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:20px;overflow:hidden"><div style="background:#0D1B2A;height:100%;width:75.5%;border-radius:1px"></div></div>
+  </div>
+  <div style="margin-bottom:8px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600;color:#0D1B2A">Total</span><span style="font-weight:700;color:#0D1B2A">71.7%</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:20px;overflow:hidden"><div style="background:#0D1B2A;height:100%;width:71.7%;border-radius:1px"></div></div>
+  </div>
+  <div style="margin-bottom:8px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600;color:#0D1B2A">ACS Cross-sell</span><span style="font-weight:700;color:#0D1B2A">70.6%</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:20px;overflow:hidden"><div style="background:#0D1B2A;height:100%;width:70.6%;border-radius:1px"></div></div>
+  </div>
+  <div style="margin-bottom:8px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600;color:#0D1B2A">Installment TW</span><span style="font-weight:700;color:#0D1B2A">61.7%</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:20px;overflow:hidden"><div style="background:#0D1B2A;height:100%;width:61.7%;border-radius:1px"></div></div>
+  </div>
+  <div style="margin-bottom:8px">
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600;color:#0D1B2A">Cash Loan Total</span><span style="font-weight:700;color:#0D1B2A">35.4%</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:20px;overflow:hidden"><div style="background:#0D1B2A;height:100%;width:35.4%;border-radius:1px"></div></div>
+  </div>
+  <div>
+    <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px"><span style="font-weight:600;color:#0D1B2A">Cash Loan NTB</span><span style="font-weight:700;color:#0D1B2A">30.5%</span></div>
+    <div style="background:#e5e7eb;border-radius:0;height:20px;overflow:hidden"><div style="background:#0D1B2A;height:100%;width:30.5%;border-radius:1px"></div></div>
+  </div>
+</div>
+
+<h4>1.1.4 Approval Workflow -- Automated vs Manual Decision Points <span style="background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle">IKIGAI DESIGN</span></h4>
+<pre><code>[Scoring Complete]
+    |
+    → DECISION: Auto-Decision Eligible?
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ AUTO APPROVE or AUTO DECLINE&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Estimated: &lt;30% of applications fully automated&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Time: &lt;5 minutes&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;NO (Grey zone; flags; manual triggers)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ [Route to Credit Assessor queue]&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ [Auto Assignment Engine V3.0 assigns to assessor]&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ [Assessor reviews: CIC report, application data, supporting documents]&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ [Assessor decision: Approve / Approve with conditions / Decline]&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ [If amount &gt; assessor authority: Escalate to Senior Head of Risk / Credit Committee]&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Estimated: &gt;70% of applications require some manual intervention&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ Time: 1-3 business days&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+    → [Approval notification sent to agent/customer]
+    → [If approved: Generate loan terms, rate, tenor, monthly payment]
+</code></pre>
+<h4>1.1.5 Disbursement Process</h4>
+<pre><code>[Loan Approved + Contract Signed]
+    |
+    → [Step 1: Account Setup in T24]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Configure: Product type, amount, rate, tenor, payment schedule&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Link: Customer CIF, repayment account&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Time: Semi-automated; may require manual entry for certain products&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → [Step 2: Initiate Disbursement via Payment API]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Disbursement routing:&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ ATTEMPT 1: SeABank direct transfer (primary)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ ATTEMPT 2: CITAD (if SeABank unavailable)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ ATTEMPT 3: NAPAS fast (if CITAD unavailable)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Disbursement status tracked: READY → PAID&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ DECISION: Disbursement successful?&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;YES → Update T24 account status; notify customer&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;NO → [Retry logic] → [Manual intervention if all attempts fail]&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → [Step 3: Confirmation]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Internal system update (LOOMS + T24 status synchronized)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ BOTTLENECK: No push notification (no app); no in-app confirmation&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Time: Same day to next business day&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → PROCESS COMPLETE
+</code></pre>
+<h3>1.2 Loan Servicing Process</h3>
+<pre><code>[Active Loan Account in T24]
+    |
+    → [Monthly Payment Processing]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Payment due date calculated per loan schedule&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Minimum payment = Principal + Interest + Fees (if any)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Collection fee processing: Minimum payment must cover collection fees&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ CHANNELS for payment receipt:&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Bank transfer to ABC collection account (SeABank)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Collection partner payment points (API: CreateFTPayment)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Customer Portal (basic online payment)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ BOTTLENECK: No auto-debit from customer&#39;s primary bank&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ BOTTLENECK: No VietQR or e-wallet payment&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ BOTTLENECK: No push notification reminders (no app)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → [Account Management]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ WAON Point Redemption: Customer can redeem WAON points against balance&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ PTF Point Payment: Legacy point system processing&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Early Settlement: Customer requests via hotline or collection partner&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ CHECK: Is COB (Close of Business) running?&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ If COB running: Cannot process early settlement; must wait&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ BOTTLENECK: COB creates downtime windows for certain operations&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Partial Prepayment: Same COB check required&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → [Customer Communication]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Phone calls for pre-due reminders (South_Predue team: 6 HC; North_B0 Daily: 6 HC)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Email: Limited use&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ BOTTLENECK: No push notifications; no in-app messaging; no Zalo ZNS yet&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → [Monthly Closing]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;1. Credit Screening System processes&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;2. Card Solution System processes&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;3. Core Banking (T24) processes&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;4. Final closing result sharing&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ T24 cannot support both normal monthly automation AND manual deployment&lt;/div&gt; &lt;span style=&quot;background:#CCE5FF;color:#004085;font-size:10px;font-weight:600;padding:1px 6px;border-radius:2px;margin-left:4px;vertical-align:middle&quot;&gt;IKIGAI DESIGN&lt;/span&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;simultaneously (write-off with debt group upgrade, loan restructuring)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ BOTTLENECK: Manual coordination required during month-end&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+</code></pre>
+<h3>1.3 Collections Process</h3>
+<h4>1.3.1 B0 -- Pre-Due / Current (DPD 0)</h4>
+<pre><code>[B0 Portfolio: 25,008 cases; VND 621.1B POS_BOM]
+    |
+    → [Pre-Due Reminder (7-3 days before due date)]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ North_B0 Daily team (6 HC) makes outbound calls&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ B0 team (9 HC as of Feb-26) handles daily pre-due&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ SMS reminders (limited; ZNS under development)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ METRIC: B0 RFR 1.41% (Jan-26) -- trending up from 1.33% (Dec-25)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ BOTTLENECK: No automated SMS/Zalo reminders at scale&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ BOTTLENECK: No push notification capability (no app)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+    → DECISION: Payment received by due date?
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:8px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;NO → Account rolls to B1 (DPD 1-30)&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px&quot;&gt;
+&lt;span style=&quot;font-weight:600&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:8px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ RFR (Roll Forward Rate) from B0 to B1: 1.41%&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#0D1B2A;color:white;padding:10px 16px;border-radius:0;font-size:13px&quot;&gt;
+&lt;span style=&quot;font-weight:600&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4>1.3.2 B1-B3 -- Early Stage (DPD 1-90)</h4>
+<pre><code>[B1 Account: 595 cases; VND 14.0B POS]
+    |
+    → [Day 1-7: Automated SMS/IVR (when ZNS/SMS gateway complete)]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ SMS notification: &quot;Your payment of VND X is overdue&quot;&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ IVR auto-call with payment instruction&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ METRIC: B1 resolution rate 54.97% (Jan-26); KPI target 59.92%&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ METRIC: Contact rate only 7.3% despite 18 call attempts per contract&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ BOTTLENECK: 7.3% contact rate is critically low&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;div style=&quot;display:flex;align-items:center;gap:8px;margin:6px 0&quot;&gt;
+&lt;div style=&quot;width:140px;font-size:13px;text-align:right;color:#555;font-weight:500&quot;&gt;→ BOTTLENECK: No Zalo messaging; no payment link; no self-service&lt;/div&gt;
+&lt;div style=&quot;flex:1;background:#ECECEC;border-radius:0;overflow:hidden;height:30px&quot;&gt;
+&lt;div style=&quot;width:50%;height:100%;background:#0D1B2A;border-radius:0;display:flex;align-items:center;padding-left:12px;color:white;font-weight:700;font-size:12px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+    → [Day 8-30: Tele Collection Calls]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Multiple call attempts at different times of day&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Negotiate payment plan; record promise-to-pay&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ DECISION: Promise made and kept?&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;YES → Account cured; returns to B0&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;NO → Continue calling; escalate if pattern of non-contact&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+    → [Day 15-30: Field Visit Trigger]
+&lt;div style=&quot;margin:24px 0;font-family:Inter,sans-serif&quot;&gt;
+&lt;div style=&quot;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px&quot;&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ IF: Customer in accessible geographic area&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ THEN: Assign to field collection team&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ Field collectors: South (17 HC), North (7 HC)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div style=&quot;background:white;border-radius:0;padding:16px;border:1px solid #D4D4D4;border-left:4px solid #D4D4D4&quot;&gt;
+&lt;div style=&quot;font-weight:700;font-size:14px;color:#0D1B2A;margin-bottom:6px&quot;&gt;→ BOTTLENECK: Field collector productivity VND 15M/HC (critically low)&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+[B2 Account: 463 cases; VND 10.0B POS]
+    → Same process as B1 with escalated urgency
+    → B2 resolution rate: 41.67% (Jan-26); declining trend
+    → B2 roll forward rate: 57.7%&lt;span style=&quot;position:relative;display:inline-block;cursor:help;margin-left:3px&quot; title=&quot;State Bank of Vietnam (sbv.gov.vn)&quot;VietQR&lt;span class=&quot;src-tip&quot;&gt;&lt;span class=&quot;src-icon&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;src-detail&quot;&gt;NAPAS &quot;VietQR Integration Sta</body></html>
